@@ -109,8 +109,9 @@
         content: '';
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-        opacity: 0.4;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        opacity: 0.3;
+        mix-blend-mode: overlay;
         pointer-events: none;
         z-index: 9999;
     }
@@ -305,14 +306,14 @@
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 <div class="max-w-5xl mx-auto px-6 text-center">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1] gradient-text hero-reveal hero-reveal-1">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1] gradient-text">
         Construye Tu Infraestructura de Crecimiento en 10 Días
     </h1>
-    <p class="text-xl md:text-2xl opacity-60 mb-6 max-w-2xl mx-auto leading-relaxed hero-reveal hero-reveal-2">
+    <p class="text-xl md:text-2xl text-white/60 mb-6 max-w-2xl mx-auto leading-relaxed">
         Diagnóstico. Construcción. Lanzamiento.<br class="hidden md:block"/>
         Tuyo para siempre.
     </p>
-    <p class="text-base opacity-50 mb-12 max-w-2xl mx-auto hero-reveal hero-reveal-3">
+    <p class="text-base text-white/50 mb-12 max-w-2xl mx-auto">
         Sistemas de IA que capturan clientes las 24 horas, eliminan citas perdidas y recuperan ingresos que hoy se te escapan — sin cuotas mensuales.
     </p>
     <div class="flex flex-wrap justify-center gap-4 mb-12">
