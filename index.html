@@ -52,9 +52,11 @@
     }
     .grid-bg {
         background-image:
-            linear-gradient(to right, rgba(77, 166, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(77, 166, 255, 0.05) 1px, transparent 1px);
-        background-size: 40px 40px;
+            linear-gradient(to right, rgba(77, 166, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(77, 166, 255, 0.02) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
+        -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
     }
     .glow-button {
         box-shadow: 0 0 20px rgba(77, 166, 255, 0.4);
@@ -324,7 +326,7 @@
             &lt; 8 días de recuperación
         </div>
         <div class="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-base">credit_card_off</span>
+            <span class="material-symbols-outlined text-primary text-base">money_off</span>
             0% cuotas mensuales
         </div>
     </div>
@@ -368,7 +370,7 @@
         </div>
         <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
             <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-primary">voice_over_off</span>
+                <span class="material-symbols-outlined text-primary">phone_missed</span>
             </div>
             <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="75" data-suffix="%">75%</div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Sin Seguimiento</p>
@@ -384,7 +386,7 @@
         </div>
         <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
             <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-primary">description_off</span>
+                <span class="material-symbols-outlined text-primary">receipt_long</span>
             </div>
             <div class="text-3xl font-extrabold text-primary mb-2">60-80%</div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Cotizaciones Abandonadas</p>
@@ -392,7 +394,7 @@
         </div>
         <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
             <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-primary">person_off</span>
+                <span class="material-symbols-outlined text-primary">person_remove</span>
             </div>
             <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="55" data-suffix="%">55%</div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Sin Reactivación</p>
@@ -415,7 +417,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             <div class="relative flex flex-col items-center text-center">
                 <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
-                    <span class="material-symbols-outlined text-primary text-3xl">stethoscope</span>
+                    <span class="material-symbols-outlined text-primary text-3xl">search</span>
                 </div>
                 <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20">30 minutos</div>
                 <h3 class="text-xl font-bold mb-3">Diagnóstico Gratuito</h3>
@@ -611,7 +613,7 @@
             <div class="p-8 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10">
-                        <span class="material-symbols-outlined text-white text-2xl">dentistry</span>
+                        <span class="material-symbols-outlined text-white text-2xl">local_hospital</span>
                     </div>
                     <span class="text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 px-2 py-1 rounded text-white/60">7,334 clínicas en CDMX</span>
                 </div>
@@ -880,10 +882,10 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div class="col-span-1 md:col-span-2">
             <div class="flex items-center space-x-2 mb-6">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-lg shadow-primary/20">
-                    <span class="text-white font-black text-sm">A</span>
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
+                    <span class="text-white font-black text-[10px]">A</span>
                 </div>
-                <span class="text-xl font-extrabold tracking-tight uppercase">AELION</span>
+                <span class="text-lg font-extrabold tracking-tight uppercase">AELION</span>
             </div>
             <p class="text-xl font-medium mb-2">Smarter Systems.<br/>Super Human Results.</p>
             <p class="opacity-50 text-sm">Infraestructura de IA para negocios que no tienen tiempo que perder.</p>
