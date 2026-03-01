@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AELION — Infraestructura de Crecimiento con IA para tu Negocio</title>
+<meta name="description" content="Construimos sistemas de IA que capturan clientes 24/7, eliminan citas perdidas y recuperan ingresos. Sin cuotas mensuales. Tuyo para siempre.">
+<meta property="og:title" content="AELION — Infraestructura de Crecimiento con IA">
+<meta property="og:description" content="Sistemas de IA que trabajan 24/7 para tu negocio. Sin cuotas mensuales. 3.7x ROI en Mes 1.">
+<meta property="og:image" content="/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#4da6ff",
+                    "background-dark": "#0a0e1a",
+                    "neon-blue": "#4da6ff",
+                },
+                fontFamily: {
+                    display: ["Inter", "sans-serif"],
+                    body: ["Inter", "sans-serif"],
+                },
+                borderRadius: {
+                    DEFAULT: "8px",
+                },
+            },
+        },
+    };
+</script>
+<style type="text/tailwindcss">
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(77, 166, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+        border: 1px solid rgba(77, 166, 255, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .grid-bg {
+        background-image:
+            linear-gradient(to right, rgba(77, 166, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(77, 166, 255, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+    .glow-button {
+        box-shadow: 0 0 20px rgba(77, 166, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+    .glow-button:hover {
+        box-shadow: 0 0 30px rgba(77, 166, 255, 0.6);
+        transform: translateY(-2px);
+    }
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #4da6ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    .counter { font-variant-numeric: tabular-nums; }
+    @keyframes float-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .float-in { animation: float-in 0.6s ease-out forwards; opacity: 0; }
+    .float-in-delay-1 { animation-delay: 0.1s; }
+    .float-in-delay-2 { animation-delay: 0.2s; }
+    .float-in-delay-3 { animation-delay: 0.3s; }
+    .float-in-delay-4 { animation-delay: 0.4s; }
+    .float-in-delay-5 { animation-delay: 0.5s; }
+</style>
+</head>
+<body class="font-body bg-background-dark text-[#F9FAFB] selection:bg-primary selection:text-white">
+
+<!-- ============ NAV ============ -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+        <img alt="AELION Logo" class="h-8" src="assets/aelion-logo.png"/>
+        <span class="text-2xl font-extrabold tracking-tighter uppercase italic">AELION</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-8 text-sm font-medium opacity-80">
+        <a class="hover:text-primary transition-colors" href="#dolor">Problema</a>
+        <a class="hover:text-primary transition-colors" href="#metodo">Método</a>
+        <a class="hover:text-primary transition-colors" href="#resultados">Resultados</a>
+        <a class="hover:text-primary transition-colors" href="#construimos">Soluciones</a>
+        <a class="hover:text-primary transition-colors" href="#industrias">Industrias</a>
+        <a class="hover:text-primary transition-colors" href="#precios">Precios</a>
+        <a class="hover:text-primary transition-colors" href="#faq">FAQ</a>
+    </div>
+    <div class="flex items-center space-x-4">
+        <a class="hidden sm:inline-flex bg-primary hover:brightness-110 text-white px-5 py-2.5 rounded font-semibold text-sm transition-all" href="#cta">
+            Agenda Tu Diagnóstico
+        </a>
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-label="Menú">
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-top"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-mid"></span>
+            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-bot"></span>
+        </button>
+    </div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden bg-background-dark/95 backdrop-blur-md border-t border-white/10 px-6 py-6 space-y-4">
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#dolor">Problema</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#metodo">Método</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#resultados">Resultados</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#construimos">Soluciones</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#industrias">Industrias</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#precios">Precios</a>
+    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#faq">FAQ</a>
+    <a class="block bg-primary text-white px-5 py-3 rounded font-semibold text-center mt-4" href="#cta">Agenda Tu Diagnóstico</a>
+</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="relative pt-40 pb-20 overflow-hidden grid-bg">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[#4da6ff]/10 blur-[120px] rounded-full -z-10"></div>
+<div class="max-w-5xl mx-auto px-6 text-center">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1] gradient-text">
+        Construye Tu Infraestructura de Crecimiento en 10 Días
+    </h1>
+    <p class="text-xl md:text-2xl opacity-60 mb-6 max-w-2xl mx-auto leading-relaxed">
+        Diagnóstico. Construcción. Lanzamiento.<br class="hidden md:block"/>
+        Tuyo para siempre.
+    </p>
+    <p class="text-base opacity-50 mb-12 max-w-2xl mx-auto">
+        Sistemas de IA que capturan clientes las 24 horas, eliminan citas perdidas y recuperan ingresos que hoy se te escapan — sin cuotas mensuales.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">trending_up</span>
+            3.7x ROI en Mes 1
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">bolt</span>
+            &lt; 8 días de recuperación
+        </div>
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-base">credit_card_off</span>
+            0% cuotas mensuales
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <a href="#cta" class="glow-button bg-primary text-white px-8 py-5 rounded text-lg font-bold flex items-center space-x-3 w-full md:w-auto justify-center">
+            <span>Agenda Tu Diagnóstico Gratuito</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="#metodo" class="px-8 py-5 rounded text-lg font-medium flex items-center space-x-2 w-full md:w-auto justify-center hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+            <span>Mira Cómo Funciona</span>
+            <span class="material-symbols-outlined">arrow_downward</span>
+        </a>
+    </div>
+</div>
+</section>
+
+<!-- ============ PAIN POINTS ============ -->
+<section class="py-24 bg-background-dark/50" id="dolor">
+<div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Tu Negocio Pierde Así?</h2>
+        <p class="opacity-60">Estos problemas le cuestan miles de pesos cada mes a negocios como el tuyo.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="47" data-suffix="hrs">47hrs</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Respuesta Lenta</p>
+            <p class="opacity-70 leading-relaxed">El tiempo promedio de respuesta a un prospecto es 47 horas. Responder en 5 minutos multiplica la conversión 21x.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">event_busy</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2">15-30%</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Citas Perdidas</p>
+            <p class="opacity-70 leading-relaxed">Entre 15% y 30% de tus citas no se presentan. Cada no-show te cuesta $4,000-$8,000 MXN.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">voice_over_off</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="75" data-suffix="%">75%</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Sin Seguimiento</p>
+            <p class="opacity-70 leading-relaxed">75% de quienes escuchan buzón de voz nunca vuelven a llamar. 58% eran pacientes NUEVOS.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">dark_mode</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="46" data-suffix="%">46%</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Horario Limitado</p>
+            <p class="opacity-70 leading-relaxed">46% de las reservaciones se intentan fuera de horario. Si no contestas, pierdes.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">description_off</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2">60-80%</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Cotizaciones Abandonadas</p>
+            <p class="opacity-70 leading-relaxed">Hasta 80% de cotizaciones enviadas no reciben seguimiento y mueren.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl border-l-4 border-l-primary/50">
+            <div class="w-12 h-12 bg-[#4da6ff]/10 rounded flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary">person_off</span>
+            </div>
+            <div class="text-3xl font-extrabold text-primary mb-2 counter" data-target="55" data-suffix="%">55%</div>
+            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-4">Sin Reactivación</p>
+            <p class="opacity-70 leading-relaxed">55% de clientes de primera vez nunca regresan. Sin sistema de retención, el dinero se va.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="py-24 relative overflow-hidden" id="metodo">
+<div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro Proceso</h2>
+        <p class="opacity-60">De diagnóstico a sistema funcionando en 10 días.</p>
+    </div>
+    <div class="relative">
+        <div class="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 shadow-[0_0_10px_rgba(77,166,255,0.5)]"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            <div class="relative flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                    <span class="material-symbols-outlined text-primary text-3xl">stethoscope</span>
+                </div>
+                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20">30 minutos</div>
+                <h3 class="text-xl font-bold mb-3">Diagnóstico Gratuito</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Analizamos tu negocio con nuestro framework de 5 variables: Oferta, Flujo de Prospectos, Citas, Cierre y Entrega.</p>
+            </div>
+            <div class="relative flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                    <span class="material-symbols-outlined text-primary text-3xl">task</span>
+                </div>
+                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20">24 horas</div>
+                <h3 class="text-xl font-bold mb-3">Propuesta Personalizada</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Recibes una propuesta con el sistema exacto que necesitas, proyección de ROI y cronograma de implementación.</p>
+            </div>
+            <div class="relative flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                    <span class="material-symbols-outlined text-primary text-3xl">build</span>
+                </div>
+                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20">10 días</div>
+                <h3 class="text-xl font-bold mb-3">Construcción e Instalación</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Construimos tu infraestructura completa: IA conversacional, automatización de citas, seguimiento inteligente. Probamos todo antes de lanzar.</p>
+            </div>
+            <div class="relative flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                    <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                </div>
+                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20">Día 10 → 40</div>
+                <h3 class="text-xl font-bold mb-3">Lanzamiento + 30 Días de Soporte</h3>
+                <p class="opacity-60 text-sm leading-relaxed">Lanzamos el sistema, te entrenamos, y te acompañamos 30 días para optimizar resultados.</p>
+            </div>
+        </div>
+    </div>
+    <p class="text-center mt-16 text-xl font-bold text-primary drop-shadow-[0_0_10px_rgba(77,166,255,0.5)]">
+        Tú lo conservas. Para siempre. Sin cuotas. Sin dependencia.
+    </p>
+</div>
+</section>
+
+<!-- ============ CASE STUDY / RESULTS ============ -->
+<section class="py-24 bg-[#0d1326]" id="resultados">
+<div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Los Números No Mienten</h2>
+        <p class="opacity-60">Esto es lo que pasa cuando instalamos el sistema en una clínica dental típica en México.</p>
+    </div>
+    <div class="glass-card rounded-2xl overflow-hidden border border-white/5 relative">
+        <div class="absolute top-0 right-0 p-4">
+            <div class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                Datos: DENUE 2025, Dental Intelligence
+            </div>
+        </div>
+        <div class="bg-primary/10 px-8 py-6 border-b border-primary/20">
+            <h3 class="text-xl font-bold">Escenario Modelado: Clínica Dental</h3>
+            <p class="text-sm opacity-60">Clínica con 200 citas/mes, $160,000 MXN de ingreso mensual, 1 recepcionista.</p>
+        </div>
+        <div class="p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-8">
+                        <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[0_0_15px_rgba(77,166,255,0.5)] counter" data-target="56200" data-prefix="$" data-suffix=" MXN">
+                            $56,200 MXN
+                        </div>
+                        <p class="text-sm text-primary font-bold uppercase tracking-widest">/mes recuperados en ingresos</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-white counter" data-target="3.7" data-suffix="x">3.7x</div>
+                            <p class="text-[10px] text-primary font-bold uppercase tracking-wide">ROI Mes 1</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-white">&lt; 8 días</div>
+                            <p class="text-[10px] text-primary font-bold uppercase tracking-wide">Recuperación</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-white counter" data-target="674400" data-prefix="$">$674,400</div>
+                            <p class="text-[10px] text-primary font-bold uppercase tracking-wide">Impacto Anual</p>
+                        </div>
+                    </div>
+                    <a href="#cta" class="inline-flex items-center gap-2 text-sm text-primary font-bold hover:underline">
+                        ¿Quieres ver los números para TU negocio?
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-background-dark p-6 rounded-lg border border-white/5 flex justify-between items-center">
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Citas Perdidas / Mes</div>
+                            <div class="font-bold text-red-400 line-through decoration-red-400/50 decoration-2">30 (15%)</div>
+                        </div>
+                        <span class="material-symbols-outlined text-white/20">arrow_forward</span>
+                        <div class="text-right">
+                            <div class="text-xs text-primary uppercase tracking-wide mb-1 font-bold">Con AELION</div>
+                            <div class="font-bold text-green-400 text-xl">16 <span class="text-sm opacity-60">↓ 47%</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-background-dark p-6 rounded-lg border border-white/5 flex justify-between items-center">
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Llamadas Sin Contestar</div>
+                            <div class="font-bold text-red-400 line-through decoration-red-400/50 decoration-2">35%</div>
+                        </div>
+                        <span class="material-symbols-outlined text-white/20">arrow_forward</span>
+                        <div class="text-right">
+                            <div class="text-xs text-primary uppercase tracking-wide mb-1 font-bold">Con AELION</div>
+                            <div class="font-bold text-green-400 text-xl">0% <span class="text-sm opacity-60">↓ 100%</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-background-dark p-6 rounded-lg border border-white/5 flex justify-between items-center">
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Reservaciones Fuera de Horario</div>
+                            <div class="font-bold text-red-400 line-through decoration-red-400/50 decoration-2">0</div>
+                        </div>
+                        <span class="material-symbols-outlined text-white/20">arrow_forward</span>
+                        <div class="text-right">
+                            <div class="text-xs text-primary uppercase tracking-wide mb-1 font-bold">Con AELION</div>
+                            <div class="font-bold text-green-400 text-xl">10/mes <span class="text-sm opacity-60">+10</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-background-dark p-6 rounded-lg border border-white/5 flex justify-between items-center">
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Aceptación de Tratamiento</div>
+                            <div class="font-bold text-red-400 line-through decoration-red-400/50 decoration-2">35%</div>
+                        </div>
+                        <span class="material-symbols-outlined text-white/20">arrow_forward</span>
+                        <div class="text-right">
+                            <div class="text-xs text-primary uppercase tracking-wide mb-1 font-bold">Con AELION</div>
+                            <div class="font-bold text-green-400 text-xl">50%+ <span class="text-sm opacity-60">↑ 43%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ============ WHAT WE BUILD ============ -->
+<section class="py-24 relative overflow-hidden" id="construimos">
+<div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text inline-block">Lo Que Construimos</h2>
+        <p class="opacity-60 max-w-2xl mx-auto">Infraestructura inteligente que trabaja mientras tú duermes.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-[#25D366]/10 rounded-lg flex items-center justify-center mb-6 border border-[#25D366]/20 group-hover:bg-[#25D366]/20 transition-colors">
+                <span class="material-symbols-outlined text-[#25D366] text-3xl">chat</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Asistente WhatsApp 24/7</h3>
+            <p class="opacity-60 text-sm leading-relaxed">IA conversacional que responde, califica y agenda prospectos al instante — en español e inglés, a cualquier hora.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-primary text-3xl">calendar_month</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Agendamiento Inteligente</h3>
+            <p class="opacity-60 text-sm leading-relaxed">Tus prospectos agendan solos. Recordatorios automáticos a 24hrs, 2hrs y 30min antes de la cita. Tasa de no-show ↓ 85%.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-primary text-3xl">alt_route</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Nurturing Automatizado</h3>
+            <p class="opacity-60 text-sm leading-relaxed">Secuencias de seguimiento que reactivan cotizaciones abandonadas y convierten prospectos fríos en citas confirmadas.</p>
+        </div>
+        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Dashboard de Resultados</h3>
+            <p class="opacity-60 text-sm leading-relaxed">Visibilidad total: llamadas, citas, conversiones, ingresos recuperados. Datos reales, no vanity metrics.</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <p class="text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-6 py-3 rounded-full inline-block">
+            Construido con tecnología empresarial. Sin cuotas mensuales de SaaS. El sistema es tuyo.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="py-24 bg-background-dark relative" id="industrias">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/5 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Industrias Que Servimos</h2>
+        <p class="opacity-60">Infraestructura de crecimiento adaptada a tu vertical.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300">
+            <div class="h-2 bg-gradient-to-r from-blue-400 to-primary"></div>
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10">
+                        <span class="material-symbols-outlined text-white text-2xl">dentistry</span>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 px-2 py-1 rounded text-white/60">7,334 clínicas en CDMX</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Clínicas Dentales</h3>
+                <div class="space-y-4 mt-4 flex-grow">
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Dolor Principal</p>
+                        <p class="text-sm opacity-70">15-30% de citas se pierden. Las llamadas fuera de horario no se contestan.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Solución AELION</p>
+                        <p class="text-sm opacity-70">IA que agenda, confirma y recupera pacientes automáticamente.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <p class="text-2xl font-black text-white">$56,200 <span class="text-xs font-normal opacity-50 ml-1 uppercase">MXN/mes recuperados</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 transform md:-translate-y-4">
+            <div class="h-2 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10">
+                        <span class="material-symbols-outlined text-white text-2xl">flight_takeoff</span>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 px-2 py-1 rounded text-white/60">Mercado de $2.1B USD</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Turismo Médico</h3>
+                <div class="space-y-4 mt-4 flex-grow">
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Dolor Principal</p>
+                        <p class="text-sm opacity-70">Pacientes internacionales esperan respuesta inmediata en su idioma, 24/7.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Solución AELION</p>
+                        <p class="text-sm opacity-70">Asistente bilingüe que responde, califica y agenda — mientras tú operas.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <p class="text-2xl font-black text-white">$80K-$160K <span class="text-xs font-normal opacity-50 ml-1 uppercase">MXN / paciente</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300">
+            <div class="h-2 bg-gradient-to-r from-primary to-purple-500"></div>
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center border border-white/10">
+                        <span class="material-symbols-outlined text-white text-2xl">spa</span>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 px-2 py-1 rounded text-white/60">190,000 salones en México</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Estética y Med Spa</h3>
+                <div class="space-y-4 mt-4 flex-grow">
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Dolor Principal</p>
+                        <p class="text-sm opacity-70">55% de clientes de primera vez nunca regresan. 46% busca agendar fuera de horario.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-primary font-bold uppercase mb-1">Solución AELION</p>
+                        <p class="text-sm opacity-70">Sistema de retención + captura 24/7 que maximiza el valor de cada cliente.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <p class="text-2xl font-black text-white">$54,000 <span class="text-xs font-normal opacity-50 ml-1 uppercase">MXN CLV promedio</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-12">
+        <p class="text-sm opacity-50">+ Real Estate, Legal, Ecommerce →</p>
+    </div>
+</div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="py-24" id="precios">
+<div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Inversión</h2>
+        <p class="opacity-60">No es un gasto mensual. Es infraestructura que te pertenece.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="glass-card p-10 rounded-2xl relative flex flex-col border-white/10">
+            <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30">Plazas Limitadas</div>
+            <div class="mb-8 mt-4">
+                <h3 class="text-2xl font-bold mb-2">Cliente Fundador</h3>
+                <p class="text-sm opacity-60">Ideal para validar tu primer sistema de IA.</p>
+            </div>
+            <div class="text-4xl font-black mb-2 italic">$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Pago Único</span></div>
+            <p class="text-xs opacity-40 mb-8">Precio exclusivo para nuestros primeros clientes. A cambio, documentamos resultados como caso de estudio.</p>
+            <ul class="space-y-4 mb-10 flex-grow">
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Diagnóstico completo (5 variables)</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Sistema de IA personalizado</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> 10 días de construcción</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Entrenamiento de tu equipo</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> 30 días de soporte post-lanzamiento</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> El sistema es tuyo para siempre</li>
+            </ul>
+            <a href="#cta" class="w-full py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-colors text-center block">Quiero Ser Cliente Fundador</a>
+        </div>
+        <div class="glass-card p-10 rounded-2xl relative flex flex-col border-primary/40 bg-primary/5">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black tracking-widest px-4 py-1.5 rounded-full uppercase shadow-[0_0_15px_rgba(77,166,255,0.6)]">Recomendado</div>
+            <div class="mb-8 mt-4">
+                <h3 class="text-2xl font-bold mb-2">Infraestructura de Crecimiento</h3>
+                <p class="text-sm opacity-60">Para empresas listas para automatización total.</p>
+            </div>
+            <div class="text-3xl font-black mb-1 italic text-white">$25,000 - $50,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span></div>
+            <div class="text-xs opacity-40 mb-8 font-medium uppercase tracking-wide">Dependiendo complejidad / Pago Único</div>
+            <ul class="space-y-4 mb-10 flex-grow">
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Todo lo del plan Fundador</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Integraciones avanzadas</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Múltiples canales (WhatsApp + Voz + Web)</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Dashboard personalizado</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Soporte prioritario 60 días</li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Propiedad total del código y flujos</li>
+            </ul>
+            <a href="#cta" class="w-full py-4 bg-primary text-white font-bold rounded hover:brightness-110 transition-colors shadow-lg shadow-primary/20 text-center block">Agendar Diagnóstico</a>
+        </div>
+    </div>
+    <!-- Comparison Table -->
+    <div class="overflow-x-auto rounded-xl border border-white/5 bg-background-dark/50 backdrop-blur-sm mb-12">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="border-b border-white/10">
+                    <th class="p-6 text-sm font-bold uppercase tracking-wider opacity-60 w-1/4">Comparativa</th>
+                    <th class="p-6 text-sm font-bold uppercase tracking-wider text-center opacity-60 w-1/4">SaaS Mensual</th>
+                    <th class="p-6 text-sm font-bold uppercase tracking-wider text-center opacity-60 w-1/4">Agencia Retainer</th>
+                    <th class="p-6 text-sm font-bold uppercase tracking-wider text-center text-primary bg-primary/10 border-t-2 border-primary w-1/4">AELION</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm">
+                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td class="p-6 font-medium">Costo</td>
+                    <td class="p-6 text-center opacity-60">$20,000+ MXN/mes</td>
+                    <td class="p-6 text-center opacity-60">$100,000+ MXN/mes</td>
+                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20">$15K-$50K MXN (una vez)</td>
+                </tr>
+                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td class="p-6 font-medium">Propiedad</td>
+                    <td class="p-6 text-center opacity-60">Lo rentas</td>
+                    <td class="p-6 text-center opacity-60">Ellos controlan</td>
+                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20">Tú lo conservas</td>
+                </tr>
+                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td class="p-6 font-medium">Dependencia</td>
+                    <td class="p-6 text-center opacity-60">Cancelar = perder todo</td>
+                    <td class="p-6 text-center opacity-60">Sin agencia = sin marketing</td>
+                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20">Independencia total</td>
+                </tr>
+                <tr class="hover:bg-white/5 transition-colors">
+                    <td class="p-6 font-medium">Tiempo de ROI</td>
+                    <td class="p-6 text-center opacity-60">3-6 meses</td>
+                    <td class="p-6 text-center opacity-60">3-6 meses</td>
+                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20">&lt; 8 días</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="text-center text-xl font-bold text-primary">Un paciente recuperado paga todo el sistema.</p>
+</div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="py-24 bg-background-dark/80" id="faq">
+<div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas Frecuentes</h2>
+        <p class="opacity-60">Todo lo que necesitas saber antes de empezar.</p>
+    </div>
+    <div class="space-y-4">
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿Qué hace diferente a AELION de una agencia de marketing?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Las agencias te cobran cada mes y tú dependes de ellas. Nosotros construimos infraestructura que tú conservas para siempre. Es como la diferencia entre rentar y ser dueño. Construimos tu sistema, te entrenamos, y te lo entregamos. Sin cuotas recurrentes.</div>
+            </div>
+        </details>
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿Quién es dueño del sistema?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Tú. 100%. El sistema se instala en tu infraestructura y tú tienes control total. Si decides cambiar de proveedor, modificarlo, o escalarlo, es completamente tuyo. No hay candado de proveedor.</div>
+            </div>
+        </details>
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿En cuánto tiempo veo resultados?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Nuestros clientes típicamente recuperan la inversión en menos de 8 días. El sistema empieza a capturar prospectos y reducir citas perdidas desde el día del lanzamiento. Los primeros 30 días incluyen optimización activa para maximizar resultados.</div>
+            </div>
+        </details>
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿Qué pasa si necesito cambios después?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Los primeros 30 días incluyen soporte y ajustes. Después, el sistema es tuyo para modificar. Ofrecemos mantenimiento opcional ($3,000-$5,000 MXN/mes) para optimización continua, pero no es obligatorio.</div>
+            </div>
+        </details>
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿Qué tecnología necesito tener?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Solo necesitas un número de WhatsApp Business y acceso a internet. Nosotros configuramos toda la infraestructura técnica: servidores, IA, integraciones, automatizaciones. No necesitas conocimientos técnicos.</div>
+            </div>
+        </details>
+        <details class="glass-card rounded-xl group overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
+                <h3 class="font-bold text-lg">¿Cómo empezamos?</h3>
+                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-sm opacity-70 leading-relaxed border-t border-white/5">
+                <div class="pt-4">Agenda un diagnóstico gratuito de 30 minutos. Analizamos tu negocio, identificamos dónde pierdes crecimiento, y te presentamos una propuesta con ROI proyectado en 24 horas. Sin compromiso.</div>
+            </div>
+        </details>
+    </div>
+</div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-24 relative overflow-hidden bg-background-dark border-t border-white/5" id="cta">
+<div class="absolute inset-0 bg-primary/5 animate-pulse" style="animation-duration: 4s;"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">¿Listo Para Dejar de Perder Clientes?</h2>
+    <p class="text-xl opacity-70 mb-10 max-w-2xl mx-auto">
+        Cada día sin sistema es dinero que se escapa. Agenda 30 minutos y descubre exactamente cuánto pierde tu negocio — y cómo recuperarlo.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+        <a class="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded flex items-center justify-center gap-3 transition-colors shadow-lg shadow-green-900/20" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20diagn%C3%B3stico%20gratuito%20de%20AELION" target="_blank" rel="noopener">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Escríbenos por WhatsApp</span>
+        </a>
+        <a class="w-full sm:w-auto px-8 py-4 bg-primary hover:brightness-110 text-white font-bold rounded flex items-center justify-center gap-2 glow-button transition-all" href="#calendly-embed">
+            <span>Agenda Tu Diagnóstico</span>
+            <span class="material-symbols-outlined">calendar_month</span>
+        </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 opacity-50 text-xs font-medium uppercase tracking-widest mb-16">
+        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Sin compromiso</div>
+        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">schedule</span> 30 minutos</div>
+        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">verified</span> Diagnóstico gratuito</div>
+        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">bolt</span> Propuesta en 24 hrs</div>
+    </div>
+    <!-- Calendly Embed Placeholder -->
+    <div id="calendly-embed" class="bg-white/5 border border-white/10 rounded-xl overflow-hidden max-w-3xl mx-auto" style="min-height: 650px;">
+        <!-- Replace this div with: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK" style="min-width:320px;height:650px;"></div> -->
+        <!-- And add: <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+        <div class="flex flex-col items-center justify-center h-full py-20 text-center">
+            <span class="material-symbols-outlined text-6xl text-primary mb-4 opacity-50">calendar_add_on</span>
+            <p class="text-xl font-medium opacity-60">Agenda tu diagnóstico aquí</p>
+            <p class="text-sm opacity-40 mt-2">Calendly widget — replace with your link</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="py-20 border-t border-white/10 bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center space-x-2 mb-6">
+                <img alt="AELION Logo" class="h-8" src="assets/aelion-logo.png"/>
+                <span class="text-2xl font-extrabold tracking-tighter uppercase italic">AELION</span>
+            </div>
+            <p class="text-xl font-medium mb-2">Smarter Systems.<br/>Super Human Results.</p>
+            <p class="opacity-50 text-sm">Infraestructura de IA para negocios que no tienen tiempo que perder.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Navegación</h4>
+            <ul class="space-y-4 opacity-60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="#metodo">Proceso</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#resultados">Resultados</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#industrias">Industrias</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#precios">Precios</a></li>
+                <li><a class="hover:text-primary transition-colors" href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Contacto</h4>
+            <ul class="space-y-4 opacity-60 text-sm">
+                <li>contacto@aelion.mx</li>
+                <li>Ciudad de México, MX</li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-6">
+        <p class="text-xs opacity-40">© 2026 AELION. Todos los derechos reservados.</p>
+        <p class="text-xs opacity-40 font-medium">Hecho con IA en México 🇲🇽</p>
+        <div class="flex gap-4">
+            <a class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity hover:bg-primary hover:border-primary" href="#" aria-label="LinkedIn">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity hover:bg-primary hover:border-primary" href="#" aria-label="Instagram">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity hover:bg-[#25D366] hover:border-[#25D366]" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20el%20diagn%C3%B3stico%20gratuito%20de%20AELION" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+        </div>
+    </div>
+</div>
+</footer>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// --- Hamburger Menu ---
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamTop = document.getElementById('ham-top');
+const hamMid = document.getElementById('ham-mid');
+const hamBot = document.getElementById('ham-bot');
+let menuOpen = false;
+
+hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('hidden');
+    if (menuOpen) {
+        hamTop.style.transform = 'rotate(45deg) translate(4px, 4px)';
+        hamMid.style.opacity = '0';
+        hamBot.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+    } else {
+        hamTop.style.transform = '';
+        hamMid.style.opacity = '1';
+        hamBot.style.transform = '';
+    }
+});
+
+// Close mobile menu when clicking a link
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.add('hidden');
+        hamTop.style.transform = '';
+        hamMid.style.opacity = '1';
+        hamBot.style.transform = '';
+    });
+});
+
+// --- Smooth Scroll ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
+
+// --- Scroll Animations (sections + staggered cards) ---
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+
+            // Stagger child cards
+            const cards = entry.target.querySelectorAll('.glass-card');
+            cards.forEach((card, i) => {
+                setTimeout(() => {
+                    card.classList.add('opacity-100');
+                    card.classList.remove('opacity-0', 'translate-y-6');
+                }, i * 100);
+            });
+        }
+    });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+    sectionObserver.observe(section);
+});
+
+document.querySelectorAll('.glass-card').forEach(card => {
+    card.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-6');
+});
+
+// --- Animated Counters ---
+function animateValue(element, target, duration, prefix, suffix) {
+    const start = performance.now();
+    const isDecimal = target % 1 !== 0;
+    const decimals = isDecimal ? (String(target).split('.')[1] || '').length : 0;
+
+    function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+    function formatNumber(n) {
+        if (isDecimal) return n.toFixed(decimals);
+        return Math.round(n).toLocaleString('en-US');
+    }
+
+    function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = easeOutQuart(progress) * target;
+        element.textContent = prefix + formatNumber(value) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
+            const target = parseFloat(entry.target.dataset.target);
+            const prefix = entry.target.dataset.prefix || '';
+            const suffix = entry.target.dataset.suffix || '';
+            if (typeof animateValue === 'function') {
+                animateValue(entry.target, target, 2000, prefix, suffix);
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter[data-target]').forEach(el => {
+    counterObserver.observe(el);
+});
+
+// --- Nav background on scroll ---
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('shadow-lg', 'shadow-black/20');
+    } else {
+        nav.classList.remove('shadow-lg', 'shadow-black/20');
+    }
+});
+</script>
+</body>
+</html>
