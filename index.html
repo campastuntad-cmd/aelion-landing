@@ -51,12 +51,20 @@
         background: rgba(255, 255, 255, 0.05);
     }
     .grid-bg {
+        position: relative;
+    }
+    .grid-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
         background-image:
-            linear-gradient(to right, rgba(77, 166, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(77, 166, 255, 0.02) 1px, transparent 1px);
+            linear-gradient(to right, rgba(77, 166, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(77, 166, 255, 0.03) 1px, transparent 1px);
         background-size: 60px 60px;
         mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
         -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
+        pointer-events: none;
+        z-index: 0;
     }
     .glow-button {
         box-shadow: 0 0 20px rgba(77, 166, 255, 0.4);
@@ -295,7 +303,7 @@
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
-<div class="max-w-5xl mx-auto px-6 text-center">
+<div class="max-w-5xl mx-auto px-6 text-center relative z-10">
     <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1] gradient-text">
         Construye Tu Infraestructura de Crecimiento en 10 Días
     </h1>
@@ -306,17 +314,17 @@
     <p class="text-base text-white/50 mb-12 max-w-2xl mx-auto">
         Sistemas de IA que capturan clientes las 24 horas, eliminan citas perdidas y recuperan ingresos que hoy se te escapan — sin cuotas mensuales.
     </p>
-    <div class="flex flex-wrap justify-center gap-4 mb-12" style="opacity:1 !important;">
-        <div style="background:#1e3a5f; border:1px solid rgba(77,166,255,0.5); color:#ffffff; opacity:1 !important;" class="px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
-            <span class="material-symbols-outlined text-base" style="color:#4da6ff;">trending_up</span>
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
+            <span class="material-symbols-outlined text-primary text-base">trending_up</span>
             3.7x ROI en Mes 1
         </div>
-        <div style="background:#1e3a5f; border:1px solid rgba(77,166,255,0.5); color:#ffffff; opacity:1 !important;" class="px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
-            <span class="material-symbols-outlined text-base" style="color:#4da6ff;">bolt</span>
+        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
+            <span class="material-symbols-outlined text-primary text-base">bolt</span>
             &lt; 8 días de recuperación
         </div>
-        <div style="background:#1e3a5f; border:1px solid rgba(77,166,255,0.5); color:#ffffff; opacity:1 !important;" class="px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
-            <span class="material-symbols-outlined text-base" style="color:#4da6ff;">money_off</span>
+        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
+            <span class="material-symbols-outlined text-primary text-base">money_off</span>
             0% cuotas mensuales
         </div>
     </div>
