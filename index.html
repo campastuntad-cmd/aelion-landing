@@ -186,7 +186,10 @@
 
     .section-divider {
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(77,166,255,0.2) 20%, rgba(77,166,255,0.4) 50%, rgba(77,166,255,0.2) 80%, transparent);
+        background: linear-gradient(90deg, transparent, rgba(77,166,255,0.15) 20%, rgba(77,166,255,0.35) 50%, rgba(77,166,255,0.15) 80%, transparent);
+        box-shadow: 0 0 8px rgba(77,166,255,0.1), 0 0 20px rgba(77,166,255,0.05);
+        margin: 0 auto;
+        max-width: 90%;
     }
 
     .glow-stat { text-shadow: 0 0 20px rgba(77,166,255,0.4), 0 0 40px rgba(77,166,255,0.2); }
@@ -341,17 +344,17 @@
     <p class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto leading-relaxed hero-reveal hero-reveal-2" data-i18n="hero.subtitle">
         AELION construye infraestructura de IA que captura clientes 24/7, elimina citas perdidas y recupera tus ingresos — sin cuotas mensuales.
     </p>
-    <div class="flex flex-wrap justify-center gap-4 mb-12 hero-reveal hero-reveal-3">
-        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
-            <span class="material-symbols-outlined text-primary text-base">trending_up</span>
+    <div class="flex flex-wrap justify-center gap-3 mb-16 hero-reveal hero-reveal-3">
+        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
+            <span class="material-symbols-outlined text-primary text-sm">trending_up</span>
             <span data-i18n="hero.badge1">3.7x ROI Mes 1</span>
         </div>
-        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
-            <span class="material-symbols-outlined text-primary text-base">bolt</span>
+        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
+            <span class="material-symbols-outlined text-primary text-sm">bolt</span>
             <span data-i18n="hero.badge2">&lt; 8 Días de Recuperación</span>
         </div>
-        <div class="bg-[#1e3a5f] border border-primary/50 px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 text-white shadow-lg shadow-primary/10">
-            <span class="material-symbols-outlined text-primary text-base">money_off</span>
+        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
+            <span class="material-symbols-outlined text-primary text-sm">money_off</span>
             <span data-i18n="hero.badge3">0 Cuotas Mensuales</span>
         </div>
     </div>
@@ -507,7 +510,7 @@
 
 <div class="section-divider"></div>
 <!-- ============ /03 MÉTODO ============ -->
-<section class="section-pad relative overflow-hidden" id="metodo">
+<section class="section-pad relative overflow-hidden bg-[#080c18]" id="metodo">
 <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-20">
         <div class="section-label" data-i18n="label.metodo">/03 MÉTODO</div>
@@ -757,6 +760,7 @@
 </div>
 </section>
 
+<div class="section-divider"></div>
 <!-- ============ /06 INDUSTRIAS ============ -->
 <section class="section-pad bg-background-dark relative" id="industrias">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/5 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
@@ -823,8 +827,9 @@
 </div>
 </section>
 
+<div class="section-divider"></div>
 <!-- ============ /07 INVERSIÓN ============ -->
-<section class="section-pad" id="inversion">
+<section class="section-pad bg-[#080c18]" id="inversion">
 <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
         <div class="section-label" data-i18n="label.inversion">/07 INVERSIÓN</div>
@@ -910,6 +915,7 @@
 </div>
 </section>
 
+<div class="section-divider"></div>
 <!-- ============ /08 PREGUNTAS ============ -->
 <section class="section-pad bg-background-dark/80" id="preguntas">
 <div class="max-w-4xl mx-auto px-6">
