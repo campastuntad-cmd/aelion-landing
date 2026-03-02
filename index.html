@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth dark" lang="es">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -22,6 +22,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
     tailwind.config = {
@@ -285,9 +286,128 @@
         0%, 100% { transform: scale(1); opacity: 0.4; }
         50% { transform: scale(1.15); opacity: 0; }
     }
+
+    /* ===== PREMIUM ANIMATIONS V3 ===== */
+
+    /* 2. Staggered Card Cascade */
+    .cascade-card {
+        opacity: 0;
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: calc(var(--cascade-i, 0) * 0.1s);
+    }
+    .cascade-card:nth-child(odd) { transform: translateX(-30px); }
+    .cascade-card:nth-child(even) { transform: translateX(30px); }
+    .cascade-card.is-visible { opacity: 1; transform: translateX(0); }
+
+    /* 3. Section Heading Clip-Path Reveal */
+    .heading-reveal {
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .heading-reveal.is-visible { clip-path: inset(0 0 0 0); }
+
+    /* 4. Section Label "/" Line-Grow */
+    .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .section-label::after {
+        content: '';
+        display: inline-block;
+        width: 60px;
+        height: 1px;
+        background: rgba(77,166,255,0.4);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.6s ease-out 0.3s;
+    }
+    .section-label.is-visible::after { transform: scaleX(1); }
+
+    /* 5. Comparison Section Choreography */
+    .compare-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: calc(var(--row-i, 0) * 0.12s);
+    }
+    .compare-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: calc(var(--row-i, 0) * 0.12s);
+    }
+    .compare-left.is-visible, .compare-right.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* 6. Animated Gradient on Hero Text */
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .hero-word {
+        background-size: 200% 200%;
+        animation: word-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                   gradient-shift 6s ease infinite 1s;
+    }
+
+    /* 7. 3D Tilt on Glass Cards */
+    .glass-card { transition: all 0.3s ease, transform 0.5s ease-out; }
+    .glass-card .tilt-glow {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 1;
+    }
+    .glass-card:hover .tilt-glow { opacity: 1; }
+
+    /* 8. Scroll Progress Bar */
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4da6ff, #7c3aed);
+        transform-origin: left;
+        transform: scaleX(0);
+        z-index: 9999;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    /* 9. Counter Blur-In */
+    .counter-blur {
+        filter: blur(8px);
+        transform: scale(1.1);
+        transition: filter 1.8s ease-out, transform 1.8s ease-out;
+    }
+    .counter-blur.counter-sharp {
+        filter: blur(0);
+        transform: scale(1);
+    }
+
+    /* 10. Magnetic Button Effect */
+    .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* Accessibility: Respect prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        .scroll-progress { display: none; }
+    }
 </style>
 </head>
 <body class="font-body bg-background-dark text-[#F9FAFB] selection:bg-primary selection:text-white">
+<div class="scroll-progress" id="scroll-progress"></div>
 <div class="cursor-glow hidden md:block" id="cursor-glow"></div>
 
 <!-- ============ NAV ============ -->
@@ -420,7 +540,7 @@
         <p class="opacity-60 max-w-2xl mx-auto" data-i18n="pain.subtitle">Estos problemas le cuestan miles de pesos cada mes a negocios como el tuyo.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:0">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">schedule</span></div>
                 <div class="text-2xl font-extrabold text-primary counter" data-target="47" data-suffix="hrs">47hrs</div>
@@ -428,7 +548,7 @@
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c1.title">Respuesta Lenta</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c1.desc">El tiempo promedio de respuesta a un prospecto es 47 horas. Responder en 5 minutos multiplica la conversión 21x.</p>
         </div>
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:1">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">event_busy</span></div>
                 <div class="text-2xl font-extrabold text-primary">15-30%</div>
@@ -436,7 +556,7 @@
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c2.title">Citas Perdidas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c2.desc">Entre 15% y 30% de tus citas no se presentan. Cada no-show te cuesta $4,000-$8,000 MXN.</p>
         </div>
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:2">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">phone_missed</span></div>
                 <div class="text-2xl font-extrabold text-primary counter" data-target="75" data-suffix="%">75%</div>
@@ -444,7 +564,7 @@
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c3.title">Sin Seguimiento</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c3.desc">75% de quienes escuchan buzón de voz nunca vuelven a llamar. 58% eran pacientes NUEVOS.</p>
         </div>
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:3">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">dark_mode</span></div>
                 <div class="text-2xl font-extrabold text-primary counter" data-target="46" data-suffix="%">46%</div>
@@ -452,7 +572,7 @@
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c4.title">Horario Limitado</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c4.desc">46% de las reservaciones se intentan fuera de horario. Si no contestas, pierdes.</p>
         </div>
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:4">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">receipt_long</span></div>
                 <div class="text-2xl font-extrabold text-primary">60-80%</div>
@@ -460,7 +580,7 @@
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c5.title">Cotizaciones Abandonadas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c5.desc">Hasta 80% de cotizaciones enviadas no reciben seguimiento y mueren.</p>
         </div>
-        <div class="glass-card p-6 rounded-xl border-l-4 border-l-primary/50">
+        <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:5">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">person_remove</span></div>
                 <div class="text-2xl font-extrabold text-primary counter" data-target="55" data-suffix="%">55%</div>
@@ -481,8 +601,8 @@
         <div class="section-label" data-i18n="label.contraste">/02 CONTRASTE</div>
         <h2 class="font-heading text-3xl md:text-5xl tracking-tight-v2 mb-4" data-i18n="comp.title">Dos Realidades. Tú Eliges.</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden">
-        <div class="bg-red-500/5 p-8 md:p-10">
+    <div id="comparison-grid" class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden">
+        <div class="compare-left bg-red-500/5 p-8 md:p-10" style="--row-i:0">
             <h3 class="text-red-400 font-bold text-sm mb-8 uppercase tracking-widest" data-i18n="comp.sinTitle">Sin AELION</h3>
             <ul class="space-y-6">
                 <li class="flex items-start gap-3"><span class="material-symbols-outlined text-red-400/60 text-lg mt-0.5">close</span><span class="opacity-70 text-sm" data-i18n="comp.sin1">Tu prospecto manda WhatsApp. Lo lees 47 horas después. Ya compró con otro.</span></li>
@@ -492,7 +612,7 @@
                 <li class="flex items-start gap-3"><span class="material-symbols-outlined text-red-400/60 text-lg mt-0.5">close</span><span class="opacity-70 text-sm" data-i18n="comp.sin5">Le pagas $20K+/mes a una agencia. Si cancelas, pierdes todo. No eres dueño de nada.</span></li>
             </ul>
         </div>
-        <div class="bg-primary/5 p-8 md:p-10">
+        <div class="compare-right bg-primary/5 p-8 md:p-10" style="--row-i:1">
             <h3 class="text-primary font-bold text-sm mb-8 uppercase tracking-widest" data-i18n="comp.conTitle">Con AELION</h3>
             <ul class="space-y-6">
                 <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-lg mt-0.5">check</span><span class="text-sm" data-i18n="comp.con1">Respuesta en 30 segundos. Automática. En su idioma. A cualquier hora.</span></li>
@@ -580,7 +700,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <!-- Large card: WhatsApp AI with chat mockup -->
-        <div class="md:col-span-2 glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+        <div class="md:col-span-2 glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:0">
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="flex-1">
                     <div class="w-14 h-14 bg-[#25D366]/10 rounded-lg flex items-center justify-center mb-6 border border-[#25D366]/20 group-hover:bg-[#25D366]/20 transition-colors">
@@ -601,7 +721,7 @@
             </div>
         </div>
         <!-- Small card: Scheduling -->
-        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+        <div class="glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:1">
             <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                 <span class="material-symbols-outlined text-primary text-3xl">calendar_month</span>
             </div>
@@ -617,7 +737,7 @@
             </div>
         </div>
         <!-- Small card: Nurturing -->
-        <div class="glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+        <div class="glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:2">
             <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                 <span class="material-symbols-outlined text-primary text-3xl">alt_route</span>
             </div>
@@ -635,7 +755,7 @@
             </div>
         </div>
         <!-- Large card: Dashboard -->
-        <div class="md:col-span-2 glass-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1">
+        <div class="md:col-span-2 glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:3">
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="flex-1">
                     <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
@@ -681,21 +801,21 @@
     </div>
     <!-- 3 Hero Metrics -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="text-center glass-card rounded-xl p-8">
+        <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:0">
             <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat1.label">MXN Recuperados</p>
         </div>
-        <div class="text-center glass-card rounded-xl p-8">
+        <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:1">
             <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="3.7" data-suffix="x">3.7x</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat2.label">ROI Mes 1</p>
         </div>
-        <div class="text-center glass-card rounded-xl p-8">
+        <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:2">
             <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="674400" data-prefix="$">$674,400</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat3.label">Impacto Anual MXN</p>
         </div>
     </div>
     <!-- Challenge / Solution / Results Card -->
-    <div class="glass-card rounded-2xl overflow-hidden border border-white/5 relative mb-8">
+    <div class="glass-card cascade-card rounded-2xl overflow-hidden border border-white/5 relative mb-8" style="--cascade-i:3">
         <div class="absolute top-0 right-0 p-4">
             <div class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
                 Datos: DENUE 2025, Dental Intelligence
@@ -775,7 +895,7 @@
         <p class="opacity-60" data-i18n="industries.subtitle">Infraestructura de crecimiento adaptada a tu vertical.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300">
+        <div class="glass-card cascade-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300" style="--cascade-i:0">
             <div class="h-2 bg-gradient-to-r from-blue-400 to-primary"></div>
             <div class="p-8 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
@@ -792,7 +912,7 @@
                 </div>
             </div>
         </div>
-        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 transform md:-translate-y-4">
+        <div class="glass-card cascade-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 transform md:-translate-y-4" style="--cascade-i:1">
             <div class="h-2 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
             <div class="p-8 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
@@ -809,7 +929,7 @@
                 </div>
             </div>
         </div>
-        <div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300">
+        <div class="glass-card cascade-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300" style="--cascade-i:2">
             <div class="h-2 bg-gradient-to-r from-primary to-purple-500"></div>
             <div class="p-8 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
@@ -841,7 +961,7 @@
         <p class="opacity-60" data-i18n="pricing.subtitle">No es un gasto mensual. Es infraestructura que te pertenece.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div class="glass-card p-10 rounded-2xl relative flex flex-col border-white/10">
+        <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-white/10" style="--cascade-i:0">
             <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30" data-i18n="pricing.p1.badge">Plazas Limitadas</div>
             <div class="mb-8 mt-4">
                 <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p1.title">Cliente Fundador</h3>
@@ -859,7 +979,7 @@
             </ul>
             <a href="#cta" class="w-full py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-colors text-center block" data-i18n="pricing.p1.cta">Quiero Ser Cliente Fundador</a>
         </div>
-        <div class="glass-card p-10 rounded-2xl relative flex flex-col border-primary/40 bg-primary/5">
+        <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-primary/40 bg-primary/5" style="--cascade-i:1">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black tracking-widest px-4 py-1.5 rounded-full uppercase shadow-[0_0_15px_rgba(77,166,255,0.6)]" data-i18n="pricing.p2.badge">Recomendado</div>
             <div class="mb-8 mt-4">
                 <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p2.title">Infraestructura de Crecimiento</h3>
@@ -1073,6 +1193,17 @@
 
 <!-- ============ JAVASCRIPT ============ -->
 <script>
+// --- 1. Lenis Smooth Scroll ---
+const lenis = new Lenis({ lerp: 0.1, duration: 1.2, smoothWheel: true });
+function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+
+// --- Scroll Progress Bar ---
+const scrollProgress = document.getElementById('scroll-progress');
+lenis.on('scroll', ({ progress }) => {
+    scrollProgress.style.transform = `scaleX(${progress})`;
+});
+
 // --- Hamburger Menu ---
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -1105,15 +1236,15 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
-// --- Smooth Scroll ---
+// --- Smooth Scroll (via Lenis) ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
             const navHeight = document.querySelector('nav').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            lenis.scrollTo(target, { offset: -navHeight });
         }
     });
 });
@@ -1137,21 +1268,23 @@ function updateActiveNav() {
         }
     });
 }
-window.addEventListener('scroll', updateActiveNav, { passive: true });
+lenis.on('scroll', updateActiveNav);
 
-// --- Scroll Reveals ---
+// --- Premium Scroll Reveals (cascade, heading-reveal, section-label, compare) ---
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Heading clip-path reveal
+            entry.target.querySelectorAll('.heading-reveal').forEach(el => el.classList.add('is-visible'));
+            // Section label line-grow
+            entry.target.querySelectorAll('.section-label').forEach(el => el.classList.add('is-visible'));
+            // Cascade cards
+            entry.target.querySelectorAll('.cascade-card').forEach(el => el.classList.add('is-visible'));
+            // Compare choreography
+            entry.target.querySelectorAll('.compare-left, .compare-right').forEach(el => el.classList.add('is-visible'));
+            // Legacy reveal classes
             entry.target.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el, i) => {
                 setTimeout(() => el.classList.add('revealed'), i * 80);
-            });
-            const cards = entry.target.querySelectorAll('.glass-card');
-            cards.forEach((card, i) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0) scale(1)';
-                }, 150 + i * 100);
             });
             revealObserver.unobserve(entry.target);
         }
@@ -1159,22 +1292,19 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('section:not(#hero):not(#marquee)').forEach(section => {
+    // Add heading-reveal to H2s
     const heading = section.querySelector('h2');
-    if (heading && !heading.classList.contains('reveal-up')) heading.classList.add('reveal-up');
+    if (heading) {
+        heading.classList.remove('reveal-up');
+        heading.classList.add('heading-reveal');
+    }
+    // Keep legacy reveals for subtexts
     const subtext = section.querySelector('.text-center > p');
     if (subtext && !subtext.classList.contains('reveal-up')) subtext.classList.add('reveal-up');
-    const label = section.querySelector('.section-label');
-    if (label && !label.classList.contains('reveal-up')) label.classList.add('reveal-up');
     revealObserver.observe(section);
 });
 
-document.querySelectorAll('section:not(#hero):not(#marquee) .glass-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px) scale(0.97)';
-    card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-});
-
-// --- Animated Counters ---
+// --- Animated Counters with Blur-In ---
 function animateValue(element, target, duration, prefix, suffix) {
     const start = performance.now();
     const isDecimal = target % 1 !== 0;
@@ -1184,11 +1314,16 @@ function animateValue(element, target, duration, prefix, suffix) {
         if (isDecimal) return n.toFixed(decimals);
         return Math.round(n).toLocaleString('en-US');
     }
+    // Add blur class at start
+    element.classList.add('counter-blur');
     function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const value = easeOutQuart(progress) * target;
         element.textContent = prefix + formatNumber(value) + suffix;
+        if (progress >= 0.3 && !element.classList.contains('counter-sharp')) {
+            element.classList.add('counter-sharp');
+        }
         if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -1210,7 +1345,7 @@ document.querySelectorAll('.counter[data-target]').forEach(el => counterObserver
 
 // --- Nav shadow on scroll ---
 const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
+lenis.on('scroll', () => {
     if (window.scrollY > 50) {
         nav.classList.add('shadow-lg', 'shadow-black/30');
         nav.style.backdropFilter = 'blur(20px)';
@@ -1218,16 +1353,16 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('shadow-lg', 'shadow-black/30');
         nav.style.backdropFilter = 'blur(12px)';
     }
-}, { passive: true });
+});
 
 // --- Orb parallax ---
-window.addEventListener('scroll', () => {
+lenis.on('scroll', () => {
     const scrollY = window.scrollY;
     document.querySelectorAll('.orb').forEach((orb, i) => {
         const speed = 0.03 + i * 0.015;
         orb.style.transform = `translateY(${scrollY * speed}px)`;
     });
-}, { passive: true });
+});
 
 // --- Cursor Glow ---
 const cursorGlow = document.getElementById('cursor-glow');
@@ -1258,13 +1393,60 @@ animateHeroWords();
 
 // --- Floating WhatsApp show/hide ---
 const floatingWA = document.getElementById('floating-wa');
-window.addEventListener('scroll', () => {
+lenis.on('scroll', () => {
     if (window.scrollY > 600) {
         floatingWA.classList.add('visible');
     } else {
         floatingWA.classList.remove('visible');
     }
-}, { passive: true });
+});
+
+// --- 7. 3D Tilt on Glass Cards (desktop only) ---
+if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.style.position = card.style.position || 'relative';
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const maxTilt = 3;
+            const perspective = 1000;
+            const glowOpacity = 0.06;
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
+            const rotateX = -(mouseY / (rect.height / 2)) * maxTilt;
+            const rotateY = (mouseX / (rect.width / 2)) * maxTilt;
+            card.style.transform = `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            const px = ((e.clientX - rect.left) / rect.width) * 100;
+            const py = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(77,166,255,${glowOpacity}) 0%, transparent 60%), rgba(255,255,255,0.03)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.background = '';
+        });
+    });
+}
+
+// --- 10. Magnetic Button Effect (desktop only) ---
+if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.shimmer-btn, .glow-button').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const dx = e.clientX - centerX;
+            const dy = e.clientY - centerY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+                btn.style.transform = `translate(${dx * 0.3}px, ${dy * 0.3}px)`;
+            }
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+}
 
 // --- ES/EN Translations ---
 const translations = {
