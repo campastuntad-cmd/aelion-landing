@@ -1489,13 +1489,16 @@ function animateHeroSubtitle() {
     const subtitle = document.getElementById('hero-subtitle');
     if (!subtitle) return;
     const text = subtitle.textContent.trim();
+    const words = text.split(/\s+/);
     let charIndex = 0;
-    const html = text.split('').map(char => {
-        if (char === ' ') return '<span class="char-stagger-space"> </span>';
-        const delay = 20 + charIndex * 12;
-        charIndex++;
-        return `<span class="char-stagger" style="animation-delay:${delay}ms">${char}</span>`;
-    }).join('');
+    const html = words.map(word => {
+        const chars = word.split('').map(char => {
+            const delay = 20 + charIndex * 12;
+            charIndex++;
+            return `<span class="char-stagger" style="animation-delay:${delay}ms">${char}</span>`;
+        }).join('');
+        return `<span style="display:inline-block;white-space:nowrap">${chars}</span>`;
+    }).join(' ');
     subtitle.innerHTML = html;
 }
 animateHeroSubtitle();
