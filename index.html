@@ -217,8 +217,8 @@
         margin-bottom: 1rem;
     }
     .tracking-tight-v2 { letter-spacing: -0.04em; }
-    .section-pad { padding-top: 140px; padding-bottom: 140px; }
-    @media (max-width: 768px) { .section-pad { padding-top: 80px; padding-bottom: 80px; } }
+    .section-pad { padding-top: 180px; padding-bottom: 180px; }
+    @media (max-width: 768px) { .section-pad { padding-top: 100px; padding-bottom: 100px; } }
 
     .marquee-container {
         position: relative;
@@ -394,6 +394,56 @@
 
     /* 10. Magnetic Button Effect */
     .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* Scroll-triggered Radial Gradient Bloom */
+    .gradient-bloom {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(77,166,255,0.12) 0%, rgba(99,102,241,0.06) 40%, transparent 70%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0.6);
+        z-index: 0;
+    }
+    .gradient-bloom.is-visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Scroll-driven Text Blur Sequence */
+    .blur-sequence-container {
+        height: 300vh;
+        position: relative;
+        background: #0a0e1a;
+    }
+    .blur-sequence-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+    }
+    .blur-sequence-text {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        position: absolute;
+        filter: blur(12px);
+        opacity: 0;
+        transition: filter 0.6s ease-out, opacity 0.6s ease-out;
+        line-height: 1.3;
+    }
+    .blur-sequence-text.blur-active {
+        filter: blur(0);
+        opacity: 1;
+    }
 
     /* Accessibility: Respect prefers-reduced-motion */
     @media (prefers-reduced-motion: reduce) {
@@ -591,6 +641,15 @@
     </div>
     <p class="text-center mt-12 text-lg font-medium text-white/40 italic" data-i18n="pain.bridge">¿Y tu competencia? Ya lo resolvió.</p>
 </div>
+</section>
+
+<!-- ============ SCROLL BLUR SEQUENCE ============ -->
+<section class="blur-sequence-container" id="blur-sequence">
+    <div class="blur-sequence-sticky">
+        <p class="blur-sequence-text" data-blur-i="0" data-i18n="blur.s1">Tu negocio pierde dinero cada día que pasa sin un sistema.</p>
+        <p class="blur-sequence-text" data-blur-i="1" data-i18n="blur.s2">La automatización no es el futuro — es el presente.</p>
+        <p class="blur-sequence-text" data-blur-i="2" data-i18n="blur.s3">AELION construye la infraestructura que tu negocio necesita para crecer.</p>
+    </div>
 </section>
 
 <div class="section-divider"></div>
@@ -793,6 +852,8 @@
 <!-- ============ /05 RESULTADOS ============ -->
 <section class="section-pad bg-[#0d1326] relative" id="resultados">
 <div class="aurora-bg" style="opacity:0.5;"></div>
+<div class="gradient-bloom" style="top: -200px; right: -200px;"></div>
+<div class="gradient-bloom" style="bottom: -150px; left: -250px;"></div>
 <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-16">
         <div class="section-label" data-i18n="label.resultados">/05 RESULTADOS</div>
@@ -1110,6 +1171,7 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="section-pad relative overflow-hidden bg-background-dark border-t border-white/5" id="cta">
 <div class="absolute inset-0 bg-primary/5 animate-pulse" style="animation-duration: 4s;"></div>
+<div class="gradient-bloom" style="top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.6);"></div>
 <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
     <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-6" data-i18n="cta.title">Cada Día Sin Sistema Es Dinero Que Se Escapa</h2>
     <p class="text-xl opacity-70 mb-10 max-w-2xl mx-auto" data-i18n="cta.subtitle">
@@ -1448,6 +1510,40 @@ if (window.matchMedia('(hover: hover)').matches) {
     });
 }
 
+// --- Scroll-Driven Text Blur Sequence ---
+const blurContainer = document.getElementById('blur-sequence');
+if (blurContainer) {
+    const blurTexts = blurContainer.querySelectorAll('.blur-sequence-text');
+    const totalTexts = blurTexts.length;
+    lenis.on('scroll', () => {
+        const rect = blurContainer.getBoundingClientRect();
+        const containerH = blurContainer.offsetHeight;
+        const progress = Math.max(0, Math.min(1, -rect.top / (containerH - window.innerHeight)));
+        const segmentSize = 1 / totalTexts;
+        blurTexts.forEach((txt, i) => {
+            const segStart = i * segmentSize;
+            const segEnd = (i + 1) * segmentSize;
+            const fadeIn = segStart + segmentSize * 0.1;
+            const fadeOut = segEnd - segmentSize * 0.1;
+            if (progress >= fadeIn && progress <= fadeOut) {
+                txt.classList.add('blur-active');
+            } else {
+                txt.classList.remove('blur-active');
+            }
+        });
+    });
+}
+
+// --- Scroll-Triggered Gradient Blooms ---
+const bloomObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.gradient-bloom').forEach(bloom => bloom.classList.add('is-visible'));
+        }
+    });
+}, { threshold: 0.15 });
+document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
+
 // --- ES/EN Translations ---
 const translations = {
 es: {
@@ -1493,6 +1589,9 @@ es: {
     "pain.c6.title": "Sin Reactivación",
     "pain.c6.desc": "55% de clientes de primera vez nunca regresan. Sin sistema de retención, el dinero se va.",
     "pain.bridge": "¿Y tu competencia? Ya lo resolvió.",
+    "blur.s1": "Tu negocio pierde dinero cada día que pasa sin un sistema.",
+    "blur.s2": "La automatización no es el futuro — es el presente.",
+    "blur.s3": "AELION construye la infraestructura que tu negocio necesita para crecer.",
     "comp.title": "Dos Realidades. Tú Eliges.",
     "comp.sinTitle": "Sin AELION",
     "comp.conTitle": "Con AELION",
@@ -1700,6 +1799,9 @@ en: {
     "pain.c6.title": "No Reactivation",
     "pain.c6.desc": "55% of first-time clients never return. Without a retention system, the money walks out.",
     "pain.bridge": "Your competition? They already solved it.",
+    "blur.s1": "Your business loses money every day without a system.",
+    "blur.s2": "Automation isn't the future — it's the present.",
+    "blur.s3": "AELION builds the infrastructure your business needs to grow.",
     "comp.title": "Two Realities. You Choose.",
     "comp.sinTitle": "Without AELION",
     "comp.conTitle": "With AELION",
