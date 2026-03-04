@@ -1592,21 +1592,15 @@ document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.
 // --- Marquee (JS-driven for Tailwind CDN compatibility) ---
 document.querySelectorAll('.marquee-track').forEach(track => {
     const speed = parseFloat(track.dataset.marqueeSpeed) || 0.3;
-    const direction = speed > 0 ? 1 : -1;
+    const goLeft = speed > 0;
     const absSpeed = Math.abs(speed);
-    let pos = direction > 0 ? 0 : track.scrollWidth / 2;
+    let pos = 0;
     track.style.willChange = 'transform';
     function tick() {
         const half = track.scrollWidth / 2;
-        if (direction > 0) {
-            pos += absSpeed;
-            if (pos >= half) pos = 0;
-            track.style.transform = `translate3d(${-pos}px, 0, 0)`;
-        } else {
-            pos -= absSpeed;
-            if (pos <= 0) pos = half;
-            track.style.transform = `translate3d(${-pos}px, 0, 0)`;
-        }
+        pos = (pos + absSpeed) % half;
+        const x = goLeft ? -pos : -(half - pos);
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
         requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
