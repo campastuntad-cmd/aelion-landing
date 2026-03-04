@@ -474,12 +474,6 @@
         .scroll-progress { display: none; }
     }
 </style>
-<style id="marquee-styles">
-    @keyframes marquee-scroll {
-        0% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(-50%, 0, 0); }
-    }
-</style>
 </head>
 <body class="font-body bg-background-dark text-[#F9FAFB] selection:bg-primary selection:text-white">
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -574,7 +568,7 @@
 <section class="py-6 border-y border-white/5 bg-background-dark/50" id="marquee">
 <div class="max-w-7xl mx-auto">
     <div class="marquee-container mb-4">
-        <div class="marquee-track text-sm font-semibold text-white/50" style="animation:marquee-scroll 30s linear infinite;will-change:transform;backface-visibility:hidden">
+        <div class="marquee-track text-sm font-semibold text-white/50" data-marquee-speed="0.5">
             <span data-i18n="marquee.s1">3.7x ROI Mes 1</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s2">24/7 Automatización</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s3">0 Cuotas Mensuales</span><span class="text-primary/40 mx-4">·</span>
@@ -588,7 +582,7 @@
         </div>
     </div>
     <div class="marquee-container">
-        <div class="marquee-track" style="animation:marquee-scroll 25s linear infinite reverse;will-change:transform;backface-visibility:hidden">
+        <div class="marquee-track" data-marquee-speed="-0.6">
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
@@ -1594,6 +1588,22 @@ const bloomObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.15 });
 document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
+
+// --- Marquee (JS-driven for Tailwind CDN compatibility) ---
+document.querySelectorAll('.marquee-track').forEach(track => {
+    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.5;
+    let pos = 0;
+    track.style.willChange = 'transform';
+    function tick() {
+        pos += speed;
+        const half = track.scrollWidth / 2;
+        if (speed > 0 && pos >= half) pos = 0;
+        if (speed < 0 && Math.abs(pos) >= half) pos = 0;
+        track.style.transform = `translate3d(${-Math.abs(pos)}px, 0, 0)`;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+});
 
 // --- ES/EN Translations ---
 const translations = {
