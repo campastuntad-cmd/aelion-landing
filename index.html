@@ -365,16 +365,9 @@
         will-change: transform;
     }
 
-    /* 9. Counter Blur-In */
-    .counter-blur {
-        filter: blur(8px);
-        transform: scale(1.1);
-        transition: filter 1.8s ease-out, transform 1.8s ease-out;
-    }
-    .counter-blur.counter-sharp {
-        filter: blur(0);
-        transform: scale(1);
-    }
+    /* 9. Counter Reveal */
+    .counter[data-target] { opacity: 0; }
+    .counter[data-target].counter-active { opacity: 1; transition: opacity 0.4s ease-out; }
 
     /* 10. Magnetic Button Effect */
     .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -1393,7 +1386,7 @@ document.querySelectorAll('section:not(#hero):not(#marquee)').forEach(section =>
     revealObserver.observe(section);
 });
 
-// --- Animated Counters with Blur-In ---
+// --- Animated Counters ---
 function animateValue(element, target, duration, prefix, suffix) {
     const start = performance.now();
     const isDecimal = target % 1 !== 0;
@@ -1403,16 +1396,12 @@ function animateValue(element, target, duration, prefix, suffix) {
         if (isDecimal) return n.toFixed(decimals);
         return Math.round(n).toLocaleString('en-US');
     }
-    // Add blur class at start
-    element.classList.add('counter-blur');
+    element.classList.add('counter-active');
     function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const value = easeOutQuart(progress) * target;
         element.textContent = prefix + formatNumber(value) + suffix;
-        if (progress >= 0.3 && !element.classList.contains('counter-sharp')) {
-            element.classList.add('counter-sharp');
-        }
         if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -1428,7 +1417,7 @@ const counterObserver = new IntersectionObserver((entries) => {
             animateValue(entry.target, target, 2000, prefix, suffix);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.2 });
 
 document.querySelectorAll('.counter[data-target]').forEach(el => counterObserver.observe(el));
 
