@@ -568,7 +568,7 @@
 <section class="py-6 border-y border-white/5 bg-background-dark/50" id="marquee">
 <div class="max-w-7xl mx-auto">
     <div class="marquee-container mb-4">
-        <div class="marquee-track text-sm font-semibold text-white/50" data-marquee-speed="0.5">
+        <div class="marquee-track text-sm font-semibold text-white/50" data-marquee-speed="0.3">
             <span data-i18n="marquee.s1">3.7x ROI Mes 1</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s2">24/7 Automatización</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s3">0 Cuotas Mensuales</span><span class="text-primary/40 mx-4">·</span>
@@ -582,7 +582,7 @@
         </div>
     </div>
     <div class="marquee-container">
-        <div class="marquee-track" data-marquee-speed="-0.6">
+        <div class="marquee-track" data-marquee-speed="-0.35">
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
@@ -1591,15 +1591,22 @@ document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.
 
 // --- Marquee (JS-driven for Tailwind CDN compatibility) ---
 document.querySelectorAll('.marquee-track').forEach(track => {
-    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.5;
-    let pos = 0;
+    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.3;
+    const direction = speed > 0 ? 1 : -1;
+    const absSpeed = Math.abs(speed);
+    let pos = direction > 0 ? 0 : track.scrollWidth / 2;
     track.style.willChange = 'transform';
     function tick() {
-        pos += speed;
         const half = track.scrollWidth / 2;
-        if (speed > 0 && pos >= half) pos = 0;
-        if (speed < 0 && Math.abs(pos) >= half) pos = 0;
-        track.style.transform = `translate3d(${-Math.abs(pos)}px, 0, 0)`;
+        if (direction > 0) {
+            pos += absSpeed;
+            if (pos >= half) pos = 0;
+            track.style.transform = `translate3d(${-pos}px, 0, 0)`;
+        } else {
+            pos -= absSpeed;
+            if (pos <= 0) pos = half;
+            track.style.transform = `translate3d(${-pos}px, 0, 0)`;
+        }
         requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
