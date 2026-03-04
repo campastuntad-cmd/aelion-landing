@@ -614,7 +614,7 @@
         <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:1">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">event_busy</span></div>
-                <div class="text-2xl font-extrabold text-primary counter">15-30%</div>
+                <div class="text-2xl font-extrabold text-primary counter" data-target="15" data-range-end="30" data-suffix="%">15-30%</div>
             </div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c2.title">Citas Perdidas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c2.desc">Entre 15% y 30% de tus citas no se presentan. Cada no-show te cuesta $4,000-$8,000 MXN.</p>
@@ -638,7 +638,7 @@
         <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:4">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">receipt_long</span></div>
-                <div class="text-2xl font-extrabold text-primary counter">60-80%</div>
+                <div class="text-2xl font-extrabold text-primary counter" data-target="60" data-range-end="80" data-suffix="%">60-80%</div>
             </div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c5.title">Cotizaciones Abandonadas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c5.desc">Hasta 80% de cotizaciones enviadas no reciben seguimiento y mueren.</p>
@@ -1387,12 +1387,12 @@ document.querySelectorAll('section:not(#hero):not(#marquee)').forEach(section =>
 });
 
 // --- Animated Counters ---
-function animateValue(element, target, duration, prefix, suffix) {
+function animateValue(element, target, duration, prefix, suffix, rangeEnd) {
     const start = performance.now();
     const isDecimal = target % 1 !== 0;
     const decimals = isDecimal ? (String(target).split('.')[1] || '').length : 0;
     function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
-    function formatNumber(n) {
+    function fmt(n) {
         if (isDecimal) return n.toFixed(decimals);
         return Math.round(n).toLocaleString('en-US');
     }
@@ -1400,8 +1400,13 @@ function animateValue(element, target, duration, prefix, suffix) {
     function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        const value = easeOutQuart(progress) * target;
-        element.textContent = prefix + formatNumber(value) + suffix;
+        const eased = easeOutQuart(progress);
+        const value = eased * target;
+        if (rangeEnd) {
+            element.textContent = prefix + fmt(value) + '-' + fmt(eased * rangeEnd) + suffix;
+        } else {
+            element.textContent = prefix + fmt(value) + suffix;
+        }
         if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -1414,7 +1419,8 @@ const counterObserver = new IntersectionObserver((entries) => {
             const target = parseFloat(entry.target.dataset.target);
             const prefix = entry.target.dataset.prefix || '';
             const suffix = entry.target.dataset.suffix || '';
-            animateValue(entry.target, target, 2000, prefix, suffix);
+            const rangeEnd = entry.target.dataset.rangeEnd ? parseFloat(entry.target.dataset.rangeEnd) : null;
+            animateValue(entry.target, target, 2000, prefix, suffix, rangeEnd);
         }
     });
 }, { threshold: 0.2 });
