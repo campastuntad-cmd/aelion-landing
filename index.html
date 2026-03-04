@@ -1589,29 +1589,23 @@ const bloomObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
 
-// --- Marquee (pixel-perfect seamless loop) ---
-document.querySelectorAll('.marquee-track').forEach(track => {
-    const children = Array.from(track.children);
-    const half = children.length / 2;
-    // Measure exact pixel width of first half (original content)
-    let firstHalfWidth = 0;
-    for (let i = 0; i < half; i++) {
-        firstHalfWidth += children[i].offsetWidth;
-    }
-    // Add gaps: CSS gap is 2rem = 32px, gaps between items within each half
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 32;
-    firstHalfWidth += gap * half; // gaps between items + gap between halves
-    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.3;
-    const dur = Math.round(firstHalfWidth / (Math.abs(speed) * 60));
-    const direction = speed > 0 ? '-' : '';
-    const from = speed > 0 ? '0' : `-${firstHalfWidth}`;
-    const to = speed > 0 ? `-${firstHalfWidth}` : '0';
-    const uid = 'mq-' + Math.random().toString(36).slice(2, 6);
-    const s = document.createElement('style');
-    s.textContent = `@keyframes ${uid}{from{transform:translate3d(${from}px,0,0)}to{transform:translate3d(${to}px,0,0)}}`;
-    document.head.appendChild(s);
-    track.style.cssText = `animation:${uid} ${dur}s linear infinite;will-change:transform`;
-});
+// --- Marquee (CSS animation, deferred to ensure layout is ready) ---
+(function initMarquee() {
+    const style = document.createElement('style');
+    style.textContent = [
+        '@keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}',
+        '@keyframes mqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}'
+    ].join('');
+    document.head.appendChild(style);
+    requestAnimationFrame(() => {
+        document.querySelectorAll('.marquee-track').forEach(track => {
+            const spd = parseFloat(track.dataset.marqueeSpeed) || 0.3;
+            const name = spd > 0 ? 'mqL' : 'mqR';
+            track.style.animation = name + ' 35s linear infinite';
+            track.style.willChange = 'transform';
+        });
+    });
+})();
 
 // --- ES/EN Translations ---
 const translations = {
