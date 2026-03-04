@@ -306,23 +306,11 @@
     }
     .heading-reveal.is-visible { clip-path: inset(0 0 0 0); }
 
-    /* 4. Section Label "/" Line-Grow */
+    /* 4. Section Label — Clean Centered */
     .section-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
+        display: block;
+        text-align: center;
     }
-    .section-label::after {
-        content: '';
-        display: inline-block;
-        width: 80px;
-        height: 1px;
-        background: linear-gradient(90deg, rgba(77,166,255,0.5), rgba(77,166,255,0));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
-    }
-    .section-label.is-visible::after { transform: scaleX(1); }
 
     /* 5. Comparison Section Choreography */
     .compare-left {
@@ -394,6 +382,17 @@
 
     /* 10. Magnetic Button Effect */
     .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    @keyframes electrify {
+        0%, 100% { box-shadow: 0 0 20px rgba(77,166,255,0.4), 0 0 4px rgba(77,166,255,0.2); }
+        25% { box-shadow: 0 0 25px rgba(77,166,255,0.6), 0 0 8px rgba(77,166,255,0.3), inset 0 0 4px rgba(77,166,255,0.1); }
+        50% { box-shadow: 0 0 18px rgba(77,166,255,0.35), 0 0 3px rgba(77,166,255,0.15); }
+        75% { box-shadow: 0 0 28px rgba(77,166,255,0.55), 0 0 10px rgba(77,166,255,0.25), inset 0 0 6px rgba(77,166,255,0.15); }
+    }
+    #metodo .glow-button {
+        animation: electrify 2.5s ease-in-out infinite;
+        animation-delay: calc(var(--electrify-i, 0) * 0.4s);
+    }
 
     /* Character-by-character stagger animation */
     @keyframes char-reveal {
@@ -728,7 +727,7 @@
         <div class="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 shadow-[0_0_10px_rgba(77,166,255,0.5)]"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:0">
                     <span class="material-symbols-outlined text-primary text-3xl">search</span>
                 </div>
                 <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s1.badge">30 minutos</div>
@@ -736,7 +735,7 @@
                 <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s1.desc">Analizamos tu negocio con nuestro framework de 5 variables: Oferta, Flujo de Prospectos, Citas, Cierre y Entrega.</p>
             </div>
             <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:1">
                     <span class="material-symbols-outlined text-primary text-3xl">task</span>
                 </div>
                 <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s2.badge">24 horas</div>
@@ -744,7 +743,7 @@
                 <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s2.desc">Recibes una propuesta con el sistema exacto que necesitas, proyección de ROI y cronograma de implementación.</p>
             </div>
             <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:2">
                     <span class="material-symbols-outlined text-primary text-3xl">build</span>
                 </div>
                 <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s3.badge">10 días</div>
@@ -752,7 +751,7 @@
                 <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s3.desc">Construimos tu infraestructura completa: IA conversacional, automatización de citas, seguimiento inteligente. Probamos todo antes de lanzar.</p>
             </div>
             <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button">
+                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:3">
                     <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
                 </div>
                 <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s4.badge">Día 10 → 40</div>
@@ -778,7 +777,7 @@
 <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
         <div class="section-label" data-i18n="label.servicios">/04 SERVICIOS</div>
-        <h2 class="font-heading text-3xl md:text-5xl tracking-tight-v2 mb-4 gradient-text inline-block" data-i18n="services.title">Lo Que Construimos</h2>
+        <h2 class="font-heading text-3xl md:text-5xl tracking-tight-v2 mb-4" data-i18n="services.title"><span class="gradient-text">Lo Que Construimos</span></h2>
         <p class="opacity-60 max-w-2xl mx-auto" data-i18n="services.subtitle">Infraestructura inteligente que trabaja mientras tú duermes.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -887,15 +886,15 @@
     <!-- 3 Hero Metrics -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:0">
-            <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat1.label">MXN Recuperados</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:1">
-            <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="3.7" data-suffix="x">3.7x</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="3.7" data-suffix="x">3.7x</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat2.label">ROI Mes 1</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:2">
-            <div class="text-4xl md:text-5xl font-black text-white glow-stat counter" data-target="674400" data-prefix="$">$674,400</div>
+            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="674400" data-prefix="$">$674,400</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat3.label">Impacto Anual MXN</p>
         </div>
     </div>
@@ -1550,8 +1549,8 @@ if (window.matchMedia('(hover: hover)').matches) {
             const dx = e.clientX - centerX;
             const dy = e.clientY - centerY;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 100) {
-                btn.style.transform = `translate(${dx * 0.3}px, ${dy * 0.3}px)`;
+            if (dist < 120) {
+                btn.style.transform = `translate(${dx * 0.08}px, ${dy * 0.08}px)`;
             }
         });
         btn.addEventListener('mouseleave', () => {
