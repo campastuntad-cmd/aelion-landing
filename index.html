@@ -232,13 +232,7 @@
         align-items: center;
         gap: 2rem;
         white-space: nowrap;
-        animation: marquee 30s linear infinite;
         width: max-content;
-    }
-    /* marquee never pauses */
-    @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
     }
 
     .hero-word {
@@ -481,18 +475,19 @@
     }
 </style>
 <style>
-    /* Marquee — separate from Tailwind to avoid CDN interference */
     @keyframes marquee-scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% { transform: translate3d(0, 0, 0); }
+        100% { transform: translate3d(-50%, 0, 0); }
     }
     .marquee-track {
-        animation: marquee-scroll 25s linear infinite !important;
+        animation: marquee-scroll 30s linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
     .marquee-track.marquee-reverse {
-        animation: marquee-scroll 20s linear infinite reverse !important;
+        animation: marquee-scroll 25s linear infinite reverse;
     }
-    /* marquee always running */
 </style>
 </head>
 <body class="font-body bg-background-dark text-[#F9FAFB] selection:bg-primary selection:text-white">
