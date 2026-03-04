@@ -87,7 +87,7 @@
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
     .counter { font-variant-numeric: tabular-nums; }
-    #resultados .counter { font-size: clamp(1.25rem, 2.8vw, 2.25rem); }
+    #resultados .counter { font-size: clamp(1rem, 2.5vw, 2.25rem); line-height: 1.2; }
     @keyframes float-in {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -882,15 +882,15 @@
     <!-- 3 Hero Metrics -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:0">
-            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
+            <div class="font-black text-white glow-stat counter" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat1.label">MXN Recuperados</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:1">
-            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="3.7" data-suffix="x">3.7x</div>
+            <div class="font-black text-white glow-stat counter" data-target="3.7" data-suffix="x">3.7x</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat2.label">ROI Mes 1</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:2">
-            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="674400" data-prefix="$">$674,400</div>
+            <div class="font-black text-white glow-stat counter" data-target="674400" data-prefix="$">$674,400</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat3.label">Impacto Anual MXN</p>
         </div>
     </div>
@@ -1589,21 +1589,28 @@ const bloomObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
 
-// --- Marquee (JS-driven for Tailwind CDN compatibility) ---
+// --- Marquee (pixel-perfect seamless loop) ---
 document.querySelectorAll('.marquee-track').forEach(track => {
-    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.3;
-    const goLeft = speed > 0;
-    const absSpeed = Math.abs(speed);
-    let pos = 0;
-    track.style.willChange = 'transform';
-    function tick() {
-        const half = track.scrollWidth / 2;
-        pos = (pos + absSpeed) % half;
-        const x = goLeft ? -pos : -(half - pos);
-        track.style.transform = `translate3d(${x}px, 0, 0)`;
-        requestAnimationFrame(tick);
+    const children = Array.from(track.children);
+    const half = children.length / 2;
+    // Measure exact pixel width of first half (original content)
+    let firstHalfWidth = 0;
+    for (let i = 0; i < half; i++) {
+        firstHalfWidth += children[i].offsetWidth;
     }
-    requestAnimationFrame(tick);
+    // Add gaps: CSS gap is 2rem = 32px, gaps between items within each half
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 32;
+    firstHalfWidth += gap * half; // gaps between items + gap between halves
+    const speed = parseFloat(track.dataset.marqueeSpeed) || 0.3;
+    const dur = Math.round(firstHalfWidth / (Math.abs(speed) * 60));
+    const direction = speed > 0 ? '-' : '';
+    const from = speed > 0 ? '0' : `-${firstHalfWidth}`;
+    const to = speed > 0 ? `-${firstHalfWidth}` : '0';
+    const uid = 'mq-' + Math.random().toString(36).slice(2, 6);
+    const s = document.createElement('style');
+    s.textContent = `@keyframes ${uid}{from{transform:translate3d(${from}px,0,0)}to{transform:translate3d(${to}px,0,0)}}`;
+    document.head.appendChild(s);
+    track.style.cssText = `animation:${uid} ${dur}s linear infinite;will-change:transform`;
 });
 
 // --- ES/EN Translations ---
