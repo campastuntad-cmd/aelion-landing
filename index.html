@@ -86,7 +86,8 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
-    .counter { font-variant-numeric: tabular-nums; font-size: clamp(1.5rem, 4vw, 3rem); }
+    .counter { font-variant-numeric: tabular-nums; }
+    #resultados .counter { font-size: clamp(1.25rem, 2.8vw, 2.25rem); }
     @keyframes float-in {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -234,7 +235,7 @@
         animation: marquee 30s linear infinite;
         width: max-content;
     }
-    .marquee-container:hover .marquee-track { animation-play-state: paused; }
+    /* marquee never pauses */
     @keyframes marquee {
         from { transform: translateX(0); }
         to { transform: translateX(-50%); }
@@ -466,6 +467,7 @@
     .blur-sequence-text.blur-active {
         filter: blur(0);
         opacity: 1;
+        text-shadow: 0 0 40px rgba(77,166,255,0.3), 0 0 80px rgba(77,166,255,0.15);
     }
 
     /* Accessibility: Respect prefers-reduced-motion */
@@ -490,9 +492,7 @@
     .marquee-track.marquee-reverse {
         animation: marquee-scroll 20s linear infinite reverse !important;
     }
-    .marquee-container:hover .marquee-track {
-        animation-play-state: paused !important;
-    }
+    /* marquee always running */
 </style>
 </head>
 <body class="font-body bg-background-dark text-[#F9FAFB] selection:bg-primary selection:text-white">
@@ -640,7 +640,7 @@
         <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:1">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">event_busy</span></div>
-                <div class="text-2xl font-extrabold text-primary">15-30%</div>
+                <div class="text-2xl font-extrabold text-primary counter">15-30%</div>
             </div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c2.title">Citas Perdidas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c2.desc">Entre 15% y 30% de tus citas no se presentan. Cada no-show te cuesta $4,000-$8,000 MXN.</p>
@@ -664,7 +664,7 @@
         <div class="glass-card cascade-card p-6 rounded-xl border-l-4 border-l-primary/50" style="--cascade-i:4">
             <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">receipt_long</span></div>
-                <div class="text-2xl font-extrabold text-primary">60-80%</div>
+                <div class="text-2xl font-extrabold text-primary counter">60-80%</div>
             </div>
             <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c5.title">Cotizaciones Abandonadas</p>
             <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c5.desc">Hasta 80% de cotizaciones enviadas no reciben seguimiento y mueren.</p>
