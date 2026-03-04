@@ -1589,15 +1589,29 @@ const bloomObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
 
-// --- Marquee (Web Animations API — zero CSS dependency) ---
+// --- Marquee (seamless infinite loop) ---
 document.querySelectorAll('.marquee-track').forEach(track => {
     const spd = parseFloat(track.dataset.marqueeSpeed) || 0.3;
     const goLeft = spd > 0;
+    // HTML has 2 identical halves. Grab one set of items.
+    const all = Array.from(track.children);
+    const oneSet = all.slice(0, all.length / 2);
+    // Clone content until track fills at least 3× viewport (no gaps ever visible)
+    while (track.scrollWidth < window.innerWidth * 3) {
+        oneSet.forEach(c => track.appendChild(c.cloneNode(true)));
+    }
+    // One set's share of total width
+    const totalSets = track.children.length / oneSet.length;
+    const pct = (100 / totalSets).toFixed(4) + '%';
+    // Speed: pixels per second based on data attribute
+    const oneSetPx = track.scrollWidth / totalSets;
+    const pxPerSec = Math.abs(spd) * 120;
+    const dur = (oneSetPx / pxPerSec) * 1000;
     track.animate(
         goLeft
-            ? [{ transform: 'translateX(0%)' }, { transform: 'translateX(-50%)' }]
-            : [{ transform: 'translateX(-50%)' }, { transform: 'translateX(0%)' }],
-        { duration: 35000, iterations: Infinity, easing: 'linear' }
+            ? [{ transform: 'translateX(0)' }, { transform: `translateX(-${pct})` }]
+            : [{ transform: `translateX(-${pct})` }, { transform: 'translateX(0)' }],
+        { duration: dur, iterations: Infinity, easing: 'linear' }
     );
 });
 
