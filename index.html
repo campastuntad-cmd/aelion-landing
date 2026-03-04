@@ -45,17 +45,24 @@
     };
 </script>
 <style type="text/tailwindcss">
+    /* ===== GLOBAL ===== */
+    *, *::before, *::after {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
     /* ===== CARRIED FORWARD ===== */
     .glass-card {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(12px);
         border: 1px solid rgba(77, 166, 255, 0.1);
-        transition: all 0.3s ease;
+        transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.4s ease, transform 0.5s ease-out;
     }
     .glass-card:hover {
-        border-color: rgba(77,166,255,0.3);
+        border-color: rgba(77,166,255,0.4);
         background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 0 30px rgba(77,166,255,0.08), inset 0 0 30px rgba(77,166,255,0.02);
+        box-shadow: 0 0 40px rgba(77,166,255,0.12), 0 0 80px rgba(77,166,255,0.05), inset 0 0 30px rgba(77,166,255,0.02);
     }
     .grid-bg { position: relative; }
     .grid-bg::before {
@@ -184,6 +191,19 @@
         transform: translate(-50%, -50%);
         transition: opacity 0.3s ease;
         will-change: left, top;
+    }
+
+    /* Grain texture overlay */
+    body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        pointer-events: none;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 256px 256px;
     }
 
     .section-divider {
