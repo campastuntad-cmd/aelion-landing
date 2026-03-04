@@ -474,19 +474,10 @@
         .scroll-progress { display: none; }
     }
 </style>
-<style>
+<style id="marquee-styles">
     @keyframes marquee-scroll {
         0% { transform: translate3d(0, 0, 0); }
         100% { transform: translate3d(-50%, 0, 0); }
-    }
-    .marquee-track {
-        animation: marquee-scroll 30s linear infinite;
-        will-change: transform;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-    }
-    .marquee-track.marquee-reverse {
-        animation: marquee-scroll 25s linear infinite reverse;
     }
 </style>
 </head>
@@ -583,7 +574,7 @@
 <section class="py-6 border-y border-white/5 bg-background-dark/50" id="marquee">
 <div class="max-w-7xl mx-auto">
     <div class="marquee-container mb-4">
-        <div class="marquee-track text-sm font-semibold text-white/50">
+        <div class="marquee-track text-sm font-semibold text-white/50" style="animation:marquee-scroll 30s linear infinite;will-change:transform;backface-visibility:hidden">
             <span data-i18n="marquee.s1">3.7x ROI Mes 1</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s2">24/7 Automatización</span><span class="text-primary/40 mx-4">·</span>
             <span data-i18n="marquee.s3">0 Cuotas Mensuales</span><span class="text-primary/40 mx-4">·</span>
@@ -597,7 +588,7 @@
         </div>
     </div>
     <div class="marquee-container">
-        <div class="marquee-track marquee-reverse">
+        <div class="marquee-track" style="animation:marquee-scroll 25s linear infinite reverse;will-change:transform;backface-visibility:hidden">
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
