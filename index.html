@@ -1589,23 +1589,17 @@ const bloomObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll('#resultados, #cta').forEach(section => bloomObserver.observe(section));
 
-// --- Marquee (CSS animation, deferred to ensure layout is ready) ---
-(function initMarquee() {
-    const style = document.createElement('style');
-    style.textContent = [
-        '@keyframes mqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}',
-        '@keyframes mqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}'
-    ].join('');
-    document.head.appendChild(style);
-    requestAnimationFrame(() => {
-        document.querySelectorAll('.marquee-track').forEach(track => {
-            const spd = parseFloat(track.dataset.marqueeSpeed) || 0.3;
-            const name = spd > 0 ? 'mqL' : 'mqR';
-            track.style.animation = name + ' 35s linear infinite';
-            track.style.willChange = 'transform';
-        });
-    });
-})();
+// --- Marquee (Web Animations API — zero CSS dependency) ---
+document.querySelectorAll('.marquee-track').forEach(track => {
+    const spd = parseFloat(track.dataset.marqueeSpeed) || 0.3;
+    const goLeft = spd > 0;
+    track.animate(
+        goLeft
+            ? [{ transform: 'translateX(0%)' }, { transform: 'translateX(-50%)' }]
+            : [{ transform: 'translateX(-50%)' }, { transform: 'translateX(0%)' }],
+        { duration: 35000, iterations: Infinity, easing: 'linear' }
+    );
+});
 
 // --- ES/EN Translations ---
 const translations = {
