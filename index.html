@@ -86,7 +86,7 @@
     }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
-    .counter { font-variant-numeric: tabular-nums; }
+    .counter { font-variant-numeric: tabular-nums; font-size: clamp(1.5rem, 4vw, 3rem); }
     @keyframes float-in {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -384,10 +384,10 @@
     .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
     @keyframes electrify {
-        0%, 100% { box-shadow: 0 0 20px rgba(77,166,255,0.4), 0 0 4px rgba(77,166,255,0.2); }
-        25% { box-shadow: 0 0 25px rgba(77,166,255,0.6), 0 0 8px rgba(77,166,255,0.3), inset 0 0 4px rgba(77,166,255,0.1); }
-        50% { box-shadow: 0 0 18px rgba(77,166,255,0.35), 0 0 3px rgba(77,166,255,0.15); }
-        75% { box-shadow: 0 0 28px rgba(77,166,255,0.55), 0 0 10px rgba(77,166,255,0.25), inset 0 0 6px rgba(77,166,255,0.15); }
+        0%, 100% { box-shadow: 0 0 25px rgba(77,166,255,0.5), 0 0 8px rgba(77,166,255,0.3), 0 0 60px rgba(77,166,255,0.15); }
+        25% { box-shadow: 0 0 35px rgba(77,166,255,0.7), 0 0 15px rgba(77,166,255,0.4), 0 0 80px rgba(77,166,255,0.2), inset 0 0 8px rgba(77,166,255,0.15); }
+        50% { box-shadow: 0 0 22px rgba(77,166,255,0.45), 0 0 6px rgba(77,166,255,0.25), 0 0 50px rgba(77,166,255,0.1); }
+        75% { box-shadow: 0 0 40px rgba(77,166,255,0.65), 0 0 18px rgba(77,166,255,0.35), 0 0 90px rgba(77,166,255,0.25), inset 0 0 10px rgba(77,166,255,0.2); }
     }
     #metodo .glow-button {
         animation: electrify 2.5s ease-in-out infinite;
@@ -476,6 +476,22 @@
             transition-duration: 0.01ms !important;
         }
         .scroll-progress { display: none; }
+    }
+</style>
+<style>
+    /* Marquee — separate from Tailwind to avoid CDN interference */
+    @keyframes marquee-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+        animation: marquee-scroll 25s linear infinite !important;
+    }
+    .marquee-track.marquee-reverse {
+        animation: marquee-scroll 20s linear infinite reverse !important;
+    }
+    .marquee-container:hover .marquee-track {
+        animation-play-state: paused !important;
     }
 </style>
 </head>
@@ -586,7 +602,7 @@
         </div>
     </div>
     <div class="marquee-container">
-        <div class="marquee-track" style="animation-direction:reverse;animation-duration:25s;">
+        <div class="marquee-track marquee-reverse">
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
             <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
@@ -886,15 +902,15 @@
     <!-- 3 Hero Metrics -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:0">
-            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
+            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="56200" data-prefix="$" data-suffix="/mes">$56,200/mes</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat1.label">MXN Recuperados</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:1">
-            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="3.7" data-suffix="x">3.7x</div>
+            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="3.7" data-suffix="x">3.7x</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat2.label">ROI Mes 1</p>
         </div>
         <div class="text-center glass-card cascade-card rounded-xl p-8" style="--cascade-i:2">
-            <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white glow-stat counter" data-target="674400" data-prefix="$">$674,400</div>
+            <div class="font-black text-white glow-stat counter whitespace-nowrap" data-target="674400" data-prefix="$">$674,400</div>
             <p class="text-xs text-primary font-bold uppercase tracking-widest mt-2" data-i18n="results.stat3.label">Impacto Anual MXN</p>
         </div>
     </div>
