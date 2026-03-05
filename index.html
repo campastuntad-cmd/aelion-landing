@@ -1056,13 +1056,17 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-white/10" style="--cascade-i:0">
-            <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30" data-i18n="pricing.p1.badge">Plazas Limitadas</div>
+            <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30" data-i18n="pricing.p1.badge">Oferta de Lanzamiento</div>
             <div class="mb-8 mt-4">
-                <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p1.title">Cliente Fundador</h3>
-                <p class="text-sm opacity-60" data-i18n="pricing.p1.desc">Ideal para validar tu primer sistema de IA.</p>
+                <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p1.title">Consultoría de IA</h3>
+                <p class="text-sm opacity-60" data-i18n="pricing.p1.desc">Auditoría completa + sistema personalizado para tu negocio.</p>
             </div>
-            <div class="text-4xl font-black mb-2 italic" data-i18n="pricing.p1.price" data-i18n-html="true">$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Pago Único</span></div>
-            <p class="text-xs opacity-40 mb-8" data-i18n="pricing.p1.note">Precio exclusivo para nuestros primeros clientes. A cambio, documentamos resultados como caso de estudio.</p>
+            <div class="text-4xl font-black mb-2 italic" data-i18n="pricing.p1.price" data-i18n-html="true">$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Auditoría</span></div>
+            <p class="text-xs opacity-40 mb-4" data-i18n="pricing.p1.note">Auditoría profesional de 5 variables para identificar exactamente dónde pierde tu negocio.</p>
+            <div class="mb-8 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                <p class="text-xs font-bold text-green-400 uppercase tracking-wider mb-1" data-i18n="pricing.p1.bonus.label">Bonus Solo en Marzo</p>
+                <p class="text-sm opacity-80" data-i18n="pricing.p1.bonus.desc">Sistema de IA personalizado incluido sin costo adicional. A cambio, documentamos los resultados como caso de estudio.</p>
+            </div>
             <ul class="space-y-4 mb-10 flex-grow">
                 <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f1">Diagnóstico completo (5 variables)</span></li>
                 <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f2">Sistema de IA personalizado</span></li>
@@ -1083,7 +1087,7 @@
                     <div class="flex flex-col"><span id="cd-secs" class="text-2xl font-black text-primary tabular-nums">00</span><span class="text-[10px] uppercase tracking-wider opacity-40" data-i18n="pricing.p1.countdown.secs">Seg</span></div>
                 </div>
             </div>
-            <a href="#cta" class="w-full py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-colors text-center block" data-i18n="pricing.p1.cta">Quiero Ser Cliente Fundador</a>
+            <a href="#cta" class="w-full py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-colors text-center block" data-i18n="pricing.p1.cta">Agenda Tu Consultoría</a>
         </div>
         <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-primary/40 bg-primary/5" style="--cascade-i:1">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black tracking-widest px-4 py-1.5 rounded-full uppercase shadow-[0_0_15px_rgba(77,166,255,0.6)]" data-i18n="pricing.p2.badge">Recomendado</div>
@@ -1094,7 +1098,7 @@
             <div class="text-3xl font-black mb-1 italic text-white" data-i18n="pricing.p2.price" data-i18n-html="true">$25,000 - $50,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span></div>
             <div class="text-xs opacity-40 mb-8 font-medium uppercase tracking-wide" data-i18n="pricing.p2.note">Dependiendo complejidad / Pago Único</div>
             <ul class="space-y-4 mb-10 flex-grow">
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f1">Todo lo del plan Fundador</span></li>
+                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f1">Todo lo de Consultoría de IA</span></li>
                 <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f2">Integraciones avanzadas</span></li>
                 <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f3">Múltiples canales (WhatsApp + Voz + Web)</span></li>
                 <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f4">Dashboard personalizado</span></li>
@@ -1776,11 +1780,13 @@ es: {
     "industries.more": "+ Real Estate, Legal, Ecommerce →",
     "pricing.title": "Inversión",
     "pricing.subtitle": "No es un gasto mensual. Es infraestructura que te pertenece.",
-    "pricing.p1.badge": "Plazas Limitadas",
-    "pricing.p1.title": "Cliente Fundador",
-    "pricing.p1.desc": "Ideal para validar tu primer sistema de IA.",
-    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Pago Único</span>',
-    "pricing.p1.note": "Precio exclusivo para nuestros primeros clientes. A cambio, documentamos resultados como caso de estudio.",
+    "pricing.p1.badge": "Oferta de Lanzamiento",
+    "pricing.p1.title": "Consultoría de IA",
+    "pricing.p1.desc": "Auditoría completa + sistema personalizado para tu negocio.",
+    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Auditoría</span>',
+    "pricing.p1.note": "Auditoría profesional de 5 variables para identificar exactamente dónde pierde tu negocio.",
+    "pricing.p1.bonus.label": "Bonus Solo en Marzo",
+    "pricing.p1.bonus.desc": "Sistema de IA personalizado incluido sin costo adicional. A cambio, documentamos los resultados como caso de estudio.",
     "pricing.p1.f1": "Diagnóstico completo (5 variables)",
     "pricing.p1.f2": "Sistema de IA personalizado",
     "pricing.p1.f3": "10 días de construcción",
@@ -1792,13 +1798,13 @@ es: {
     "pricing.p1.countdown.hours": "Horas",
     "pricing.p1.countdown.mins": "Min",
     "pricing.p1.countdown.secs": "Seg",
-    "pricing.p1.cta": "Quiero Ser Cliente Fundador",
+    "pricing.p1.cta": "Agenda Tu Consultoría",
     "pricing.p2.badge": "Recomendado",
     "pricing.p2.title": "Infraestructura de Crecimiento",
     "pricing.p2.desc": "Para empresas listas para automatización total.",
     "pricing.p2.price": '$25,000 - $50,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span>',
     "pricing.p2.note": "Dependiendo complejidad / Pago Único",
-    "pricing.p2.f1": "Todo lo del plan Fundador",
+    "pricing.p2.f1": "Todo lo de Consultoría de IA",
     "pricing.p2.f2": "Integraciones avanzadas",
     "pricing.p2.f3": "Múltiples canales (WhatsApp + Voz + Web)",
     "pricing.p2.f4": "Dashboard personalizado",
@@ -1991,11 +1997,13 @@ en: {
     "industries.more": "+ Real Estate, Legal, Ecommerce →",
     "pricing.title": "Investment",
     "pricing.subtitle": "Not a monthly expense. It's infrastructure you own.",
-    "pricing.p1.badge": "Limited Spots",
-    "pricing.p1.title": "Founding Client",
-    "pricing.p1.desc": "Ideal to validate your first AI system.",
-    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / One-Time</span>',
-    "pricing.p1.note": "Exclusive pricing for our first clients. In exchange, we document results as a case study.",
+    "pricing.p1.badge": "Launch Offer",
+    "pricing.p1.title": "AI Consulting",
+    "pricing.p1.desc": "Complete audit + custom AI system for your business.",
+    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Audit</span>',
+    "pricing.p1.note": "Professional 5-variable audit to identify exactly where your business is losing revenue.",
+    "pricing.p1.bonus.label": "March Bonus Only",
+    "pricing.p1.bonus.desc": "Custom AI system included at no extra cost. In exchange, we document results as a case study.",
     "pricing.p1.f1": "Complete diagnostic (5 variables)",
     "pricing.p1.f2": "Custom AI system",
     "pricing.p1.f3": "10 days of build",
@@ -2007,13 +2015,13 @@ en: {
     "pricing.p1.countdown.hours": "Hours",
     "pricing.p1.countdown.mins": "Min",
     "pricing.p1.countdown.secs": "Sec",
-    "pricing.p1.cta": "I Want to Be a Founding Client",
+    "pricing.p1.cta": "Book Your Consultation",
     "pricing.p2.badge": "Recommended",
     "pricing.p2.title": "Growth Infrastructure",
     "pricing.p2.desc": "For businesses ready for full automation.",
     "pricing.p2.price": '$25,000 - $50,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span>',
     "pricing.p2.note": "Depending on complexity / One-Time Payment",
-    "pricing.p2.f1": "Everything in Founding plan",
+    "pricing.p2.f1": "Everything in AI Consulting",
     "pricing.p2.f2": "Advanced integrations",
     "pricing.p2.f3": "Multiple channels (WhatsApp + Voice + Web)",
     "pricing.p2.f4": "Custom dashboard",
