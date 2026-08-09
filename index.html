@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AELION — AI Consulting &amp; Growth Infrastructure</title>
-<meta name="description" content="AELION audits your operation with AI, quantifies ROI with your real numbers, and builds growth infrastructure you fully own. AI Consulting — $15,000 MXN.">
+<title>AELION — AI-Cinematic Growth. Measured in Conversions.</title>
+<meta name="description" content="AELION engineers AI-cinematic campaigns, persona talent, and growth infrastructure that turn audiences into revenue — for luxury tourism, adventure travel, and luxury real estate.">
 <link rel="canonical" href="https://aelion.ai/">
 <meta property="og:url" content="https://aelion.ai/">
 <meta property="og:title" content="AELION — Smarter systems. Super human results.">
-<meta property="og:description" content="AI consulting and growth infrastructure. Quantified ROI, full client ownership.">
+<meta property="og:description" content="AI-cinematic campaigns, persona talent, and growth infrastructure — measured in conversions, not views.">
 <meta property="og:image" content="https://aelion.ai/assets/og-image-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AELION — Smarter systems. Super human results.">
-<meta name="twitter:description" content="AI consulting and growth infrastructure. Quantified ROI, full client ownership.">
+<meta name="twitter:description" content="AI-cinematic campaigns, persona talent, and growth infrastructure — measured in conversions, not views.">
 <meta name="twitter:image" content="https://aelion.ai/assets/og-image-v2.jpg">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -82,20 +82,28 @@
   .prob .n{font-size:12px;color:var(--blade);letter-spacing:.18em;display:block;margin-bottom:14px}
   @media(max-width:720px){.prob{grid-template-columns:1fr}}
 
+  .tracks{margin-top:52px;border-top:1px solid var(--line)}
+  .track{display:grid;grid-template-columns:70px 1fr 1.8fr;gap:24px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line)}
+  .track .num{font-size:13px;color:var(--blade);letter-spacing:.14em}
+  .track h3{font-size:21px;font-weight:600;margin-bottom:6px}
+  .track .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+  .track p{font-size:14px;color:var(--smoke)}
+  @media(max-width:860px){.track{grid-template-columns:50px 1fr;gap:8px 18px}.track p{grid-column:2}}
+  .diagnostic{margin-top:34px;border-left:4px solid var(--blade);background:var(--coal);padding:20px 24px;font-size:14.5px;color:var(--bone);max-width:72ch}
+  .diagnostic b{font-weight:600}
+
   .vars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
   .var{background:var(--coal);padding:22px 20px}
   .var b{font-size:14px;font-weight:600;display:block;margin-bottom:4px}
   .var span{font-size:12.5px;color:var(--smoke)}
   @media(max-width:720px){.vars{grid-template-columns:1fr 1fr}}
 
-  .tiers{margin-top:52px;border-top:1px solid var(--line)}
-  .tier{display:grid;grid-template-columns:70px 1.2fr .6fr 1.6fr;gap:24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
-  .tier .num{font-size:13px;color:var(--blade);letter-spacing:.14em}
-  .tier h3{font-size:19px;font-weight:600}
-  .tier .price{font-size:15px;font-variant-numeric:tabular-nums}
-  .tier p{font-size:13.5px;color:var(--smoke)}
-  .tier.star{background:var(--coal);border-left:4px solid var(--blade);padding-left:22px;margin-left:-26px}
-  @media(max-width:860px){.tier{grid-template-columns:50px 1fr;gap:8px 18px}.tier .price{grid-column:2}.tier p{grid-column:2}.tier.star{margin-left:0;padding-left:18px}}
+  .niches{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:52px}
+  .niche h3{font-size:17px;font-weight:600;margin-bottom:8px}
+  .niche p{font-size:13.5px;color:var(--smoke)}
+  .niche .n{font-size:12px;color:var(--blade);letter-spacing:.18em;display:block;margin-bottom:14px}
+  .overlay-note{margin-top:34px;font-size:13.5px;color:var(--smoke);max-width:66ch}
+  @media(max-width:720px){.niches{grid-template-columns:1fr}}
 
   .work{margin-top:52px}
   .job{display:grid;grid-template-columns:110px 1fr auto;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
@@ -125,8 +133,9 @@
 <nav><div class="wrap nav-in">
   <a class="logo" href="#">AELION</a>
   <div class="nav-links">
-    <a href="#metodologia" data-i18n="nav_method">Methodology</a>
-    <a href="#servicios" data-i18n="nav_services">Services</a>
+    <a href="#servicios" data-i18n="nav_what">What we do</a>
+    <a href="#metodologia" data-i18n="nav_method">Method</a>
+    <a href="#niches" data-i18n="nav_niches">Who it's for</a>
     <a href="#trabajo" data-i18n="nav_work">Track record</a>
     <a href="#preguntas" data-i18n="nav_faq">FAQ</a>
     <button class="lang" id="langToggle" aria-label="Cambiar idioma / Switch language">ES</button>
@@ -135,12 +144,12 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="eyebrow" data-i18n="hero_eyebrow">AI Consulting · Growth Infrastructure · Mexico City</span>
+  <span class="eyebrow" data-i18n="hero_eyebrow">AI-Cinematic Growth Studio · Growth Infrastructure</span>
   <h1 data-i18n-html="hero_h1">Smarter systems. <span class="r">Super&nbsp;human</span> results.</h1>
-  <p class="sub" data-i18n="hero_sub">AELION audits your operation, finds where AI converts more customers, and builds the infrastructure — with ROI calculated on your real numbers, not promises. You own everything.</p>
+  <p class="sub" data-i18n="hero_sub">AELION engineers AI-cinematic campaigns, persona talent, and growth infrastructure that turn audiences into revenue. We are not measured in views. We are measured in conversions.</p>
   <div class="cta-row">
-    <a class="btn" href="#agendar" data-i18n="hero_cta1">Free discovery call</a>
-    <a class="btn ghost" href="#servicios" data-i18n="hero_cta2">See the offer</a>
+    <a class="btn" href="#agendar" data-i18n="hero_cta1">Book a discovery call</a>
+    <a class="btn ghost" href="#servicios" data-i18n="hero_cta2">What we do</a>
   </div>
 </div></header>
 
@@ -153,18 +162,29 @@
 
 <section id="problema"><div class="wrap">
   <span class="eyebrow" data-i18n="prob_eyebrow">The problem</span>
-  <h2 data-i18n="prob_h2">Your operation loses customers in places nobody is measuring.</h2>
+  <h2 data-i18n="prob_h2">Beautiful content that never becomes revenue.</h2>
   <div class="prob">
-    <div><span class="n">01</span><h3 data-i18n="prob1_h">Leads left waiting</h3><p data-i18n="prob1_p">Every inquiry that waits hours is a sale walking to the competitor who answered in minutes.</p></div>
-    <div><span class="n">02</span><h3 data-i18n="prob2_h">Hours lost to repeatable work</h3><p data-i18n="prob2_p">Your team spends its talent on follow-ups, scheduling, and reports a system would run without getting tired.</p></div>
-    <div><span class="n">03</span><h3 data-i18n="prob3_h">Decisions without data</h3><p data-i18n="prob3_p">Without measurement, every improvement is a bet. With infrastructure, every peso invested is traced to its return.</p></div>
+    <div><span class="n">01</span><h3 data-i18n="prob1_h">Views without conversions</h3><p data-i18n="prob1_p">Agencies sell reach and impressions. Nobody signs their name next to bookings, inquiries, or closed sales.</p></div>
+    <div><span class="n">02</span><h3 data-i18n="prob2_h">Production that can't keep pace</h3><p data-i18n="prob2_p">Premium content at traditional cost and speed means one campaign a quarter — while the algorithm demands one a day.</p></div>
+    <div><span class="n">03</span><h3 data-i18n="prob3_h">No accountability</h3><p data-i18n="prob3_p">Without attribution from content to revenue, every marketing peso is a leap of faith. We put a dashboard behind every promise.</p></div>
   </div>
 </div></section>
 
+<section id="servicios"><div class="wrap">
+  <span class="eyebrow" data-i18n="svc_eyebrow">What we do</span>
+  <h2 data-i18n="svc_h2">Three ways we turn attention into revenue.</h2>
+  <div class="tracks">
+    <div class="track"><span class="num">01</span><div><h3 data-i18n="t1_h">Growth Campaigns</h3><span class="tag" data-i18n="t1_t">AELION Studios</span></div><p data-i18n="t1_d">AI-cinematic campaigns and persona talent engineered to convert — premiere-grade film craft at software speed, built on viral mechanics and measured against your funnel, not your follower count.</p></div>
+    <div class="track"><span class="num">02</span><div><h3 data-i18n="t2_h">Growth Infrastructure</h3><span class="tag" data-i18n="t2_t">Install &amp; operate</span></div><p data-i18n="t2_d">The audience-to-revenue machine installed inside your operation in 10–14 days — lead capture, follow-up, booking, and a results dashboard. You own all of it: your servers, your keys, your data.</p></div>
+    <div class="track"><span class="num">03</span><div><h3 data-i18n="t3_h">Fractional CAIO</h3><span class="tag" data-i18n="t3_t">Executive AI leadership</span></div><p data-i18n="t3_d">A chief AI officer's judgment without the executive hire — strategy, vendor calls, and an AI roadmap your team actually executes, reviewed monthly against revenue.</p></div>
+  </div>
+  <p class="diagnostic" data-i18n-html="diag">Every engagement starts the same way: <b>a paid diagnostic.</b> Eight growth variables, your real numbers, quantified ROI — so the first thing you buy from us is clarity, not a promise.</p>
+</div></section>
+
 <section id="metodologia"><div class="wrap">
-  <span class="eyebrow" data-i18n="meth_eyebrow">Methodology — Growth Scanner</span>
+  <span class="eyebrow" data-i18n="meth_eyebrow">Method — Growth Scanner</span>
   <h2 data-i18n="meth_h2">Eight variables. One diagnostic. Zero guesswork.</h2>
-  <p class="lede" data-i18n="meth_lede">The AI Consulting engagement maps your entire business against the eight variables that determine growth, and ranks every opportunity by impact against effort.</p>
+  <p class="lede" data-i18n="meth_lede">The diagnostic maps your entire business against the eight variables that determine growth, and ranks every opportunity by impact against effort. It is how every AELION engagement begins.</p>
   <div class="vars">
     <div class="var"><b data-i18n="v1">Offer</b><span data-i18n="v1s">What you sell and how it lands</span></div>
     <div class="var"><b data-i18n="v2">Lead flow</b><span data-i18n="v2s">How they arrive, how many are lost</span></div>
@@ -177,21 +197,21 @@
   </div>
 </div></section>
 
-<section id="servicios"><div class="wrap">
-  <span class="eyebrow" data-i18n="svc_eyebrow">Services</span>
-  <h2 data-i18n="svc_h2">A ladder, not a bundle.</h2>
-  <div class="tiers">
-    <div class="tier"><span class="num">01</span><h3 data-i18n="t1_h">Discovery call</h3><span class="price" data-i18n="t1_p">Free · 30 min</span><p data-i18n="t1_d">We qualify the case and surface 2–3 pain points. No commitment.</p></div>
-    <div class="tier star"><span class="num">02</span><h3 data-i18n="t2_h">AI Consulting</h3><span class="price">$15,000 MXN</span><p data-i18n="t2_d">Star product. 8-variable audit + opportunity matrix + ROI projection on your numbers + implementation roadmap. 50% credited toward your build.</p></div>
-    <div class="tier"><span class="num">03</span><h3 data-i18n="t3_h">Growth infrastructure</h3><span class="price">$35,000–150,000 MXN</span><p data-i18n="t3_d">Built and installed in 10–14 days. Runs on your servers, with your keys. If AELION disappears, everything keeps running.</p></div>
-    <div class="tier"><span class="num">04</span><h3 data-i18n="t4_h">Maintenance &amp; optimization</h3><span class="price">$5,000–15,000 MXN/mo</span><p data-i18n="t4_d">Monitoring, fine-tuning, and weekly reports. Optional and cancelable — you keep everything.</p></div>
+<section id="niches"><div class="wrap">
+  <span class="eyebrow" data-i18n="niche_eyebrow">Who we work with</span>
+  <h2 data-i18n="niche_h2">Built for brands that sell desire.</h2>
+  <div class="niches">
+    <div class="niche"><span class="n">01</span><h3 data-i18n="n1_h">Luxury Tourism</h3><p data-i18n="n1_p">Hotels, resorts, and experience brands whose next guest decides from a screen long before they decide from a lobby.</p></div>
+    <div class="niche"><span class="n">02</span><h3 data-i18n="n2_h">Adventure Travel</h3><p data-i18n="n2_p">Operators losing 20–25% of every booking to marketplaces — who need their own audience and their own funnel.</p></div>
+    <div class="niche"><span class="n">03</span><h3 data-i18n="n3_h">Luxury Real Estate</h3><p data-i18n="n3_p">Developments whose buyers spend fewer than 90 days a year in any home — they buy off film, not site visits.</p></div>
   </div>
+  <p class="overlay-note" data-i18n="niche_note">Across all three: sustainability storytelling that survives scrutiny — because more than half of affluent buyers don't trust environmental claims, and the ones who check are the ones who spend.</p>
 </div></section>
 
 <section id="trabajo"><div class="wrap">
   <span class="eyebrow" data-i18n="work_eyebrow">Track record</span>
   <h2 data-i18n="work_h2">A decade delivering for the most demanding brands in the world.</h2>
-  <p class="lede" data-i18n="work_lede">Before building AI systems, Antonio Campa spent 10 years as an assistant director: coordinating operations of dozens of people to deliver on time, no excuses. That discipline is what AELION installs in your business.</p>
+  <p class="lede" data-i18n="work_lede">Before building AI systems, Antonio Campa spent 10 years as an assistant director: coordinating operations of dozens of people to deliver on time, no excuses. That discipline runs every AELION campaign and install.</p>
   <div class="work">
     <div class="job"><time>2019</time><b>Apple — iPhone</b><span data-i18n="job_2ad">Commercial production · 2nd AD</span></div>
     <div class="job"><time>2019</time><b>Palacio de Hierro</b><span data-i18n="job_1ad_1">Commercial production · 1st AD</span></div>
@@ -207,10 +227,10 @@
   <span class="eyebrow" data-i18n="faq_eyebrow">FAQ</span>
   <h2 data-i18n="faq_h2">What every owner asks before starting.</h2>
   <div style="margin-top:40px">
-    <details><summary data-i18n="q1">What happens if I cancel maintenance?</summary><p data-i18n="a1">Everything keeps running. The systems live on your server, with your API keys and your data. Canceling ends the ongoing optimization and priority support — never the infrastructure.</p></details>
-    <details><summary data-i18n="q2">Why charge for the consulting instead of giving it away?</summary><p data-i18n="a2">Because a serious diagnostic takes serious work: full operations mapping, an 8-variable analysis, and ROI on your real numbers. And 50% is credited toward your build if you proceed.</p></details>
-    <details><summary data-i18n="q3">Does it work for my industry?</summary><p data-i18n="a3">The methodology is framework-based, not template-based — it applies to any business whose operations can be mapped. For several industries, templated solutions already accelerate the build.</p></details>
-    <details><summary data-i18n="q4">What does it cost to operate the systems?</summary><p data-i18n="a4">Infrastructure costs (hosting and APIs, typically $1,275–3,536 MXN/mo) are paid by you directly to the providers. AELION doesn't resell or mark up your infrastructure.</p></details>
+    <details><summary data-i18n="q1">How do you measure success?</summary><p data-i18n="a1">Conversions — inquiries, bookings, closed revenue — tracked on a client-facing dashboard from day one. Views and followers are instruments, never the score.</p></details>
+    <details><summary data-i18n="q2">Is the content labeled as AI?</summary><p data-i18n="a2">Yes, wherever platform policy requires it — and the data shows disclosure doesn't suppress performance; low-quality content does. Our persona talent is AI-transparent by design. What converts is craft and story.</p></details>
+    <details><summary data-i18n="q3">What happens if we part ways?</summary><p data-i18n="a3">Everything keeps running. Infrastructure lives on your servers, with your API keys and your data. You lose the ongoing optimization — never the machine.</p></details>
+    <details><summary data-i18n="q4">Why is the diagnostic paid?</summary><p data-i18n="a4">Because a serious diagnostic takes serious work: full operations mapping, an eight-variable analysis, and ROI on your real numbers. It's also credited toward your engagement when you proceed.</p></details>
   </div>
 </div></section>
 
@@ -235,37 +255,42 @@
 <script>
 (function(){
   var ES = {
-    nav_method:"Metodología", nav_services:"Servicios", nav_work:"Trayectoria", nav_faq:"Preguntas", nav_cta:"Agendar",
-    hero_eyebrow:"Consultoría de IA · Infraestructura de Crecimiento · Ciudad de México",
+    nav_what:"Qué hacemos", nav_method:"Método", nav_niches:"Para quién", nav_work:"Trayectoria", nav_faq:"Preguntas", nav_cta:"Agendar",
+    hero_eyebrow:"Estudio de Crecimiento AI-Cinemático · Infraestructura de Crecimiento",
     hero_h1:'Sistemas más inteligentes. <span class="r">Resultados</span> sobrehumanos.',
-    hero_sub:"AELION audita su operación, identifica dónde la IA convierte más clientes y construye la infraestructura — con ROI calculado sobre sus números reales, no promesas. Usted es dueño de todo.",
-    hero_cta1:"Llamada de descubrimiento — gratis", hero_cta2:"Ver la oferta",
+    hero_sub:"AELION diseña campañas AI-cinemáticas, talento de personas digitales e infraestructura de crecimiento que convierten audiencias en ingresos. No nos medimos en vistas. Nos medimos en conversiones.",
+    hero_cta1:"Agendar llamada de descubrimiento", hero_cta2:"Qué hacemos",
     stat1:"años en producción", stat2:"producciones comerciales", stat3:"marcas globales tier-1", stat4:"días de instalación",
-    prob_eyebrow:"El problema", prob_h2:"Su operación pierde clientes en lugares que nadie está midiendo.",
-    prob1_h:"Prospectos sin respuesta", prob1_p:"Cada consulta que espera horas es una venta que se va con el competidor que respondió en minutos.",
-    prob2_h:"Horas en tareas repetibles", prob2_p:"Su equipo gasta su talento en seguimientos, agendas y reportes que un sistema haría sin cansarse.",
-    prob3_h:"Decisiones sin datos", prob3_p:"Sin medición, cada mejora es una apuesta. Con infraestructura, cada peso invertido se rastrea hasta su retorno.",
-    meth_eyebrow:"Metodología — Growth Scanner", meth_h2:"Ocho variables. Un diagnóstico. Cero adivinanzas.",
-    meth_lede:"La Consultoría de IA mapea su negocio completo contra las ocho variables que determinan el crecimiento, y prioriza cada oportunidad por impacto contra esfuerzo.",
+    prob_eyebrow:"El problema", prob_h2:"Contenido hermoso que nunca se convierte en ingresos.",
+    prob1_h:"Vistas sin conversiones", prob1_p:"Las agencias venden alcance e impresiones. Nadie firma junto a las reservas, las consultas o las ventas cerradas.",
+    prob2_h:"Producción que no sigue el ritmo", prob2_p:"Contenido premium a costo y velocidad tradicional significa una campaña por trimestre — cuando el algoritmo exige una por día.",
+    prob3_h:"Sin rendición de cuentas", prob3_p:"Sin atribución del contenido al ingreso, cada peso de marketing es un acto de fe. Nosotros ponemos un dashboard detrás de cada promesa.",
+    svc_eyebrow:"Qué hacemos", svc_h2:"Tres formas de convertir atención en ingresos.",
+    t1_h:"Campañas de Crecimiento", t1_t:"AELION Studios", t1_d:"Campañas AI-cinemáticas y talento de personas digitales diseñados para convertir — factura de cine premium a velocidad de software, construidas sobre mecánica viral y medidas contra su embudo, no contra sus seguidores.",
+    t2_h:"Infraestructura de Crecimiento", t2_t:"Instalación y operación", t2_d:"La máquina de audiencia-a-ingresos instalada dentro de su operación en 10–14 días — captura de prospectos, seguimiento, reservas y un dashboard de resultados. Usted es dueño de todo: sus servidores, sus llaves, sus datos.",
+    t3_h:"CAIO Fraccional", t3_t:"Liderazgo ejecutivo de IA", t3_d:"El criterio de un director de IA sin la contratación ejecutiva — estrategia, decisiones de proveedores y una hoja de ruta que su equipo sí ejecuta, revisada cada mes contra ingresos.",
+    diag:'Todo compromiso comienza igual: <b>un diagnóstico pagado.</b> Ocho variables de crecimiento, sus números reales, ROI cuantificado — lo primero que nos compra es claridad, no una promesa.',
+    meth_eyebrow:"Método — Growth Scanner", meth_h2:"Ocho variables. Un diagnóstico. Cero adivinanzas.",
+    meth_lede:"El diagnóstico mapea su negocio completo contra las ocho variables que determinan el crecimiento y prioriza cada oportunidad por impacto contra esfuerzo. Así comienza todo compromiso con AELION.",
     v1:"Oferta", v1s:"Qué vende y cómo se percibe", v2:"Flujo de prospectos", v2s:"Cómo llegan y cuántos se pierden",
     v3:"Citas", v3s:"Velocidad y tasa de agendado", v4:"Cierre", v4s:"De conversación a cliente",
     v5:"Entrega", v5s:"Cumplimiento y experiencia", v6:"Motor de marketing", v6s:"Qué genera demanda real",
     v7:"Datos e inteligencia", v7s:"Qué se mide y qué no", v8:"Operación y logística", v8s:"Dónde se fuga el tiempo",
-    svc_eyebrow:"Servicios", svc_h2:"Una escalera, no un paquete.",
-    t1_h:"Llamada de descubrimiento", t1_p:"Gratis · 30 min", t1_d:"Calificamos el caso y detectamos 2–3 puntos de dolor. Sin compromiso.",
-    t2_h:"Consultoría de IA", t2_d:"Producto estrella. Auditoría de 8 variables + matriz de oportunidades + proyección de ROI con sus números + hoja de ruta. 50% acreditable a su implementación.",
-    t3_h:"Infraestructura de crecimiento", t3_d:"Construcción e instalación en 10–14 días. Corre en sus servidores, con sus llaves. Si AELION desaparece, todo sigue funcionando.",
-    t4_h:"Mantenimiento y optimización", t4_d:"Monitoreo, ajuste fino y reportes semanales. Opcional y cancelable — usted conserva todo.",
+    niche_eyebrow:"Con quién trabajamos", niche_h2:"Hecho para marcas que venden deseo.",
+    n1_h:"Turismo de Lujo", n1_p:"Hoteles, resorts y marcas de experiencias cuyo próximo huésped decide desde una pantalla mucho antes que desde un lobby.",
+    n2_h:"Turismo de Aventura", n2_p:"Operadores que pierden 20–25% de cada reserva con los marketplaces — y necesitan su propia audiencia y su propio embudo.",
+    n3_h:"Bienes Raíces de Lujo", n3_p:"Desarrollos cuyos compradores pasan menos de 90 días al año en cualquier casa — compran por video, no por visitas.",
+    niche_note:"En los tres: narrativa de sustentabilidad que resiste escrutinio — porque más de la mitad de los compradores afluentes no confía en las declaraciones ambientales, y los que verifican son los que gastan.",
     work_eyebrow:"Trayectoria", work_h2:"Una década entregando para las marcas más exigentes del mundo.",
-    work_lede:"Antes de construir sistemas de IA, Antonio Campa pasó 10 años como asistente de dirección: coordinar operaciones de decenas de personas para que entreguen a tiempo, sin excusas. Esa disciplina es la que AELION instala en su empresa.",
+    work_lede:"Antes de construir sistemas de IA, Antonio Campa pasó 10 años como asistente de dirección: coordinar operaciones de decenas de personas para que entreguen a tiempo, sin excusas. Esa disciplina corre en cada campaña e instalación de AELION.",
     job_2ad:"Producción comercial · 2nd AD", job_1ad_1:"Producción comercial · 1st AD", job_1ad_2:"Producción comercial · 1st AD",
     job_1ad_3:"Producción comercial · 1st AD", job_1ad_4:"Producción comercial · 1st AD", job_more:"+140 producciones más",
     work_note:"Formación en Gestión Turística. Trabajo de cámara para Hotel Xcaret, Ondalinda y Fashion Week Mercedes-Benz México.",
     faq_eyebrow:"Preguntas frecuentes", faq_h2:"Lo que todo dueño pregunta antes de empezar.",
-    q1:"¿Qué pasa si cancelo el mantenimiento?", a1:"Todo sigue funcionando. Los sistemas corren en su servidor, con sus llaves de API y sus datos. Al cancelar pierde la optimización continua y el soporte prioritario — nunca la infraestructura.",
-    q2:"¿Por qué cobrar la consultoría en lugar de regalarla?", a2:"Porque un diagnóstico serio toma trabajo serio: mapeo completo de operaciones, análisis de 8 variables y ROI con sus números reales. Además, el 50% se acredita a su implementación si decide construir.",
-    q3:"¿Funciona para mi industria?", a3:"La metodología es de frameworks, no de plantillas — aplica a cualquier negocio con operaciones que se puedan mapear. Para varias industrias ya existen soluciones templadas que aceleran la implementación.",
-    q4:"¿Cuánto cuesta operar los sistemas?", a4:"Los costos de infraestructura (hosting y APIs, típicamente $1,275–3,536 MXN/mes) los paga usted directamente a los proveedores. AELION no revende ni margina su infraestructura.",
+    q1:"¿Cómo miden el éxito?", a1:"Conversiones — consultas, reservas, ingresos cerrados — rastreadas en un dashboard visible para el cliente desde el día uno. Las vistas y los seguidores son instrumentos, nunca el marcador.",
+    q2:"¿El contenido se etiqueta como IA?", a2:"Sí, donde la política de la plataforma lo requiere — y los datos muestran que la divulgación no suprime el rendimiento; el contenido de baja calidad sí. Nuestro talento digital es AI-transparente por diseño. Lo que convierte es el oficio y la historia.",
+    q3:"¿Qué pasa si nos separamos?", a3:"Todo sigue funcionando. La infraestructura vive en sus servidores, con sus llaves de API y sus datos. Pierde la optimización continua — nunca la máquina.",
+    q4:"¿Por qué el diagnóstico es pagado?", a4:"Porque un diagnóstico serio toma trabajo serio: mapeo completo de operaciones, análisis de ocho variables y ROI con sus números reales. Además se acredita a su compromiso cuando decide avanzar.",
     cta_eyebrow:"Siguiente paso", cta_h2:"Treinta minutos. Cero costo. Claridad total.",
     cta_lede:"Agende su llamada de descubrimiento — o escríbanos directo por WhatsApp.",
     cta_wa:"WhatsApp directo", foot_left:"AELION © 2026 · Ciudad de México"
