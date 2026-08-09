@@ -1,2356 +1,304 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AELION — Infraestructura de Crecimiento con IA para tu Negocio</title>
-<meta name="description" content="Consultoría de IA que diagnostica tu negocio completo, identifica las fugas de crecimiento y diseña la infraestructura exacta para escalar. Metodología propietaria para cualquier industria.">
+<title>AELION — AI Consulting &amp; Growth Infrastructure</title>
+<meta name="description" content="AELION audits your operation with AI, quantifies ROI with your real numbers, and builds growth infrastructure you fully own. AI Consulting — $15,000 MXN.">
 <link rel="canonical" href="https://aelion.ai/">
 <meta property="og:url" content="https://aelion.ai/">
-<meta property="og:title" content="AELION — Infraestructura de Crecimiento con IA">
-<meta property="og:description" content="Consultoría de IA que diagnostica tu negocio, encuentra lo que frena tu crecimiento y diseña la infraestructura para escalar. Metodología propietaria para cualquier industria.">
+<meta property="og:title" content="AELION — Smarter systems. Super human results.">
+<meta property="og:description" content="AI consulting and growth infrastructure. Quantified ROI, full client ownership.">
 <meta property="og:image" content="https://aelion.ai/assets/og-image-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="fb:app_id" content="1982862193114377">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_MX">
-<meta property="og:locale:alternate" content="en_US">
-<meta name="theme-color" content="#0a0e1a">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="theme-color" content="#0c0b0b">
 <meta name="geo.region" content="MX-CMX">
 <meta name="geo.placename" content="Ciudad de Mexico">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AELION — Infraestructura de Crecimiento con IA">
-<meta name="twitter:description" content="Consultoría de IA que diagnostica tu negocio, encuentra lo que frena tu crecimiento y diseña la infraestructura para escalar.">
+<meta name="twitter:title" content="AELION — Smarter systems. Super human results.">
+<meta name="twitter:description" content="AI consulting and growth infrastructure. Quantified ROI, full client ownership.">
 <meta name="twitter:image" content="https://aelion.ai/assets/og-image-v2.jpg">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://unpkg.com" rel="preconnect"/>
 <link href="https://assets.calendly.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<link href="/assets/tailwind.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
-    /* ===== GLOBAL ===== */
-    *, *::before, *::after {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
+  :root{
+    --carbon:#0c0b0b; --coal:#121110; --bone:#f3f1ee; --smoke:#a5a29b; --blade:#e0261e; --line:#26241f;
+  }
+  *{margin:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+  body{background:var(--carbon);color:var(--bone);font-family:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--smoke)}
 
-    /* ===== CARRIED FORWARD ===== */
-    .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255,255,255,0.06);
-        transition: border-color 0.3s ease, background 0.3s ease, transform 0.5s ease-out;
-    }
-    .glass-card:hover {
-        border-color: rgba(255,255,255,0.12);
-        background: rgba(255, 255, 255, 0.04);
-    }
-    .grid-bg { position: relative; }
-    .grid-bg::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(to right, rgba(77, 166, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(77, 166, 255, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
-        mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
-        -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
-        pointer-events: none;
-        z-index: 0;
-    }
-    .glow-button {
-        box-shadow: 0 0 20px rgba(77, 166, 255, 0.4);
-        transition: all 0.3s ease;
-    }
-    .glow-button:hover {
-        box-shadow: 0 0 30px rgba(77, 166, 255, 0.6);
-        transform: translateY(-2px);
-    }
-    .gradient-text {
-        background: linear-gradient(135deg, #fff 0%, #4da6ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-    .counter { font-variant-numeric: tabular-nums; }
-    #resultados .counter { font-size: clamp(1rem, 2.5vw, 2.25rem); line-height: 1.2; }
-    @keyframes float-in {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .float-in { animation: float-in 0.6s ease-out forwards; opacity: 0; }
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,11,11,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-size:14px;letter-spacing:.5em;font-weight:600;text-decoration:none}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{font-size:13px;color:var(--smoke);text-decoration:none;letter-spacing:.04em}
+  .nav-links a:hover{color:var(--bone)}
+  .btn{display:inline-block;background:var(--blade);color:#fff;text-decoration:none;padding:12px 26px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:1px solid var(--blade);transition:background .2s;cursor:pointer}
+  .btn:hover{background:#c11f18}
+  .btn.ghost{background:transparent;color:var(--bone);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--smoke);background:transparent}
+  .lang{background:transparent;border:1px solid var(--line);color:var(--smoke);font-family:inherit;font-size:12px;letter-spacing:.1em;padding:7px 12px;cursor:pointer}
+  .lang:hover{color:var(--bone);border-color:var(--smoke)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}}
 
-    @keyframes orb-drift {
-        0%, 100% { transform: translate(0, var(--parallax-y, 0px)) scale(1); }
-        25% { transform: translate(60px, calc(-40px + var(--parallax-y, 0px))) scale(1.1); }
-        50% { transform: translate(-30px, calc(50px + var(--parallax-y, 0px))) scale(0.95); }
-        75% { transform: translate(-60px, calc(-20px + var(--parallax-y, 0px))) scale(1.05); }
-    }
-    .orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        pointer-events: none;
-        animation: orb-drift 20s ease-in-out infinite;
-        will-change: transform;
-        --parallax-y: 0px;
-    }
-    .orb-1 { width: 500px; height: 500px; background: rgba(77,166,255,0.18); top: -100px; left: -100px; }
-    .orb-2 { width: 400px; height: 400px; background: rgba(99,102,241,0.12); bottom: -80px; right: -80px; animation-delay: -7s; animation-duration: 25s; }
-    .orb-3 { width: 300px; height: 300px; background: rgba(77,166,255,0.10); top: 40%; left: 60%; animation-delay: -13s; animation-duration: 30s; }
+  header{padding:180px 0 90px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;left:0;top:64px;bottom:0;width:4px;background:var(--blade)}
+  h1{font-size:clamp(42px,7.2vw,96px);font-weight:600;letter-spacing:-.025em;line-height:1.02;margin:18px 0 26px;max-width:15ch;text-wrap:balance}
+  h1 .r{color:var(--blade)}
+  .sub{font-size:17px;color:var(--smoke);max-width:56ch;margin-bottom:40px}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap}
 
-    @keyframes hero-text-reveal {
-        from { opacity: 0; transform: translateY(30px); filter: blur(10px); }
-        to { opacity: 1; transform: translateY(0); filter: blur(0); }
-    }
-    .hero-reveal { opacity: 0; animation: hero-text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .hero-reveal-1 { animation-delay: 0.1s; }
-    .hero-reveal-2 { animation-delay: 0.25s; }
-    .hero-reveal-3 { animation-delay: 0.4s; }
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+  .stat{padding:34px 28px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat b{display:block;font-size:clamp(28px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+  @media(max-width:720px){.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}}
 
-    .reveal-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal-scale { opacity: 0; transform: scale(0.95); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .revealed { opacity: 1 !important; transform: translateY(0) translateX(0) scale(1) !important; }
+  section{padding:96px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(28px,4vw,46px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:14px 0 18px;max-width:24ch;text-wrap:balance}
+  .lede{font-size:15.5px;color:var(--smoke);max-width:60ch}
 
-    .nav-link { position: relative; }
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: #4da6ff;
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-        border-radius: 1px;
-        box-shadow: 0 0 6px rgba(77,166,255,0.5);
-    }
-    .nav-link.active::after { width: 100%; }
+  .prob{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:52px}
+  .prob h3{font-size:16px;font-weight:600;margin-bottom:8px}
+  .prob p{font-size:14px;color:var(--smoke)}
+  .prob .n{font-size:12px;color:var(--blade);letter-spacing:.18em;display:block;margin-bottom:14px}
+  @media(max-width:720px){.prob{grid-template-columns:1fr}}
 
-    details .faq-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    details[open] .faq-content {
-        max-height: 400px;
-        padding-top: 1rem;
-        padding-bottom: 1.5rem;
-    }
+  .vars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
+  .var{background:var(--coal);padding:22px 20px}
+  .var b{font-size:14px;font-weight:600;display:block;margin-bottom:4px}
+  .var span{font-size:12.5px;color:var(--smoke)}
+  @media(max-width:720px){.vars{grid-template-columns:1fr 1fr}}
 
-    @keyframes aurora {
-        0%, 100% { background-position: 0% 50%; opacity: 0.3; }
-        25% { opacity: 0.5; }
-        50% { background-position: 100% 50%; opacity: 0.3; }
-        75% { opacity: 0.45; }
-    }
-    .aurora-bg {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(125deg, rgba(77,166,255,0) 0%, rgba(77,166,255,0.08) 20%, rgba(99,102,241,0.06) 40%, rgba(77,166,255,0) 50%, rgba(59,130,246,0.08) 65%, rgba(139,92,246,0.04) 80%, rgba(77,166,255,0) 100%);
-        background-size: 200% 200%;
-        animation: aurora 15s ease-in-out infinite;
-        pointer-events: none;
-        mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
-        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
-    }
+  .tiers{margin-top:52px;border-top:1px solid var(--line)}
+  .tier{display:grid;grid-template-columns:70px 1.2fr .6fr 1.6fr;gap:24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
+  .tier .num{font-size:13px;color:var(--blade);letter-spacing:.14em}
+  .tier h3{font-size:19px;font-weight:600}
+  .tier .price{font-size:15px;font-variant-numeric:tabular-nums}
+  .tier p{font-size:13.5px;color:var(--smoke)}
+  .tier.star{background:var(--coal);border-left:4px solid var(--blade);padding-left:22px;margin-left:-26px}
+  @media(max-width:860px){.tier{grid-template-columns:50px 1fr;gap:8px 18px}.tier .price{grid-column:2}.tier p{grid-column:2}.tier.star{margin-left:0;padding-left:18px}}
 
-    .cursor-glow {
-        position: fixed;
-        width: 600px;
-        height: 600px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(77,166,255,0.06) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        transition: opacity 0.3s ease;
-        will-change: transform;
-    }
+  .work{margin-top:52px}
+  .job{display:grid;grid-template-columns:110px 1fr auto;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .job time{font-size:13px;color:var(--smoke);font-variant-numeric:tabular-nums}
+  .job b{font-size:17px;font-weight:600}
+  .job span{font-size:13px;color:var(--smoke)}
+  .work-note{margin-top:22px;font-size:13.5px;color:var(--smoke)}
+  @media(max-width:640px){.job{grid-template-columns:80px 1fr}.job span{grid-column:2}}
 
-    /* Grain texture overlay */
-    body::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        pointer-events: none;
-        opacity: 0.035;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        background-repeat: repeat;
-        background-size: 256px 256px;
-    }
+  details{border-bottom:1px solid var(--line);padding:22px 0}
+  summary{font-size:16.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::after{content:"+";color:var(--blade);font-weight:400;font-size:20px}
+  details[open] summary::after{content:"—"}
+  details p{margin-top:12px;font-size:14px;color:var(--smoke);max-width:64ch}
 
-    .section-divider {
-        height: 1px;
-        background: rgba(255,255,255,0.06);
-        margin: 0 auto;
-        max-width: 90%;
-    }
+  .final{padding:110px 0;text-align:left;border-bottom:none}
+  .final h2{max-width:20ch}
+  .cal{margin-top:44px;border:1px solid var(--line)}
 
-    .glow-stat { text-shadow: 0 0 20px rgba(77,166,255,0.4), 0 0 40px rgba(77,166,255,0.2); }
-
-    @keyframes shimmer {
-        0% { background-position: -200% center; }
-        100% { background-position: 200% center; }
-    }
-    .shimmer-btn {
-        background: linear-gradient(90deg, #4da6ff 0%, #6366f1 25%, #4da6ff 50%, #3b82f6 75%, #4da6ff 100%);
-        background-size: 200% auto;
-        animation: shimmer 4s linear infinite;
-    }
-    .shimmer-btn:hover { animation-duration: 2s; }
-
-    /* ===== NEW V2 CSS ===== */
-    .section-label {
-        font-family: 'Inter', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: rgba(77,166,255,0.6);
-        margin-bottom: 1rem;
-    }
-    .tracking-tight-v2 { letter-spacing: -0.04em; }
-    .font-heading, h1, h2 { line-height: 1.2 !important; }
-    .section-pad { padding-top: 240px; padding-bottom: 240px; }
-    @media (max-width: 768px) { .section-pad { padding-top: 100px; padding-bottom: 100px; } }
-
-    .text-thin { font-weight: 300; opacity: 0.6; }
-
-    .fade-section {
-        opacity: 0;
-        transform: translateY(60px);
-        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .fade-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .marquee-container {
-        position: relative;
-        overflow: hidden;
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-    .marquee-track {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        white-space: nowrap;
-        width: max-content;
-    }
-
-    .hero-word {
-        display: inline-block;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: word-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        background: linear-gradient(135deg, #fff 0%, #4da6ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    @keyframes word-reveal {
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .floating-whatsapp {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        width: 56px;
-        height: 56px;
-        background: #25D366;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 40;
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-        opacity: 0;
-        transform: scale(0.8);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        color: white;
-    }
-    .floating-whatsapp.visible { opacity: 1; transform: scale(1); }
-    .floating-whatsapp:hover { transform: scale(1.1); }
-    .floating-whatsapp::after {
-        content: '';
-        position: absolute;
-        inset: -4px;
-        border-radius: 50%;
-        border: 2px solid rgba(37, 211, 102, 0.4);
-        animation: wa-pulse 2s ease-in-out infinite;
-    }
-    @keyframes wa-pulse {
-        0%, 100% { transform: scale(1); opacity: 0.4; }
-        50% { transform: scale(1.15); opacity: 0; }
-    }
-
-    /* ===== PREMIUM ANIMATIONS V3 ===== */
-
-    /* 2. Staggered Card Cascade */
-    .cascade-card {
-        opacity: 0;
-        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-        transition-delay: calc(var(--cascade-i, 0) * 0.12s);
-    }
-    .cascade-card:nth-child(odd) { transform: translateX(-80px); }
-    .cascade-card:nth-child(even) { transform: translateX(80px); }
-    .cascade-card.is-visible { opacity: 1; transform: translateX(0); }
-
-    /* 3. Section Heading Clip-Path Reveal */
-    .heading-reveal {
-        clip-path: inset(0 100% 0 0);
-        transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .heading-reveal.is-visible { clip-path: inset(0 0 0 0); }
-
-    /* 4. Section Label — Clean Centered */
-    .section-label {
-        display: block;
-        text-align: center;
-    }
-
-    /* 5. Comparison Section Choreography */
-    .compare-left {
-        opacity: 0;
-        transform: translateX(-150px);
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-        transition-delay: calc(var(--row-i, 0) * 0.15s);
-    }
-    .compare-right {
-        opacity: 0;
-        transform: translateX(150px);
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-        transition-delay: calc(var(--row-i, 0) * 0.15s);
-    }
-    .compare-left.is-visible, .compare-right.is-visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* 6. Animated Gradient on Hero Text */
-    @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    .hero-word {
-        background-size: 200% 200%;
-        animation: word-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-                   gradient-shift 6s ease infinite 1s;
-    }
-
-    /* 7. 3D Tilt on Glass Cards */
-    .glass-card { transition: all 0.3s ease, transform 0.5s ease-out; }
-    .glass-card .tilt-glow {
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        z-index: 1;
-    }
-    .glass-card:hover .tilt-glow { opacity: 1; }
-
-    /* 8. Scroll Progress Bar */
-    .scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #4da6ff, #7c3aed);
-        transform-origin: left;
-        transform: scaleX(0);
-        z-index: 9999;
-        pointer-events: none;
-        will-change: transform;
-    }
-
-    /* 9. Counter Reveal */
-    .counter[data-target] { opacity: 0; }
-    .counter[data-target].counter-active { opacity: 1; transition: opacity 0.4s ease-out; }
-
-    /* 10. Magnetic Button Effect */
-    .shimmer-btn, .glow-button { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-
-    @keyframes electrify {
-        0%, 100% { box-shadow: 0 0 25px rgba(77,166,255,0.5), 0 0 8px rgba(77,166,255,0.3), 0 0 60px rgba(77,166,255,0.15); }
-        25% { box-shadow: 0 0 35px rgba(77,166,255,0.7), 0 0 15px rgba(77,166,255,0.4), 0 0 80px rgba(77,166,255,0.2), inset 0 0 8px rgba(77,166,255,0.15); }
-        50% { box-shadow: 0 0 22px rgba(77,166,255,0.45), 0 0 6px rgba(77,166,255,0.25), 0 0 50px rgba(77,166,255,0.1); }
-        75% { box-shadow: 0 0 40px rgba(77,166,255,0.65), 0 0 18px rgba(77,166,255,0.35), 0 0 90px rgba(77,166,255,0.25), inset 0 0 10px rgba(77,166,255,0.2); }
-    }
-    #metodo .glow-button {
-        animation: electrify 2.5s ease-in-out infinite;
-        animation-delay: calc(var(--electrify-i, 0) * 0.4s);
-    }
-
-    /* Character-by-character stagger animation */
-    @keyframes char-reveal {
-        from { opacity: 0; transform: translateY(14px) rotateX(-40deg); filter: blur(4px); }
-        to { opacity: 1; transform: translateY(0) rotateX(0deg); filter: blur(0); }
-    }
-    .char-stagger {
-        display: inline-block;
-        opacity: 0;
-        animation: char-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        transform-origin: bottom;
-    }
-    .char-stagger-space { display: inline-block; width: 0.3em; }
-
-    /* Scroll-responsive fade-up for subtexts */
-    .fade-up-scroll {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .fade-up-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Scroll-triggered Radial Gradient Bloom */
-    .gradient-bloom {
-        position: absolute;
-        width: 700px;
-        height: 700px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(77,166,255,0.12) 0%, rgba(99,102,241,0.06) 40%, transparent 70%);
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), transform 1.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: scale(0.6);
-        z-index: 0;
-    }
-    .gradient-bloom.is-visible {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    /* Scroll-driven Text Blur Sequence */
-    .blur-sequence-container {
-        height: 300vh;
-        position: relative;
-        background: #0a0e1a;
-    }
-    .blur-sequence-sticky {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 2rem;
-    }
-    .blur-sequence-text {
-        font-family: 'DM Serif Display', serif;
-        font-size: clamp(1.5rem, 4vw, 3rem);
-        color: white;
-        text-align: center;
-        max-width: 800px;
-        position: absolute;
-        filter: blur(12px);
-        opacity: 0;
-        transition: filter 0.6s ease-out, opacity 0.6s ease-out;
-        line-height: 1.3;
-    }
-    .blur-sequence-text.blur-active {
-        filter: blur(0);
-        opacity: 1;
-        text-shadow: 0 0 40px rgba(77,166,255,0.3), 0 0 80px rgba(77,166,255,0.15);
-    }
-
-    /* Accessibility: Respect prefers-reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-        .scroll-progress { display: none; }
-    }
+  footer{border-top:1px solid var(--line);padding:36px 0;font-size:13px;color:var(--smoke)}
+  footer a{color:var(--smoke);text-decoration:none}
+  footer a:hover{color:var(--bone)}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "AELION",
-      "url": "https://aelion.ai",
-      "logo": "https://aelion.ai/assets/og-image-v2.jpg",
-      "description": "Consultoría de IA e Infraestructura de Crecimiento para negocios en México",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ciudad de México",
-        "addressCountry": "MX"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "hola@aelion.ai"
-      }
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "AELION — Consultoría de IA",
-      "url": "https://aelion.ai",
-      "priceRange": "$15,000 - $150,000 MXN",
-      "areaServed": "MX",
-      "serviceType": "AI Consulting & Growth Infrastructure"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Cuánto cuesta la consultoría de IA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La Consultoría de IA tiene un precio de $15,000 MXN. La Infraestructura de Crecimiento va de $35,000 a $150,000 MXN según la complejidad. El 50% de la consultoría se acredita si avanzas a construcción."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Funciona para mi industria?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El Growth Scanner funciona para cualquier industria — analizamos tu operación, identificamos cuellos de botella y calculamos tu ROI con números reales. La metodología es universal porque se adapta a tu negocio, no al revés."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué pasa con mis datos y mi código?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Todo corre en tus propias cuentas — tu n8n, tu OpenAI, tu WhatsApp. Si cancelas, todo sigue funcionando. La infraestructura cuesta entre $1,275-3,536 MXN/mes y la pagas directo a los proveedores, no a nosotros."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cómo empezamos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Agenda una llamada de descubrimiento gratuita (30 min). Si hay fit, avanzamos a la Consultoría de IA donde mapeamos tu operación completa y calculamos tu ROI. De ahí, construimos tu infraestructura."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
 </head>
-<body class="font-body font-light bg-background-dark text-white/90 selection:bg-primary selection:text-white">
-<div class="scroll-progress" id="scroll-progress"></div>
-<div class="cursor-glow hidden md:block" id="cursor-glow"></div>
+<body>
 
-<!-- ============ NAV ============ -->
-<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="#hero" class="flex items-center space-x-2.5 group">
-        <img alt="AELION - Consultoría de IA e Infraestructura de Crecimiento" class="h-9 w-9 rounded-lg object-cover" src="assets/logo-screenshot.png"/>
-        <span class="text-xl tracking-[0.4em] uppercase text-white/90" style="font-family:'Rajdhani',sans-serif;font-weight:600">AELION</span>
-    </a>
-    <div class="hidden md:flex items-center space-x-8 text-sm font-medium opacity-80">
-        <a class="nav-link hover:text-primary transition-colors" href="#problema" data-i18n="nav.problem">Problema</a>
-        <a class="nav-link hover:text-primary transition-colors" href="#metodologia" data-i18n="nav.methodology">Metodología</a>
-        <a class="nav-link hover:text-primary transition-colors" href="#metodo" data-i18n="nav.method">Proceso</a>
-        <a class="nav-link hover:text-primary transition-colors" href="#servicios" data-i18n="nav.services">Servicios</a>
-        <a class="nav-link hover:text-primary transition-colors" href="#inversion" data-i18n="nav.pricing">Inversión</a>
-    </div>
-    <div class="flex items-center space-x-4">
-        <div class="hidden sm:flex items-center text-sm font-medium space-x-1">
-            <button id="lang-es" class="lang-btn px-3 py-2 rounded transition-colors text-primary border-b-2 border-primary" onclick="setLang('es')">ES</button>
-            <span class="opacity-30">|</span>
-            <button id="lang-en" class="lang-btn px-3 py-2 rounded transition-colors opacity-50 hover:opacity-80" onclick="setLang('en')">EN</button>
-        </div>
-        <a class="hidden sm:inline-flex bg-primary hover:brightness-110 text-white px-5 py-2.5 rounded font-semibold text-sm transition-all" href="#cta" data-i18n="nav.cta">Agenda Tu Llamada</a>
-        <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5" aria-label="Menú">
-            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-top"></span>
-            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-mid"></span>
-            <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="ham-bot"></span>
-        </button>
-    </div>
-</div>
-<div id="mobile-menu" class="md:hidden hidden bg-background-dark/95 backdrop-blur-md border-t border-white/10 px-6 py-6 space-y-4">
-    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#problema" data-i18n="nav.problem">Problema</a>
-    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#metodologia" data-i18n="nav.methodology">Metodología</a>
-    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#metodo" data-i18n="nav.method">Proceso</a>
-    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#servicios" data-i18n="nav.services">Servicios</a>
-    <a class="block text-lg font-medium hover:text-primary transition-colors" href="#inversion" data-i18n="nav.pricing">Inversión</a>
-    <div class="flex items-center space-x-3 pt-2">
-        <button class="lang-btn-mobile px-3 py-1.5 rounded text-sm font-bold text-primary border border-primary/30" onclick="setLang('es')">ES</button>
-        <button class="lang-btn-mobile px-3 py-1.5 rounded text-sm font-bold opacity-50" onclick="setLang('en')">EN</button>
-    </div>
-    <a class="block bg-primary text-white px-5 py-3 rounded font-semibold text-center mt-4" href="#cta" data-i18n="nav.cta">Agenda Tu Llamada</a>
-</div>
-</nav>
+<nav><div class="wrap nav-in">
+  <a class="logo" href="#">AELION</a>
+  <div class="nav-links">
+    <a href="#metodologia" data-i18n="nav_method">Methodology</a>
+    <a href="#servicios" data-i18n="nav_services">Services</a>
+    <a href="#trabajo" data-i18n="nav_work">Track record</a>
+    <a href="#preguntas" data-i18n="nav_faq">FAQ</a>
+    <button class="lang" id="langToggle" aria-label="Cambiar idioma / Switch language">ES</button>
+    <a class="btn" href="#agendar" data-i18n="nav_cta">Book a call</a>
+  </div>
+</div></nav>
 
-<!-- ============ HERO ============ -->
-<section class="relative pt-48 pb-32 overflow-hidden grid-bg" id="hero">
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#4da6ff]/15 blur-[150px] rounded-full -z-10"></div>
-<div class="aurora-bg"></div>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-<div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-    <h1 id="hero-h1" class="font-heading text-5xl md:text-7xl mb-8 tracking-tight-v2 gradient-text" data-i18n="hero.h1">
-        Encontramos Lo Que Frena Tu Crecimiento. Y Lo Arreglamos.
-    </h1>
-    <p id="hero-subtitle" class="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto leading-relaxed" data-i18n="hero.subtitle">
-        Consultorías de inteligencia artificial que analizan tu negocio completo, identifican oportunidades invisibles y diseñan la infraestructura exacta para que crezcas — sin importar tu industria.
-    </p>
-    <div class="flex flex-wrap justify-center gap-3 mb-16 hero-reveal hero-reveal-3">
-        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
-            <span class="material-symbols-outlined text-primary text-sm">query_stats</span>
-            <span data-i18n="hero.badge1">Metodología Propietaria</span>
-        </div>
-        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
-            <span class="material-symbols-outlined text-primary text-sm">public</span>
-            <span data-i18n="hero.badge2">Cualquier Industria</span>
-        </div>
-        <div class="bg-[#1e3a5f]/70 border border-primary/30 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 text-white/80">
-            <span class="material-symbols-outlined text-primary text-sm">lock_open</span>
-            <span data-i18n="hero.badge3">Tu Infraestructura</span>
-        </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-        <a href="#cta" class="shimmer-btn text-white px-8 py-5 rounded-lg text-lg font-bold flex items-center space-x-3 w-full md:w-auto justify-center shadow-[0_0_30px_rgba(77,166,255,0.4)] hover:shadow-[0_0_50px_rgba(77,166,255,0.6)] transition-shadow">
-            <span data-i18n="hero.cta1">Agenda Tu Llamada Gratuita</span>
-            <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
-        <a href="#metodo" class="px-8 py-5 rounded text-lg font-medium flex items-center space-x-2 w-full md:w-auto justify-center hover:bg-white/5 transition-colors border border-white/10 hover:border-white/20">
-            <span data-i18n="hero.cta2">Mira Cómo Funciona</span>
-            <span class="material-symbols-outlined">arrow_downward</span>
-        </a>
-    </div>
-</div>
-</section>
+<header><div class="wrap">
+  <span class="eyebrow" data-i18n="hero_eyebrow">AI Consulting · Growth Infrastructure · Mexico City</span>
+  <h1 data-i18n-html="hero_h1">Smarter systems. <span class="r">Super&nbsp;human</span> results.</h1>
+  <p class="sub" data-i18n="hero_sub">AELION audits your operation, finds where AI converts more customers, and builds the infrastructure — with ROI calculated on your real numbers, not promises. You own everything.</p>
+  <div class="cta-row">
+    <a class="btn" href="#agendar" data-i18n="hero_cta1">Free discovery call</a>
+    <a class="btn ghost" href="#servicios" data-i18n="hero_cta2">See the offer</a>
+  </div>
+</div></header>
 
-<!-- ============ TRUST BAR ============ -->
-<section class="py-6 bg-background-dark/50" id="marquee">
-<div class="max-w-7xl mx-auto">
-    <div class="marquee-container mb-4">
-        <div class="marquee-track text-sm font-semibold text-white/50" data-marquee-speed="0.3">
-            <span data-i18n="marquee.s1">Diagnóstico Completo de Tu Negocio</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s2">Metodología Propietaria</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s3">Tu Infraestructura</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s4">Cualquier Industria</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s5">ROI Calculado Con Tus Números</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s1">Diagnóstico Completo de Tu Negocio</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s2">Metodología Propietaria</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s3">Tu Infraestructura</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s4">Cualquier Industria</span><span class="text-primary/40 mx-4">·</span>
-            <span data-i18n="marquee.s5">ROI Calculado Con Tus Números</span><span class="text-primary/40 mx-4">·</span>
-        </div>
-    </div>
-    <div class="marquee-container">
-        <div class="marquee-track" data-marquee-speed="-0.35">
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Claude AI</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Supabase</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Calendly</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Vapi</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">n8n</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Make</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">WhatsApp Business API</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Claude AI</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Supabase</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Calendly</span>
-            <span class="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/50">Vapi</span>
-        </div>
-    </div>
+<div class="stats wrap">
+  <div class="stat"><b>10</b><span data-i18n="stat1">years in production</span></div>
+  <div class="stat"><b>150+</b><span data-i18n="stat2">commercial productions</span></div>
+  <div class="stat"><b>20+</b><span data-i18n="stat3">tier-1 global brands</span></div>
+  <div class="stat"><b>10–14</b><span data-i18n="stat4">day installs</span></div>
 </div>
-</section>
 
-<!-- ============ /01 PROBLEMA ============ -->
-<section class="section-pad bg-background-dark/50" id="problema">
-<div class="max-w-7xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.problema">/01 EL PROBLEMA</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="pain.title">Tu Negocio Tiene Fugas Invisibles. Y Te Están Costando Caro.</h2>
-        <p class="opacity-60 max-w-2xl mx-auto" data-i18n="pain.subtitle">La mayoría de los dueños de negocio no saben exactamente dónde pierden dinero. Estos son los patrones más comunes.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:0">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">trending_down</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c1.title">Prospectos Que Se Enfrían</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c1.desc">Cada hora que tardas en responder, la probabilidad de conversión cae. Tus prospectos no esperan — compran con quien contesta primero.</p>
-        </div>
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:1">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">visibility_off</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c2.title">Operaciones Sin Visibilidad</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c2.desc">No sabes cuánto te cuesta adquirir un cliente, cuántos se pierden en el proceso, ni dónde está el cuello de botella real.</p>
-        </div>
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:2">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">repeat</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c3.title">Procesos Manuales Repetitivos</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c3.desc">Tu equipo gasta horas en tareas que deberían ser automáticas: seguimiento, recordatorios, cotizaciones, reportes. Tiempo que podrían invertir en vender.</p>
-        </div>
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:3">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">person_remove</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c4.title">Clientes Que No Regresan</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c4.desc">Sin un sistema de retención, más de la mitad de tus clientes compran una vez y desaparecen. Adquirir un cliente nuevo cuesta 5x más que retener uno.</p>
-        </div>
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:4">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">receipt_long</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c5.title">Seguimiento Inconsistente</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c5.desc">Cotizaciones que nunca se cierran, leads que se olvidan, oportunidades que mueren en silencio. La venta se pierde en el seguimiento, no en la primera conversación.</p>
-        </div>
-        <div class="glass-card cascade-card p-6 rounded-xl" style="--cascade-i:5">
-            <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#4da6ff]/10 rounded flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">lock</span></div>
-            </div>
-            <p class="text-sm font-bold uppercase tracking-wider opacity-60 mb-2" data-i18n="pain.c6.title">Dependencia de Terceros</p>
-            <p class="opacity-70 text-sm leading-relaxed" data-i18n="pain.c6.desc">Pagas a agencias, plataformas o SaaS que controlan tus datos y tus procesos. Si cancelas, pierdes todo. No eres dueño de tu propia infraestructura.</p>
-        </div>
-    </div>
-    <p class="text-center mt-12 text-xl font-medium text-white/30 italic" data-i18n="pain.bridge">El primer paso es saber exactamente dónde están las fugas.</p>
-</div>
-</section>
+<section id="problema"><div class="wrap">
+  <span class="eyebrow" data-i18n="prob_eyebrow">The problem</span>
+  <h2 data-i18n="prob_h2">Your operation loses customers in places nobody is measuring.</h2>
+  <div class="prob">
+    <div><span class="n">01</span><h3 data-i18n="prob1_h">Leads left waiting</h3><p data-i18n="prob1_p">Every inquiry that waits hours is a sale walking to the competitor who answered in minutes.</p></div>
+    <div><span class="n">02</span><h3 data-i18n="prob2_h">Hours lost to repeatable work</h3><p data-i18n="prob2_p">Your team spends its talent on follow-ups, scheduling, and reports a system would run without getting tired.</p></div>
+    <div><span class="n">03</span><h3 data-i18n="prob3_h">Decisions without data</h3><p data-i18n="prob3_p">Without measurement, every improvement is a bet. With infrastructure, every peso invested is traced to its return.</p></div>
+  </div>
+</div></section>
 
-<!-- ============ /02 METODOLOGÍA ============ -->
-<section class="section-pad relative overflow-hidden" id="metodologia">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/5 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
-<div class="max-w-5xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.metodologia">/02 NUESTRA METODOLOGÍA</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="method.title">No Adivinamos. Diagnosticamos.</h2>
-        <p class="opacity-60 max-w-2xl mx-auto" data-i18n="method.subtitle">Usamos una metodología propietaria que analiza las áreas críticas de tu negocio para encontrar exactamente dónde pierdes crecimiento — y qué construir primero.</p>
-    </div>
-    <div class="glass-card cascade-card rounded-2xl p-8 md:p-12 relative border-primary/20" style="--cascade-i:0">
-        <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30" data-i18n="method.badge">Growth Scanner</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4">
-            <div>
-                <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="method.card.title">Un diagnóstico completo de tu negocio</h3>
-                <p class="opacity-60 text-sm leading-relaxed mb-6" data-i18n="method.card.desc">Nuestra Consultoría de IA usa el Growth Scanner para analizar múltiples dimensiones de tu operación. No te vendemos una solución genérica — encontramos tus cuellos de botella reales y priorizamos por impacto.</p>
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span> <span class="opacity-80" data-i18n="method.f1">Análisis de múltiples áreas operativas</span></li>
-                    <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span> <span class="opacity-80" data-i18n="method.f2">Score cuantificado por área</span></li>
-                    <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span> <span class="opacity-80" data-i18n="method.f3">Matriz de oportunidades priorizada por ROI</span></li>
-                    <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span> <span class="opacity-80" data-i18n="method.f4">Roadmap personalizado de implementación</span></li>
-                    <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span> <span class="opacity-80" data-i18n="method.f5">Proyección de ROI con números de tu negocio</span></li>
-                </ul>
-                <a href="#cta" class="inline-flex items-center gap-2 text-sm text-primary font-bold hover:underline" data-i18n="method.cta">
-                    Agenda Tu Consultoría →
-                </a>
-            </div>
-            <div class="flex items-center justify-center">
-                <!-- Growth Scanner visual representation -->
-                <div class="w-full max-w-xs">
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/60 rounded-full" style="width:35%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">35%</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/70 rounded-full" style="width:55%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">55%</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/50 rounded-full" style="width:20%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">20%</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/80 rounded-full" style="width:72%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">72%</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/65 rounded-full" style="width:45%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">45%</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-full bg-white/5 rounded-full h-3 overflow-hidden"><div class="h-full bg-primary/45 rounded-full" style="width:15%"></div></div>
-                            <span class="text-xs text-white/40 w-8 text-right">15%</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
-                        <div class="text-xs text-white/40 uppercase tracking-widest mb-1" data-i18n="method.score.label">Score General</div>
-                        <div class="text-3xl font-black text-primary">40<span class="text-lg opacity-60">/100</span></div>
-                        <div class="text-[10px] text-red-400 font-bold uppercase tracking-wider mt-1" data-i18n="method.score.status">Oportunidades Significativas</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
+<section id="metodologia"><div class="wrap">
+  <span class="eyebrow" data-i18n="meth_eyebrow">Methodology — Growth Scanner</span>
+  <h2 data-i18n="meth_h2">Eight variables. One diagnostic. Zero guesswork.</h2>
+  <p class="lede" data-i18n="meth_lede">The AI Consulting engagement maps your entire business against the eight variables that determine growth, and ranks every opportunity by impact against effort.</p>
+  <div class="vars">
+    <div class="var"><b data-i18n="v1">Offer</b><span data-i18n="v1s">What you sell and how it lands</span></div>
+    <div class="var"><b data-i18n="v2">Lead flow</b><span data-i18n="v2s">How they arrive, how many are lost</span></div>
+    <div class="var"><b data-i18n="v3">Appointments</b><span data-i18n="v3s">Booking speed and rate</span></div>
+    <div class="var"><b data-i18n="v4">Deal flow</b><span data-i18n="v4s">From conversation to customer</span></div>
+    <div class="var"><b data-i18n="v5">Fulfillment</b><span data-i18n="v5s">Delivery and experience</span></div>
+    <div class="var"><b data-i18n="v6">Marketing engine</b><span data-i18n="v6s">What creates real demand</span></div>
+    <div class="var"><b data-i18n="v7">Data &amp; intelligence</b><span data-i18n="v7s">What gets measured — and what doesn't</span></div>
+    <div class="var"><b data-i18n="v8">Ops &amp; logistics</b><span data-i18n="v8s">Where the hours leak</span></div>
+  </div>
+</div></section>
 
-<div class="section-divider"></div>
-<!-- ============ /03 CÓMO FUNCIONA ============ -->
-<section class="section-pad relative overflow-hidden bg-[#080c18]" id="metodo">
-<div class="max-w-7xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.metodo">/03 CÓMO FUNCIONA</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="process.title">Tres Pasos. Sin Complejidad.</h2>
-        <p class="opacity-60" data-i18n="process.subtitle">De llamada a infraestructura funcionando — en tus propias cuentas.</p>
-    </div>
-    <div class="relative">
-        <div class="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 shadow-[0_0_10px_rgba(77,166,255,0.5)]"></div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-            <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:0">
-                    <span class="material-symbols-outlined text-primary text-3xl">query_stats</span>
-                </div>
-                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s1.badge">Paso 1</div>
-                <h3 class="text-xl font-bold mb-3" data-i18n="process.s1.title">Consultoría de IA</h3>
-                <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s1.desc">Analizamos tu negocio completo con nuestra metodología Growth Scanner. Identificamos dónde pierdes crecimiento, priorizamos por impacto y calculamos tu ROI con números reales. Sales con un roadmap claro.</p>
-                <div class="mt-4 text-xs text-primary/60 font-medium" data-i18n="process.s1.price">$15,000 MXN</div>
-            </div>
-            <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:1">
-                    <span class="material-symbols-outlined text-primary text-3xl">build</span>
-                </div>
-                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s2.badge">Paso 2</div>
-                <h3 class="text-xl font-bold mb-3" data-i18n="process.s2.title">Infraestructura de Crecimiento</h3>
-                <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s2.desc">Construimos exactamente lo que la consultoría reveló — en tus propias cuentas. Automatizaciones, IA conversacional y sistemas de seguimiento. Todo corre en tu infraestructura y te pertenece.</p>
-                <div class="mt-4 text-xs text-primary/60 font-medium" data-i18n="process.s2.price">$35,000 - $150,000 MXN</div>
-                <div class="mt-1 text-[10px] opacity-40" data-i18n="process.s2.ops">Costo operativo: ~$1,275 - $3,536 MXN/mes (pagado directo a proveedores)</div>
-            </div>
-            <div class="relative flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center z-10 mb-6 glow-button" style="--electrify-i:2">
-                    <span class="material-symbols-outlined text-primary text-3xl">auto_fix_high</span>
-                </div>
-                <div class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded mb-3 uppercase tracking-wider border border-primary/20" data-i18n="process.s3.badge">Opcional</div>
-                <h3 class="text-xl font-bold mb-3" data-i18n="process.s3.title">Mantenimiento + Optimización</h3>
-                <p class="opacity-60 text-sm leading-relaxed" data-i18n="process.s3.desc">Optimización mensual, analytics detallados y soporte prioritario para que tu infraestructura siga mejorando. Si cancelas, todo sigue funcionando.</p>
-                <div class="mt-4 text-xs text-primary/60 font-medium" data-i18n="process.s3.price">$5,000 - $15,000 MXN/mes</div>
-            </div>
-        </div>
-    </div>
-    <p class="text-center mt-16 text-xl font-bold text-primary drop-shadow-[0_0_10px_rgba(77,166,255,0.5)]" data-i18n="process.tagline">
-        Tu infraestructura. Tus cuentas. Si cancelas, todo sigue funcionando.
-    </p>
-    <div class="text-center mt-8">
-        <a href="#cta" class="inline-flex items-center gap-2 text-sm text-primary font-bold hover:underline" data-i18n="process.cta">
-            Agenda Tu Llamada de Descubrimiento →
-        </a>
-    </div>
-</div>
-</section>
+<section id="servicios"><div class="wrap">
+  <span class="eyebrow" data-i18n="svc_eyebrow">Services</span>
+  <h2 data-i18n="svc_h2">A ladder, not a bundle.</h2>
+  <div class="tiers">
+    <div class="tier"><span class="num">01</span><h3 data-i18n="t1_h">Discovery call</h3><span class="price" data-i18n="t1_p">Free · 30 min</span><p data-i18n="t1_d">We qualify the case and surface 2–3 pain points. No commitment.</p></div>
+    <div class="tier star"><span class="num">02</span><h3 data-i18n="t2_h">AI Consulting</h3><span class="price">$15,000 MXN</span><p data-i18n="t2_d">Star product. 8-variable audit + opportunity matrix + ROI projection on your numbers + implementation roadmap. 50% credited toward your build.</p></div>
+    <div class="tier"><span class="num">03</span><h3 data-i18n="t3_h">Growth infrastructure</h3><span class="price">$35,000–150,000 MXN</span><p data-i18n="t3_d">Built and installed in 10–14 days. Runs on your servers, with your keys. If AELION disappears, everything keeps running.</p></div>
+    <div class="tier"><span class="num">04</span><h3 data-i18n="t4_h">Maintenance &amp; optimization</h3><span class="price">$5,000–15,000 MXN/mo</span><p data-i18n="t4_d">Monitoring, fine-tuning, and weekly reports. Optional and cancelable — you keep everything.</p></div>
+  </div>
+</div></section>
 
-<div class="section-divider"></div>
-<!-- ============ /04 QUÉ CONSTRUIMOS ============ -->
-<section class="section-pad relative overflow-hidden" id="servicios">
-<div class="max-w-7xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.servicios">/04 QUÉ CONSTRUIMOS</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="services.title"><span class="gradient-text">Infraestructura de Crecimiento</span></h2>
-        <p class="opacity-60 max-w-2xl mx-auto" data-i18n="services.subtitle">Sistemas inteligentes que trabajan mientras tú te enfocas en lo que importa. Cada solución sale del diagnóstico de tu consultoría — nunca vendemos paquetes genéricos.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <!-- Large card: Conversational AI -->
-        <div class="md:col-span-2 glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:0">
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1">
-                    <div class="w-14 h-14 bg-[#25D366]/10 rounded-lg flex items-center justify-center mb-6 border border-[#25D366]/20 group-hover:bg-[#25D366]/20 transition-colors">
-                        <span class="material-symbols-outlined text-[#25D366] text-3xl">chat</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="services.c1.title">IA Conversacional</h3>
-                    <p class="opacity-60 text-sm leading-relaxed" data-i18n="services.c1.desc">Asistentes inteligentes por WhatsApp, voz o web que responden, califican y convierten prospectos a cualquier hora — en español e inglés.</p>
-                </div>
-                <!-- CSS chat mockup — premium WhatsApp style -->
-                <div class="flex-1 bg-[#0b141a] rounded-2xl overflow-hidden max-w-xs shadow-2xl shadow-black/40">
-                    <!-- WhatsApp header bar -->
-                    <div class="bg-[#1f2c34] px-4 py-3 flex items-center gap-3 border-b border-white/5">
-                        <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">smart_toy</span></div>
-                        <div>
-                            <div class="text-xs font-semibold text-white/90">AELION AI</div>
-                            <div class="text-[10px] text-green-400/80">en línea</div>
-                        </div>
-                    </div>
-                    <div class="p-4 space-y-2.5 text-xs">
-                        <div class="flex justify-end"><div class="bg-[#005c4b] text-white/90 px-3 py-2 rounded-xl rounded-tr-sm max-w-[80%] shadow-sm">Hola, me interesa cotizar</div></div>
-                        <div class="flex"><div class="bg-[#202c33] text-white/90 px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-sm">Con gusto. Para darte la mejor propuesta, ¿me cuentas sobre tu proyecto?</div></div>
-                        <div class="flex justify-end"><div class="bg-[#005c4b] text-white/90 px-3 py-2 rounded-xl rounded-tr-sm max-w-[80%] shadow-sm">Necesito automatizar mi seguimiento de clientes</div></div>
-                        <div class="flex"><div class="bg-[#202c33] text-white/90 px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-sm">Perfecto. ¿Cuántos clientes manejas al mes?</div></div>
-                        <div class="flex justify-end"><div class="bg-[#005c4b] text-white/90 px-3 py-2 rounded-xl rounded-tr-sm max-w-[80%] shadow-sm">Unos 200 aprox</div></div>
-                        <div class="flex"><div class="bg-[#202c33] text-white/90 px-3 py-2 rounded-xl rounded-tl-sm max-w-[85%] shadow-sm">Excelente. Te agendo una llamada con nuestro equipo para diseñar tu solución. <span class="text-[10px] text-white/30 ml-1">✓✓</span></div></div>
-                    </div>
-                    <!-- Input bar -->
-                    <div class="bg-[#1f2c34] px-3 py-2.5 flex items-center gap-2">
-                        <div class="flex-1 bg-[#2a3942] rounded-full px-3 py-1.5 text-[10px] text-white/30">Escribe un mensaje...</div>
-                        <div class="w-7 h-7 bg-primary rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-white text-sm">mic</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Small card: Automation -->
-        <div class="glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:1">
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                <span class="material-symbols-outlined text-primary text-3xl">alt_route</span>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-white" data-i18n="services.c2.title">Automatización de Procesos</h3>
-            <p class="opacity-60 text-sm leading-relaxed" data-i18n="services.c2.desc">Seguimiento automático, recordatorios, nurturing de leads, cotizaciones, reportes. Todo lo que tu equipo hace manualmente, automatizado.</p>
-            <!-- Workflow builder mockup -->
-            <div class="mt-5 bg-[#0d1117] rounded-xl p-4 shadow-2xl shadow-black/40">
-                <div class="flex items-center gap-2 mb-3 pb-2 border-b border-white/5">
-                    <div class="w-2 h-2 rounded-full bg-red-400/60"></div>
-                    <div class="w-2 h-2 rounded-full bg-yellow-400/60"></div>
-                    <div class="w-2 h-2 rounded-full bg-green-400/60"></div>
-                    <span class="text-[9px] text-white/20 ml-2 font-mono">seguimiento-automatico.flow</span>
-                </div>
-                <div class="flex flex-col items-center gap-1 text-[10px]">
-                    <div class="bg-primary/15 text-primary px-3 py-1.5 rounded-lg border border-primary/20 w-full text-center flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[12px]">person_add</span> Nuevo Lead</div>
-                    <div class="flex flex-col items-center"><div class="w-px h-2 bg-primary/20"></div><span class="material-symbols-outlined text-primary/30 text-[10px]">arrow_downward</span></div>
-                    <div class="bg-white/[0.03] text-white/60 px-3 py-1.5 rounded-lg border border-white/8 w-full text-center flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[12px] text-primary/50">auto_awesome</span> Calificación IA</div>
-                    <div class="flex flex-col items-center"><div class="w-px h-2 bg-primary/20"></div><span class="material-symbols-outlined text-primary/30 text-[10px]">arrow_downward</span></div>
-                    <div class="bg-white/[0.03] text-white/60 px-3 py-1.5 rounded-lg border border-white/8 w-full text-center flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[12px] text-primary/50">schedule</span> Seguimiento 48h</div>
-                    <div class="flex flex-col items-center"><div class="w-px h-2 bg-primary/20"></div><span class="material-symbols-outlined text-primary/30 text-[10px]">arrow_downward</span></div>
-                    <div class="bg-primary/10 text-primary px-3 py-1.5 rounded-lg border border-primary/20 w-full text-center flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[12px]">check_circle</span> Cliente Convertido</div>
-                </div>
-            </div>
-        </div>
-        <!-- Small card: Intelligence -->
-        <div class="glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:2">
-            <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-white" data-i18n="services.c3.title">Datos e Inteligencia</h3>
-            <p class="opacity-60 text-sm leading-relaxed" data-i18n="services.c3.desc">Dashboards en tiempo real que te muestran exactamente qué funciona y qué no. Disponible con nuestro plan de Mantenimiento.</p>
-            <!-- Dashboard mockup — full CRM panel -->
-            <div class="mt-5 bg-[#0a0f1e] rounded-xl overflow-hidden shadow-2xl shadow-black/50">
-                    <div class="p-2.5 space-y-2 min-w-0">
-                        <!-- KPI cards with gradients -->
-                        <div class="grid grid-cols-2 gap-1.5">
-                            <div class="rounded-lg p-2 bg-gradient-to-br from-primary/20 to-indigo-500/10 border border-primary/10">
-                                <div class="text-[7px] text-white/35">Costo por Adquisición</div>
-                                <div class="flex items-baseline gap-0.5"><span class="text-base font-black text-white">$340</span><span class="text-[8px] text-white/40">MXN</span></div>
-                                <div class="text-[7px] text-primary/60">-52% vs anterior</div>
-                            </div>
-                            <div class="rounded-lg p-2 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/10 border border-violet-500/10">
-                                <div class="text-[7px] text-white/35">Ticket Promedio</div>
-                                <div class="flex items-baseline gap-0.5"><span class="text-base font-black text-white">$4,800</span><span class="text-[8px] text-white/40">MXN</span></div>
-                                <div class="text-[7px] text-violet-300/60">+18% este mes</div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-3 gap-1.5">
-                            <div class="rounded-lg p-1.5 bg-white/[0.03] text-center">
-                                <div class="text-[6px] text-white/25">Retención</div>
-                                <div class="text-[11px] font-bold text-white">78%</div>
-                            </div>
-                            <div class="rounded-lg p-1.5 bg-white/[0.03] text-center">
-                                <div class="text-[6px] text-white/25">NPS</div>
-                                <div class="text-[11px] font-bold text-white">72</div>
-                            </div>
-                            <div class="rounded-lg p-1.5 bg-white/[0.03] text-center">
-                                <div class="text-[6px] text-white/25">LTV</div>
-                                <div class="text-[11px] font-bold text-white">$14.2K</div>
-                            </div>
-                        </div>
-                        <!-- Line chart area -->
-                        <div class="bg-white/[0.02] rounded-lg p-2">
-                            <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-[7px] text-white/25">Ingresos vs Costos</span>
-                                <div class="flex gap-2 items-center">
-                                    <span class="flex items-center gap-1 text-[6px] text-white/20"><span class="w-2 h-[1px] bg-primary/50 inline-block"></span>Ingresos</span>
-                                    <span class="flex items-center gap-1 text-[6px] text-white/20"><span class="w-2 h-[1px] bg-violet-400/50 inline-block" style="border-top:1px dashed"></span>Costos</span>
-                                </div>
-                            </div>
-                            <!-- SVG line chart -->
-                            <svg viewBox="0 0 200 50" class="w-full h-10" preserveAspectRatio="none" aria-hidden="true">
-                                <!-- Grid lines -->
-                                <line x1="0" y1="12.5" x2="200" y2="12.5" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
-                                <line x1="0" y1="25" x2="200" y2="25" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
-                                <line x1="0" y1="37.5" x2="200" y2="37.5" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
-                                <!-- Area fill -->
-                                <path d="M0,40 L28,35 L57,30 L85,32 L114,22 L142,18 L171,12 L200,8 L200,50 L0,50 Z" fill="url(#areaGrad)" opacity="0.3"/>
-                                <!-- Leads line -->
-                                <polyline points="0,40 28,35 57,30 85,32 114,22 142,18 171,12 200,8" fill="none" stroke="rgba(77,166,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <!-- Conversions line (dashed) -->
-                                <polyline points="0,44 28,42 57,38 85,40 114,32 142,28 171,22 200,18" fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="round"/>
-                                <!-- Data point -->
-                                <circle cx="142" cy="18" r="2.5" fill="#0a0f1e" stroke="rgba(77,166,255,0.8)" stroke-width="1"/>
-                                <!-- Tooltip -->
-                                <rect x="122" y="6" width="28" height="10" rx="2" fill="rgba(77,166,255,0.15)" stroke="rgba(77,166,255,0.3)" stroke-width="0.5"/>
-                                <text x="136" y="13" text-anchor="middle" fill="rgba(77,166,255,0.9)" font-size="5" font-weight="bold">142</text>
-                                <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(77,166,255,0.2)"/><stop offset="100%" stop-color="rgba(77,166,255,0)"/></linearGradient></defs>
-                            </svg>
-                            <div class="flex justify-between mt-1">
-                                <span class="text-[6px] text-white/15">Ene</span><span class="text-[6px] text-white/15">Feb</span><span class="text-[6px] text-white/15">Mar</span><span class="text-[6px] text-white/15">Abr</span><span class="text-[6px] text-white/15">May</span><span class="text-[6px] text-white/15">Jun</span><span class="text-[6px] text-white/15">Jul</span>
-                            </div>
-                        </div>
-                        <!-- Bottom row: donut + bar chart -->
-                        <div class="grid grid-cols-2 gap-1.5">
-                            <!-- Donut chart -->
-                            <div class="bg-white/[0.02] rounded-lg p-2">
-                                <div class="text-[7px] text-white/25 mb-1.5">Por Canal</div>
-                                <div class="flex items-center gap-2">
-                                    <svg viewBox="0 0 36 36" class="w-10 h-10 flex-shrink-0" aria-hidden="true">
-                                        <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(77,166,255,0.3)" stroke-width="4" stroke-dasharray="38 88" stroke-dashoffset="0"/>
-                                        <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(139,92,246,0.4)" stroke-width="4" stroke-dasharray="26 88" stroke-dashoffset="-38"/>
-                                        <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(236,72,153,0.3)" stroke-width="4" stroke-dasharray="14 88" stroke-dashoffset="-64"/>
-                                        <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4" stroke-dasharray="10 88" stroke-dashoffset="-78"/>
-                                    </svg>
-                                    <div class="space-y-1 text-[6px] min-w-0">
-                                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary/50"></span><span class="text-white/30">WhatsApp 43%</span></div>
-                                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-violet-500/50"></span><span class="text-white/30">Web 30%</span></div>
-                                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-pink-500/40"></span><span class="text-white/30">Voz 16%</span></div>
-                                        <div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-white/10"></span><span class="text-white/30">Otro 11%</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Bar chart -->
-                            <div class="bg-white/[0.02] rounded-lg p-2">
-                                <div class="text-[7px] text-white/25 mb-1.5">Ventas / Semana</div>
-                                <div class="h-10 flex items-end gap-[3px]">
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/25 rounded-t" style="height:14px"></div>
-                                        <span class="text-[5px] text-white/15">L</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/35 rounded-t" style="height:22px"></div>
-                                        <span class="text-[5px] text-white/15">M</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/45 rounded-t" style="height:30px"></div>
-                                        <span class="text-[5px] text-white/15">X</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/40 rounded-t" style="height:26px"></div>
-                                        <span class="text-[5px] text-white/15">J</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/55 rounded-t" style="height:34px"></div>
-                                        <span class="text-[5px] text-white/15">V</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/20 rounded-t" style="height:10px"></div>
-                                        <span class="text-[5px] text-white/15">S</span>
-                                    </div>
-                                    <div class="flex-1 flex flex-col items-center gap-0.5">
-                                        <div class="w-full bg-primary/15 rounded-t" style="height:6px"></div>
-                                        <span class="text-[5px] text-white/15">D</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <!-- Large card: Custom Systems -->
-        <div class="md:col-span-2 glass-card cascade-card p-8 rounded-xl group transition-all duration-300 hover:-translate-y-1" style="--cascade-i:3">
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-3xl">build</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="services.c4.title">Sistemas a Tu Medida</h3>
-                    <p class="opacity-60 text-sm leading-relaxed" data-i18n="services.c4.desc">Cada negocio es diferente. Por eso no vendemos plantillas. Arquitectamos y construimos exactamente lo que tu negocio necesita, basado en lo que encontramos en la consultoría. Tú eres dueño de todo — código, flujos, datos.</p>
-                </div>
-                <!-- Ownership visual — terminal style -->
-                <div class="flex-1 flex items-center justify-center">
-                    <div class="w-full max-w-sm bg-[#0d1117] rounded-xl overflow-hidden shadow-2xl shadow-black/40">
-                        <div class="flex items-center gap-2 px-4 py-2.5 border-b border-white/5">
-                            <div class="w-2 h-2 rounded-full bg-red-400/60"></div>
-                            <div class="w-2 h-2 rounded-full bg-yellow-400/60"></div>
-                            <div class="w-2 h-2 rounded-full bg-green-400/60"></div>
-                            <span class="text-[9px] text-white/20 ml-2 font-mono">tu-infraestructura</span>
-                        </div>
-                        <div class="p-5 space-y-5">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/15">
-                                    <span class="material-symbols-outlined text-primary text-lg">lock_open</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-semibold text-white mb-0.5" data-i18n="services.own1">Sin Lock-In</div>
-                                    <div class="text-[11px] text-white/35 leading-relaxed" data-i18n="services.own1d">Cancelas cuando quieras. Todo corre en tus cuentas — sigue funcionando.</div>
-                                </div>
-                            </div>
-                            <div class="h-px bg-white/5"></div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/15">
-                                    <span class="material-symbols-outlined text-primary text-lg">code</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-semibold text-white mb-0.5" data-i18n="services.own2">Tu Cuenta, Tu Sistema</div>
-                                    <div class="text-[11px] text-white/35 leading-relaxed" data-i18n="services.own2d">Flujos y automatizaciones en tu propia cuenta. Nunca en la nuestra.</div>
-                                </div>
-                            </div>
-                            <div class="h-px bg-white/5"></div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/15">
-                                    <span class="material-symbols-outlined text-primary text-lg">shield</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-semibold text-white mb-0.5" data-i18n="services.own3">Tus Datos, Tus APIs</div>
-                                    <div class="text-[11px] text-white/35 leading-relaxed" data-i18n="services.own3d">Tus datos y claves de API viven en tus cuentas — nunca en las nuestras.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center">
-        <p class="text-sm font-medium text-white/40 bg-white/5 border border-white/10 px-6 py-3 rounded-full inline-block" data-i18n="services.banner">
-            No construimos tecnología bonita. Construimos infraestructura que genera resultados.
-        </p>
-    </div>
-</div>
-</section>
+<section id="trabajo"><div class="wrap">
+  <span class="eyebrow" data-i18n="work_eyebrow">Track record</span>
+  <h2 data-i18n="work_h2">A decade delivering for the most demanding brands in the world.</h2>
+  <p class="lede" data-i18n="work_lede">Before building AI systems, Antonio Campa spent 10 years as an assistant director: coordinating operations of dozens of people to deliver on time, no excuses. That discipline is what AELION installs in your business.</p>
+  <div class="work">
+    <div class="job"><time>2019</time><b>Apple — iPhone</b><span data-i18n="job_2ad">Commercial production · 2nd AD</span></div>
+    <div class="job"><time>2019</time><b>Palacio de Hierro</b><span data-i18n="job_1ad_1">Commercial production · 1st AD</span></div>
+    <div class="job"><time>2020</time><b>Audi</b><span data-i18n="job_1ad_2">Commercial production · 1st AD</span></div>
+    <div class="job"><time>2021</time><b>Nespresso</b><span data-i18n="job_1ad_3">Commercial production · 1st AD</span></div>
+    <div class="job"><time>2021</time><b>Tequila Lalo · Mezcal Logia</b><span data-i18n="job_1ad_4">Commercial production · 1st AD</span></div>
+    <div class="job"><time>2019–2026</time><b data-i18n="job_more">140+ more productions</b><span>Toyota, Hyundai, Discovery, Rappi, NuBank, Bimbo…</span></div>
+  </div>
+  <p class="work-note" data-i18n="work_note">Degree in Tourism Management. Camera work for Hotel Xcaret, Ondalinda, and Mercedes-Benz Fashion Week México.</p>
+</div></section>
 
-<div class="section-divider"></div>
-<!-- ============ /05 PARA QUIÉN ============ -->
-<section class="section-pad bg-[#0d1326] relative" id="para-quien">
-<div class="aurora-bg" style="opacity:0.5;"></div>
-<div class="gradient-bloom" style="top: -200px; right: -200px;"></div>
-<div class="max-w-5xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.paraquien">/05 PARA QUIÉN</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="paraquien.title">Funciona Para Cualquier Industria</h2>
-        <p class="opacity-60 max-w-2xl mx-auto" data-i18n="paraquien.subtitle">Nuestra metodología no depende de tu vertical. Si tu negocio tiene clientes, prospectos y operaciones — podemos encontrar dónde pierdes crecimiento.</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:0">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">local_hospital</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i1">Salud y Dental</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:1">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">gavel</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i2">Legal</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:2">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">spa</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i3">Estética y Bienestar</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:3">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">real_estate_agent</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i4">Real Estate</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:4">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">restaurant</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i5">Restaurantes</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:5">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">school</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i6">Educación</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:6">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">shopping_cart</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i7">E-commerce</p>
-        </div>
-        <div class="glass-card cascade-card p-5 rounded-xl text-center" style="--cascade-i:7">
-            <span class="material-symbols-outlined text-primary text-2xl mb-2">more_horiz</span>
-            <p class="text-sm font-medium" data-i18n="paraquien.i8">Y más...</p>
-        </div>
-    </div>
-    <!-- Credibility strip -->
-    <div class="glass-card rounded-2xl p-8 md:p-10 border-primary/20">
-        <div class="text-center mb-6">
-            <h3 class="text-xl font-bold mb-2" data-i18n="paraquien.how.title">El Denominador Común</h3>
-            <p class="opacity-60 text-sm" data-i18n="paraquien.how.subtitle">No importa tu industria. Si reconoces estos patrones, hay oportunidad.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="text-center">
-                <span class="material-symbols-outlined text-primary text-3xl mb-3">group</span>
-                <p class="text-sm font-bold mb-1" data-i18n="paraquien.p1.title">Tienes prospectos que no conviertes</p>
-                <p class="text-xs opacity-50" data-i18n="paraquien.p1.desc">Te llegan leads pero se pierden en el proceso</p>
-            </div>
-            <div class="text-center">
-                <span class="material-symbols-outlined text-primary text-3xl mb-3">settings</span>
-                <p class="text-sm font-bold mb-1" data-i18n="paraquien.p2.title">Tienes procesos que dependen de personas</p>
-                <p class="text-xs opacity-50" data-i18n="paraquien.p2.desc">Si alguien falta, el proceso se detiene</p>
-            </div>
-            <div class="text-center">
-                <span class="material-symbols-outlined text-primary text-3xl mb-3">trending_up</span>
-                <p class="text-sm font-bold mb-1" data-i18n="paraquien.p3.title">Quieres crecer sin multiplicar tu equipo</p>
-                <p class="text-xs opacity-50" data-i18n="paraquien.p3.desc">Escalar sin que los costos escalen igual</p>
-            </div>
-        </div>
-        <div class="text-center mt-10">
-            <a href="#cta" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-background-dark font-bold rounded-lg hover:bg-primary/90 transition-colors" data-i18n="paraquien.cta">Agenda Tu Llamada Gratuita</a>
-        </div>
-    </div>
-</div>
-</section>
+<section id="preguntas"><div class="wrap">
+  <span class="eyebrow" data-i18n="faq_eyebrow">FAQ</span>
+  <h2 data-i18n="faq_h2">What every owner asks before starting.</h2>
+  <div style="margin-top:40px">
+    <details><summary data-i18n="q1">What happens if I cancel maintenance?</summary><p data-i18n="a1">Everything keeps running. The systems live on your server, with your API keys and your data. Canceling ends the ongoing optimization and priority support — never the infrastructure.</p></details>
+    <details><summary data-i18n="q2">Why charge for the consulting instead of giving it away?</summary><p data-i18n="a2">Because a serious diagnostic takes serious work: full operations mapping, an 8-variable analysis, and ROI on your real numbers. And 50% is credited toward your build if you proceed.</p></details>
+    <details><summary data-i18n="q3">Does it work for my industry?</summary><p data-i18n="a3">The methodology is framework-based, not template-based — it applies to any business whose operations can be mapped. For several industries, templated solutions already accelerate the build.</p></details>
+    <details><summary data-i18n="q4">What does it cost to operate the systems?</summary><p data-i18n="a4">Infrastructure costs (hosting and APIs, typically $1,275–3,536 MXN/mo) are paid by you directly to the providers. AELION doesn't resell or mark up your infrastructure.</p></details>
+  </div>
+</div></section>
 
-<div class="section-divider"></div>
-<!-- ============ /07 INVERSIÓN ============ -->
-<section class="section-pad bg-[#080c18]" id="inversion">
-<div class="max-w-6xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.inversion">/06 INVERSIÓN</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="pricing.title">Inversión</h2>
-        <p class="opacity-60" data-i18n="pricing.subtitle">No es un gasto mensual. Es infraestructura que te pertenece.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-white/10" style="--cascade-i:0">
-            <div class="absolute -top-4 left-6 bg-primary/20 text-primary text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase border border-primary/30" data-i18n="pricing.p1.badge">Tarifa Fundador</div>
-            <div class="mb-8 mt-4">
-                <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p1.title">Consultoría de IA</h3>
-                <p class="text-sm opacity-60" data-i18n="pricing.p1.desc">Diagnóstico profundo con mapa operativo, matriz de oportunidades y proyección de ROI.</p>
-            </div>
-            <div class="text-4xl font-black mb-2 italic" data-i18n="pricing.p1.price" data-i18n-html="true">$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Consultoría</span></div>
-            <p class="text-xs opacity-40 mb-4" data-i18n="pricing.p1.note">Mapeamos tu operación completa para encontrar exactamente dónde pierdes crecimiento.</p>
-            <div class="mb-8 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
-                <p class="text-xs font-bold text-green-400 uppercase tracking-wider mb-1" data-i18n="pricing.p1.bonus.label">Bonus Solo en Marzo</p>
-                <p class="text-sm opacity-80" data-i18n="pricing.p1.bonus.desc">2 automatizaciones incluidas (WhatsApp 24/7 + Recordatorios). A cambio, documentamos resultados como caso de estudio.</p>
-            </div>
-            <ul class="space-y-4 mb-10 flex-grow">
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f1">Diagnóstico completo con Growth Scanner</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f2">Mapa operativo de tu negocio</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f3">Matriz de oportunidades priorizada</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f4">Proyección de ROI con tus números</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f5">Roadmap de implementación personalizado</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p1.f6">50% se acredita si avanzas a construcción</span></li>
-            </ul>
-            <div id="countdown-container" class="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20 text-center">
-                <p class="text-xs uppercase tracking-widest opacity-60 mb-2" data-i18n="pricing.p1.countdown.label">Esta oferta expira en</p>
-                <div id="countdown" class="flex justify-center gap-3 text-center">
-                    <div class="flex flex-col"><span id="cd-days" class="text-2xl font-black text-primary tabular-nums">00</span><span class="text-[10px] uppercase tracking-wider opacity-40" data-i18n="pricing.p1.countdown.days">Días</span></div>
-                    <span class="text-2xl font-black text-primary/40">:</span>
-                    <div class="flex flex-col"><span id="cd-hours" class="text-2xl font-black text-primary tabular-nums">00</span><span class="text-[10px] uppercase tracking-wider opacity-40" data-i18n="pricing.p1.countdown.hours">Horas</span></div>
-                    <span class="text-2xl font-black text-primary/40">:</span>
-                    <div class="flex flex-col"><span id="cd-mins" class="text-2xl font-black text-primary tabular-nums">00</span><span class="text-[10px] uppercase tracking-wider opacity-40" data-i18n="pricing.p1.countdown.mins">Min</span></div>
-                    <span class="text-2xl font-black text-primary/40">:</span>
-                    <div class="flex flex-col"><span id="cd-secs" class="text-2xl font-black text-primary tabular-nums">00</span><span class="text-[10px] uppercase tracking-wider opacity-40" data-i18n="pricing.p1.countdown.secs">Seg</span></div>
-                </div>
-            </div>
-            <a href="#cta" class="w-full py-4 border border-primary text-primary font-bold rounded hover:bg-primary/10 transition-colors text-center block" data-i18n="pricing.p1.cta">Agenda Tu Consultoría</a>
-        </div>
-        <div class="glass-card cascade-card p-10 rounded-2xl relative flex flex-col border-primary/40 bg-primary/5" style="--cascade-i:1">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black tracking-widest px-4 py-1.5 rounded-full uppercase shadow-[0_0_15px_rgba(77,166,255,0.6)]" data-i18n="pricing.p2.badge">Recomendado</div>
-            <div class="mb-8 mt-4">
-                <h3 class="text-2xl font-bold mb-2" data-i18n="pricing.p2.title">Infraestructura de Crecimiento</h3>
-                <p class="text-sm opacity-60" data-i18n="pricing.p2.desc">Sistema completo basado en tu Consultoría. Construido en semanas, no meses.</p>
-            </div>
-            <div class="text-3xl font-black mb-1 italic text-white" data-i18n="pricing.p2.price" data-i18n-html="true">$35,000 - $150,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span></div>
-            <div class="text-xs opacity-40 mb-2 font-medium uppercase tracking-wide" data-i18n="pricing.p2.note">Cotizado según Consultoría / Pago Único / $7,500 de crédito incluido</div>
-            <div class="text-xs opacity-40 mb-8 p-2 rounded bg-white/5 border border-white/5" data-i18n="pricing.p2.ops">Costo operativo una vez construido: ~$1,275 - $3,536 MXN/mes (pagado directo a proveedores — no a nosotros)</div>
-            <ul class="space-y-4 mb-10 flex-grow">
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f1">Todo lo de Consultoría + $7,500 de crédito</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f2">Integraciones avanzadas</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f3">Múltiples canales (WhatsApp + Voz + Web)</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f4">Soporte prioritario 60 días</span></li>
-                <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <span data-i18n="pricing.p2.f5">Propiedad total del código y flujos</span></li>
-            </ul>
-            <a href="#cta" class="w-full py-4 bg-primary text-white font-bold rounded hover:brightness-110 transition-colors shadow-lg shadow-primary/20 text-center block" data-i18n="pricing.p2.cta">Agenda Tu Llamada</a>
-        </div>
-    </div>
-    <!-- Maintenance Strip -->
-    <div class="glass-card rounded-xl p-6 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border-primary/20">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined text-primary text-xl">auto_fix_high</span>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg" data-i18n="pricing.maint.title">Mantenimiento + Optimizacion</h4>
-                <p class="text-sm opacity-60" data-i18n="pricing.maint.desc">Optimización mensual, analytics detallados y soporte prioritario para que tu infraestructura siga mejorando.</p>
-            </div>
-        </div>
-        <div class="text-center md:text-right flex-shrink-0">
-            <div class="text-2xl font-black italic" data-i18n="pricing.maint.price" data-i18n-html="true">$5,000 - $15,000 <span class="text-xs font-normal opacity-50 not-italic">MXN/mes</span></div>
-            <p class="text-xs opacity-40 mt-1" data-i18n="pricing.maint.note">Incluye dashboard de analytics + optimizacion continua</p>
-        </div>
-    </div>
-    <!-- Comparison Table -->
-    <div class="overflow-x-auto rounded-xl border border-white/5 bg-background-dark/50 backdrop-blur-sm mb-12">
-        <table class="w-full text-left border-collapse">
-            <thead><tr class="border-b border-white/10">
-                <th class="p-6 text-sm font-bold uppercase tracking-wider opacity-60 w-1/4" data-i18n="pricing.table.compare">Comparativa</th>
-                <th class="p-6 text-sm font-bold uppercase tracking-wider text-center opacity-60 w-1/4" data-i18n="pricing.table.saas">SaaS Mensual</th>
-                <th class="p-6 text-sm font-bold uppercase tracking-wider text-center opacity-60 w-1/4" data-i18n="pricing.table.agency">Agencia Retainer</th>
-                <th class="p-6 text-sm font-bold uppercase tracking-wider text-center text-primary bg-primary/10 border-t-2 border-primary w-1/4">AELION</th>
-            </tr></thead>
-            <tbody class="text-sm">
-                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="p-6 font-medium" data-i18n="pricing.table.r1.label">Costo</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r1.saas">$20,000+ MXN/mes</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r1.agency">$100,000+ MXN/mes</td>
-                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20" data-i18n="pricing.table.r1.aelion">$15K-$150K MXN (una vez)</td>
-                </tr>
-                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="p-6 font-medium" data-i18n="pricing.table.r2.label">Propiedad</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r2.saas">Lo rentas</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r2.agency">Ellos controlan</td>
-                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20" data-i18n="pricing.table.r2.aelion">Tus cuentas, tu sistema</td>
-                </tr>
-                <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td class="p-6 font-medium" data-i18n="pricing.table.r3.label">Dependencia</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r3.saas">Cancelar = perder todo</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r3.agency">Sin agencia = sin marketing</td>
-                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20" data-i18n="pricing.table.r3.aelion">Independencia total</td>
-                </tr>
-                <tr class="hover:bg-white/5 transition-colors">
-                    <td class="p-6 font-medium" data-i18n="pricing.table.r4.label">Tiempo de ROI</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r4.saas">3-6 meses</td>
-                    <td class="p-6 text-center opacity-60" data-i18n="pricing.table.r4.agency">3-6 meses</td>
-                    <td class="p-6 text-center font-bold text-white bg-primary/5 border-l border-r border-primary/20" data-i18n="pricing.table.r4.aelion">&lt; 30 días</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <p class="text-center text-xl font-bold text-primary" data-i18n="pricing.tagline">Un cliente recuperado al mes paga todo el sistema.</p>
-</div>
-</section>
-
-<div class="section-divider"></div>
-<!-- ============ /08 PREGUNTAS ============ -->
-<section class="section-pad bg-background-dark/80" id="preguntas">
-<div class="max-w-4xl mx-auto px-6 fade-section">
-    <div class="text-center mb-20">
-        <div class="section-label" data-i18n="label.preguntas">/07 PREGUNTAS</div>
-        <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-4" data-i18n="faq.title">Las Preguntas Que Ya Te Hiciste</h2>
-        <p class="opacity-60" data-i18n="faq.subtitle">Respuestas directas a las objeciones reales.</p>
-    </div>
-    <div class="space-y-4">
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q1">"Esto suena caro."</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a1">¿Caro comparado con qué? La consultoría te muestra exactamente cuánto dinero pierdes en fugas invisibles — seguimiento que no se hace, prospectos que se enfrían, procesos que dependen de personas. Cuando ves los números reales de tu negocio, la inversión se paga sola. Lo caro es seguir sin saber dónde pierdes.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q2">"¿Y si no funciona para mi negocio?"</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a2">El Growth Scanner funciona para cualquier industria — analizamos tu operación, identificamos cuellos de botella y calculamos tu ROI con números reales. La metodología es universal porque se adapta a tu negocio, no al revés. En la llamada de descubrimiento confirmamos el fit antes de que inviertas un peso.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q3">"No confío en la IA con mis clientes."</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a3">La IA maneja los primeros 90 segundos: saludo, calificación, agendamiento. Tu equipo maneja las relaciones. Es como tener una recepcionista que nunca duerme, nunca se enferma, y siempre sigue el protocolo perfecto.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q4">"Ya tengo recepcionista."</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a4">Perfecto — AELION no reemplaza a tu equipo, lo amplifica. Tu recepcionista no puede contestar a las 3am, ni enviar 50 recordatorios simultáneos, ni hacer seguimiento a 200 cotizaciones. El sistema hace lo que un humano no puede escalar.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q5">"¿Qué pasa si cambio o crezco?"</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a5">Todo corre en TUS cuentas — tu n8n, tu OpenAI, tu WhatsApp. Si cancelas mantenimiento, todo sigue funcionando exactamente igual. Lo unico que pierdes es a nosotros optimizandolo. La infraestructura cuesta entre $1,275-3,536 MXN/mes (hosting + APIs) y la pagas directo a los proveedores, no a nosotros.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q6">"¿Cómo empezamos?"</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a6">Agenda una llamada de descubrimiento gratuita (30 min). Si hay fit, avanzamos a la Consultoria de IA ($15K) donde mapeamos tu operacion completa y calculamos tu ROI. De ahi, construimos tu sistema ($35-150K, con $7,500 de credito de la consultoria). Sin compromiso en la primera llamada.</div>
-            </div>
-        </details>
-        <details class="glass-card rounded-xl group overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer select-none">
-                <h3 class="font-bold text-lg" data-i18n="faq.q7">"¿Cuánto cuesta al mes mantener todo?"</h3>
-                <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 text-sm opacity-70 leading-relaxed border-t border-white/5 faq-content">
-                <div class="pt-4" data-i18n="faq.a7">La infraestructura (hosting, APIs, WhatsApp) cuesta entre $1,275-3,536 MXN/mes dependiendo de lo que construimos — y la pagas directo a los proveedores, no a nosotros. Nuestro mantenimiento opcional ($5,000-15,000 MXN/mes) es puro servicio: optimizacion, soporte y mejoras continuas. Si decides no tomar mantenimiento, tu sistema sigue funcionando igual.</div>
-            </div>
-        </details>
-    </div>
-</div>
-</section>
-
-<!-- ============ FINAL CTA ============ -->
-<section class="section-pad relative overflow-hidden bg-background-dark border-t border-white/5" id="cta">
-<div class="absolute inset-0 bg-primary/5 animate-pulse" style="animation-duration: 4s;"></div>
-<div class="gradient-bloom" style="top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.6);"></div>
-<div class="max-w-4xl mx-auto px-6 text-center relative z-10 fade-section">
-    <h2 class="font-heading text-4xl md:text-6xl tracking-tight-v2 mb-6" data-i18n="cta.title">Descubre Dónde Pierdes Crecimiento</h2>
-    <p class="text-xl opacity-70 mb-10 max-w-2xl mx-auto" data-i18n="cta.subtitle">
-        Agenda 30 minutos. Analizamos tu negocio, identificamos si hay oportunidades reales con IA, y te explicamos exactamente cómo funcionaría tu infraestructura de crecimiento.
-    </p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-        <a class="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded flex items-center justify-center gap-3 transition-colors shadow-lg shadow-green-900/20" href="https://wa.me/5215548020640?text=Hola%2C%20me%20interesa%20una%20llamada%20de%20descubrimiento%20con%20AELION" target="_blank" rel="noopener">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-i18n="cta.whatsapp">Escríbenos por WhatsApp</span>
-        </a>
-        <a class="w-full sm:w-auto px-8 py-4 bg-primary hover:brightness-110 text-white font-bold rounded flex items-center justify-center gap-2 glow-button transition-all" href="#calendly-embed">
-            <span data-i18n="cta.schedule">Agenda Tu Llamada</span>
-            <span class="material-symbols-outlined">calendar_month</span>
-        </a>
-    </div>
-    <div class="flex flex-wrap justify-center gap-6 opacity-50 text-xs font-medium uppercase tracking-widest mb-16">
-        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> <span data-i18n="cta.trust1">Sin compromiso</span></div>
-        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">schedule</span> <span data-i18n="cta.trust2">30 minutos</span></div>
-        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">verified</span> <span data-i18n="cta.trust3">Llamada gratuita</span></div>
-        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">bolt</span> <span data-i18n="cta.trust4">Siguientes pasos claros</span></div>
-    </div>
-    <div id="calendly-embed" class="rounded-xl overflow-hidden max-w-3xl mx-auto border border-white/10">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/antoniocampa-aelion/30min?hide_gdpr_banner=1&background_color=0a0e1a&text_color=f9fafb&primary_color=4da6ff" style="min-width:320px;height:700px;"></div>
-    </div>
+<section class="final" id="agendar"><div class="wrap">
+  <span class="eyebrow" data-i18n="cta_eyebrow">Next step</span>
+  <h2 data-i18n="cta_h2">Thirty minutes. Zero cost. Total clarity.</h2>
+  <p class="lede" data-i18n="cta_lede">Book your discovery call — or message us directly on WhatsApp.</p>
+  <div class="cta-row" style="margin-top:32px">
+    <a class="btn" href="https://wa.me/5215548020640?text=Hola%2C%20me%20interesa%20una%20llamada%20de%20descubrimiento%20con%20AELION" data-i18n="cta_wa">WhatsApp direct</a>
+  </div>
+  <div class="cal">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/antoniocampa-aelion/30min?hide_gdpr_banner=1&background_color=0c0b0b&text_color=f3f1ee&primary_color=e0261e" style="min-width:320px;height:640px;"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-</div>
-</section>
+  </div>
+</div></section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="py-20 border-t border-white/10 bg-background-dark overflow-hidden">
-<div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div class="col-span-1 md:col-span-2">
-            <div class="flex items-center space-x-2.5 mb-6">
-                <img alt="AELION - Consultoría de IA e Infraestructura de Crecimiento" class="h-8 w-8 rounded-lg object-cover" src="assets/logo-screenshot.png"/>
-                <span class="text-lg tracking-[0.4em] uppercase text-white/90" style="font-family:'Rajdhani',sans-serif;font-weight:600">AELION</span>
-            </div>
-            <p class="text-xl font-medium mb-2" data-i18n="footer.tagline" data-i18n-html="true">Smarter Systems.<br/>Super Human Results.</p>
-            <p class="opacity-50 text-sm" data-i18n="footer.desc">Infraestructura de IA para negocios que no tienen tiempo que perder.</p>
-        </div>
-        <div>
-            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest" data-i18n="footer.navTitle">Navegación</h4>
-            <ul class="space-y-4 opacity-60 text-sm">
-                <li><a class="hover:text-primary transition-colors" href="#problema" data-i18n="footer.nav.problem">Problema</a></li>
-                <li><a class="hover:text-primary transition-colors" href="#metodologia" data-i18n="footer.nav.methodology">Metodología</a></li>
-                <li><a class="hover:text-primary transition-colors" href="#metodo" data-i18n="footer.nav.process">Proceso</a></li>
-                <li><a class="hover:text-primary transition-colors" href="#servicios" data-i18n="footer.nav.services">Servicios</a></li>
-                <li><a class="hover:text-primary transition-colors" href="#inversion" data-i18n="footer.nav.pricing">Inversión</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="font-bold mb-6 text-sm uppercase tracking-widest" data-i18n="footer.contactTitle">Contacto</h4>
-            <ul class="space-y-4 opacity-60 text-sm">
-                <li><a class="hover:text-primary transition-colors" href="mailto:antoniocampa@aelion.ai">antoniocampa@aelion.ai</a></li>
-                <li>Ciudad de México, MX</li>
-            </ul>
-        </div>
-    </div>
-    <div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-6">
-        <p class="text-xs opacity-40" data-i18n="footer.copyright">© 2026 AELION. Todos los derechos reservados.</p>
-        <p class="text-xs opacity-40 font-medium" data-i18n="footer.made">Hecho con IA en México 🇲🇽</p>
-        <div class="flex gap-4">
-            <a class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity hover:bg-primary hover:border-primary" href="https://www.linkedin.com/company/aelion-ai/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity hover:bg-[#25D366] hover:border-[#25D366]" href="https://wa.me/5215548020640?text=Hola%2C%20me%20interesa%20una%20llamada%20de%20descubrimiento%20con%20AELION" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-        </div>
-    </div>
-</div>
-</footer>
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+  <span data-i18n="foot_left">AELION © 2026 · Mexico City</span>
+  <span><a href="mailto:antoniocampa@aelion.ai">antoniocampa@aelion.ai</a> · <a href="https://www.linkedin.com/company/aelion-ai/">LinkedIn</a></span>
+</div></footer>
 
-<!-- Floating WhatsApp Button -->
-<a id="floating-wa" class="floating-whatsapp" href="https://wa.me/5215548020640?text=Hola%2C%20me%20interesa%20una%20llamada%20de%20descubrimiento%20con%20AELION" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- ============ JAVASCRIPT ============ -->
 <script>
-// --- 1. Lenis Smooth Scroll ---
-const lenis = new Lenis({ lerp: 0.1, duration: 1.2, smoothWheel: true });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
+(function(){
+  var ES = {
+    nav_method:"Metodología", nav_services:"Servicios", nav_work:"Trayectoria", nav_faq:"Preguntas", nav_cta:"Agendar",
+    hero_eyebrow:"Consultoría de IA · Infraestructura de Crecimiento · Ciudad de México",
+    hero_h1:'Sistemas más inteligentes. <span class="r">Resultados</span> sobrehumanos.',
+    hero_sub:"AELION audita su operación, identifica dónde la IA convierte más clientes y construye la infraestructura — con ROI calculado sobre sus números reales, no promesas. Usted es dueño de todo.",
+    hero_cta1:"Llamada de descubrimiento — gratis", hero_cta2:"Ver la oferta",
+    stat1:"años en producción", stat2:"producciones comerciales", stat3:"marcas globales tier-1", stat4:"días de instalación",
+    prob_eyebrow:"El problema", prob_h2:"Su operación pierde clientes en lugares que nadie está midiendo.",
+    prob1_h:"Prospectos sin respuesta", prob1_p:"Cada consulta que espera horas es una venta que se va con el competidor que respondió en minutos.",
+    prob2_h:"Horas en tareas repetibles", prob2_p:"Su equipo gasta su talento en seguimientos, agendas y reportes que un sistema haría sin cansarse.",
+    prob3_h:"Decisiones sin datos", prob3_p:"Sin medición, cada mejora es una apuesta. Con infraestructura, cada peso invertido se rastrea hasta su retorno.",
+    meth_eyebrow:"Metodología — Growth Scanner", meth_h2:"Ocho variables. Un diagnóstico. Cero adivinanzas.",
+    meth_lede:"La Consultoría de IA mapea su negocio completo contra las ocho variables que determinan el crecimiento, y prioriza cada oportunidad por impacto contra esfuerzo.",
+    v1:"Oferta", v1s:"Qué vende y cómo se percibe", v2:"Flujo de prospectos", v2s:"Cómo llegan y cuántos se pierden",
+    v3:"Citas", v3s:"Velocidad y tasa de agendado", v4:"Cierre", v4s:"De conversación a cliente",
+    v5:"Entrega", v5s:"Cumplimiento y experiencia", v6:"Motor de marketing", v6s:"Qué genera demanda real",
+    v7:"Datos e inteligencia", v7s:"Qué se mide y qué no", v8:"Operación y logística", v8s:"Dónde se fuga el tiempo",
+    svc_eyebrow:"Servicios", svc_h2:"Una escalera, no un paquete.",
+    t1_h:"Llamada de descubrimiento", t1_p:"Gratis · 30 min", t1_d:"Calificamos el caso y detectamos 2–3 puntos de dolor. Sin compromiso.",
+    t2_h:"Consultoría de IA", t2_d:"Producto estrella. Auditoría de 8 variables + matriz de oportunidades + proyección de ROI con sus números + hoja de ruta. 50% acreditable a su implementación.",
+    t3_h:"Infraestructura de crecimiento", t3_d:"Construcción e instalación en 10–14 días. Corre en sus servidores, con sus llaves. Si AELION desaparece, todo sigue funcionando.",
+    t4_h:"Mantenimiento y optimización", t4_d:"Monitoreo, ajuste fino y reportes semanales. Opcional y cancelable — usted conserva todo.",
+    work_eyebrow:"Trayectoria", work_h2:"Una década entregando para las marcas más exigentes del mundo.",
+    work_lede:"Antes de construir sistemas de IA, Antonio Campa pasó 10 años como asistente de dirección: coordinar operaciones de decenas de personas para que entreguen a tiempo, sin excusas. Esa disciplina es la que AELION instala en su empresa.",
+    job_2ad:"Producción comercial · 2nd AD", job_1ad_1:"Producción comercial · 1st AD", job_1ad_2:"Producción comercial · 1st AD",
+    job_1ad_3:"Producción comercial · 1st AD", job_1ad_4:"Producción comercial · 1st AD", job_more:"+140 producciones más",
+    work_note:"Formación en Gestión Turística. Trabajo de cámara para Hotel Xcaret, Ondalinda y Fashion Week Mercedes-Benz México.",
+    faq_eyebrow:"Preguntas frecuentes", faq_h2:"Lo que todo dueño pregunta antes de empezar.",
+    q1:"¿Qué pasa si cancelo el mantenimiento?", a1:"Todo sigue funcionando. Los sistemas corren en su servidor, con sus llaves de API y sus datos. Al cancelar pierde la optimización continua y el soporte prioritario — nunca la infraestructura.",
+    q2:"¿Por qué cobrar la consultoría en lugar de regalarla?", a2:"Porque un diagnóstico serio toma trabajo serio: mapeo completo de operaciones, análisis de 8 variables y ROI con sus números reales. Además, el 50% se acredita a su implementación si decide construir.",
+    q3:"¿Funciona para mi industria?", a3:"La metodología es de frameworks, no de plantillas — aplica a cualquier negocio con operaciones que se puedan mapear. Para varias industrias ya existen soluciones templadas que aceleran la implementación.",
+    q4:"¿Cuánto cuesta operar los sistemas?", a4:"Los costos de infraestructura (hosting y APIs, típicamente $1,275–3,536 MXN/mes) los paga usted directamente a los proveedores. AELION no revende ni margina su infraestructura.",
+    cta_eyebrow:"Siguiente paso", cta_h2:"Treinta minutos. Cero costo. Claridad total.",
+    cta_lede:"Agende su llamada de descubrimiento — o escríbanos directo por WhatsApp.",
+    cta_wa:"WhatsApp directo", foot_left:"AELION © 2026 · Ciudad de México"
+  };
 
-// --- Scroll Progress Bar ---
-const scrollProgress = document.getElementById('scroll-progress');
-lenis.on('scroll', ({ progress }) => {
-    scrollProgress.style.transform = `scaleX(${progress})`;
-});
+  var EN = {}; // captured from the DOM on first load
+  var current = "en";
+  var btn = document.getElementById("langToggle");
 
-// --- Hamburger Menu ---
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-const hamTop = document.getElementById('ham-top');
-const hamMid = document.getElementById('ham-mid');
-const hamBot = document.getElementById('ham-bot');
-let menuOpen = false;
-
-hamburger.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('hidden');
-    if (menuOpen) {
-        hamTop.style.transform = 'rotate(45deg) translate(4px, 4px)';
-        hamMid.style.opacity = '0';
-        hamBot.style.transform = 'rotate(-45deg) translate(4px, -4px)';
-    } else {
-        hamTop.style.transform = '';
-        hamMid.style.opacity = '1';
-        hamBot.style.transform = '';
-    }
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.classList.add('hidden');
-        hamTop.style.transform = '';
-        hamMid.style.opacity = '1';
-        hamBot.style.transform = '';
+  function capture(){
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ EN[el.getAttribute("data-i18n")] = el.textContent; });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){ EN[el.getAttribute("data-i18n-html")] = el.innerHTML; });
+  }
+  function apply(lang){
+    var dict = lang === "es" ? ES : EN;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n"); if (dict[k] !== undefined) el.textContent = dict[k];
     });
-});
-
-// --- Smooth Scroll (via Lenis) ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            const navHeight = document.querySelector('nav').offsetHeight;
-            lenis.scrollTo(target, { offset: -navHeight });
-        }
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-html"); if (dict[k] !== undefined) el.innerHTML = dict[k];
     });
-});
-
-// --- Active Nav Link Highlighting ---
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section[id]');
-
-function updateActiveNav() {
-    const scrollPos = window.scrollY + 120;
-    let current = '';
-    sections.forEach(section => {
-        if (section.offsetTop <= scrollPos) {
-            current = section.id;
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active', 'text-primary');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active', 'text-primary');
-        }
-    });
-}
-lenis.on('scroll', updateActiveNav);
-
-// --- Premium Scroll Reveals (cascade, heading-reveal, section-label, compare) ---
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Heading clip-path reveal
-            entry.target.querySelectorAll('.heading-reveal').forEach(el => el.classList.add('is-visible'));
-            // Section label line-grow
-            entry.target.querySelectorAll('.section-label').forEach(el => el.classList.add('is-visible'));
-            // Cascade cards
-            entry.target.querySelectorAll('.cascade-card').forEach(el => el.classList.add('is-visible'));
-            // Compare choreography
-            entry.target.querySelectorAll('.compare-left, .compare-right').forEach(el => el.classList.add('is-visible'));
-            // Fade-up scroll elements
-            entry.target.querySelectorAll('.fade-up-scroll').forEach((el, i) => {
-                setTimeout(() => el.classList.add('is-visible'), i * 100);
-            });
-            // Legacy reveal classes
-            entry.target.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach((el, i) => {
-                setTimeout(() => el.classList.add('revealed'), i * 80);
-            });
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('section:not(#hero):not(#marquee)').forEach(section => {
-    // Add heading-reveal to H2s
-    const heading = section.querySelector('h2');
-    if (heading) {
-        heading.classList.remove('reveal-up');
-        heading.classList.add('heading-reveal');
-    }
-    // Smooth fade-up for subtexts
-    const subtext = section.querySelector('.text-center > p');
-    if (subtext) {
-        subtext.classList.remove('reveal-up');
-        subtext.classList.add('fade-up-scroll');
-    }
-    revealObserver.observe(section);
-});
-
-// --- Animated Counters ---
-function animateValue(element, target, duration, prefix, suffix, rangeEnd) {
-    const start = performance.now();
-    const isDecimal = target % 1 !== 0;
-    const decimals = isDecimal ? (String(target).split('.')[1] || '').length : 0;
-    function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
-    function fmt(n) {
-        if (isDecimal) return n.toFixed(decimals);
-        return Math.round(n).toLocaleString('en-US');
-    }
-    element.classList.add('counter-active');
-    function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutQuart(progress);
-        const value = eased * target;
-        if (rangeEnd) {
-            element.textContent = prefix + fmt(value) + '-' + fmt(eased * rangeEnd) + suffix;
-        } else {
-            element.textContent = prefix + fmt(value) + suffix;
-        }
-        if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-}
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.animated) {
-            entry.target.dataset.animated = 'true';
-            const target = parseFloat(entry.target.dataset.target);
-            const prefix = entry.target.dataset.prefix || '';
-            const suffix = entry.target.dataset.suffix || '';
-            const rangeEnd = entry.target.dataset.rangeEnd ? parseFloat(entry.target.dataset.rangeEnd) : null;
-            animateValue(entry.target, target, 2000, prefix, suffix, rangeEnd);
-        }
-    });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.counter[data-target]').forEach(el => counterObserver.observe(el));
-
-// --- Nav shadow on scroll ---
-const nav = document.querySelector('nav');
-lenis.on('scroll', () => {
-    if (window.scrollY > 50) {
-        nav.classList.add('shadow-lg', 'shadow-black/30');
-        nav.style.backdropFilter = 'blur(20px)';
-    } else {
-        nav.classList.remove('shadow-lg', 'shadow-black/30');
-        nav.style.backdropFilter = 'blur(12px)';
-    }
-});
-
-// --- Orb parallax ---
-lenis.on('scroll', () => {
-    const scrollY = window.scrollY;
-    document.querySelectorAll('.orb').forEach((orb, i) => {
-        const speed = 0.03 + i * 0.015;
-        orb.style.setProperty('--parallax-y', `${scrollY * speed}px`);
-    });
-});
-
-// --- Cursor Glow ---
-const cursorGlow = document.getElementById('cursor-glow');
-if (cursorGlow) {
-    let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
-    document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; }, { passive: true });
-    function animateGlow() {
-        glowX += (mouseX - glowX) * 0.08;
-        glowY += (mouseY - glowY) * 0.08;
-        cursorGlow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
-        requestAnimationFrame(animateGlow);
-    }
-    animateGlow();
-}
-
-// --- Hero Word-by-Word Animation ---
-function animateHeroWords() {
-    const h1 = document.getElementById('hero-h1');
-    if (!h1) return;
-    const text = h1.textContent.trim();
-    const words = text.split(/\s+/);
-    h1.innerHTML = words.map((w, i) =>
-        `<span class="hero-word" style="animation-delay:${i * 80}ms">${w}</span>`
-    ).join(' ');
-}
-animateHeroWords();
-
-// --- Hero Subtitle Character-by-Character Stagger ---
-function animateHeroSubtitle() {
-    const subtitle = document.getElementById('hero-subtitle');
-    if (!subtitle) return;
-    const text = subtitle.textContent.trim();
-    const words = text.split(/\s+/);
-    let charIndex = 0;
-    const html = words.map(word => {
-        const chars = word.split('').map(char => {
-            const delay = 20 + charIndex * 12;
-            charIndex++;
-            return `<span class="char-stagger" style="animation-delay:${delay}ms">${char}</span>`;
-        }).join('');
-        return `<span style="display:inline-block;white-space:nowrap">${chars}</span>`;
-    }).join(' ');
-    subtitle.innerHTML = html;
-}
-animateHeroSubtitle();
-
-// --- Floating WhatsApp show/hide ---
-const floatingWA = document.getElementById('floating-wa');
-lenis.on('scroll', () => {
-    if (window.scrollY > 600) {
-        floatingWA.classList.add('visible');
-    } else {
-        floatingWA.classList.remove('visible');
-    }
-});
-
-// --- 7. 3D Tilt on Glass Cards (desktop only) ---
-if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.glass-card').forEach(card => {
-        card.style.position = card.style.position || 'relative';
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const maxTilt = 3;
-            const perspective = 1000;
-            const glowOpacity = 0.06;
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const mouseX = e.clientX - centerX;
-            const mouseY = e.clientY - centerY;
-            const rotateX = -(mouseY / (rect.height / 2)) * maxTilt;
-            const rotateY = (mouseX / (rect.width / 2)) * maxTilt;
-            card.style.transform = `perspective(${perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            const px = ((e.clientX - rect.left) / rect.width) * 100;
-            const py = ((e.clientY - rect.top) / rect.height) * 100;
-            card.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(77,166,255,${glowOpacity}) 0%, transparent 60%), rgba(255,255,255,0.03)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            card.style.background = '';
-        });
-    });
-}
-
-// --- 10. Magnetic Button Effect (desktop only) ---
-if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.shimmer-btn, .glow-button').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const dx = e.clientX - centerX;
-            const dy = e.clientY - centerY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-                btn.style.transform = `translate(${dx * 0.08}px, ${dy * 0.08}px)`;
-            }
-        });
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-        });
-    });
-}
-
-// --- Scroll-Driven Text Blur Sequence ---
-// --- Scroll-Triggered Gradient Blooms ---
-const bloomObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.gradient-bloom').forEach(bloom => bloom.classList.add('is-visible'));
-        }
-    });
-}, { threshold: 0.15 });
-document.querySelectorAll('#cta').forEach(section => bloomObserver.observe(section));
-
-// --- Marquee (seamless infinite loop) ---
-document.querySelectorAll('.marquee-track').forEach(track => {
-    const spd = parseFloat(track.dataset.marqueeSpeed) || 0.3;
-    const goLeft = spd > 0;
-    // HTML has 2 identical halves. Grab one set of items.
-    const all = Array.from(track.children);
-    const oneSet = all.slice(0, all.length / 2);
-    // Clone content until track fills at least 3× viewport (no gaps ever visible)
-    while (track.scrollWidth < window.innerWidth * 3) {
-        oneSet.forEach(c => track.appendChild(c.cloneNode(true)));
-    }
-    // One set's share of total width
-    const totalSets = track.children.length / oneSet.length;
-    const pct = (100 / totalSets).toFixed(4) + '%';
-    // Speed: pixels per second based on data attribute
-    const oneSetPx = track.scrollWidth / totalSets;
-    const pxPerSec = Math.abs(spd) * 120;
-    const dur = (oneSetPx / pxPerSec) * 1000;
-    track.animate(
-        goLeft
-            ? [{ transform: 'translateX(0)' }, { transform: `translateX(-${pct})` }]
-            : [{ transform: `translateX(-${pct})` }, { transform: 'translateX(0)' }],
-        { duration: dur, iterations: Infinity, easing: 'linear' }
-    );
-});
-
-// --- ES/EN Translations ---
-const translations = {
-es: {
-    "nav.problem": "Problema",
-    "nav.methodology": "Metodología",
-    "nav.method": "Proceso",
-    "nav.services": "Servicios",
-    "nav.pricing": "Inversión",
-    "nav.cta": "Agenda Tu Llamada",
-    "hero.h1": "Encontramos Lo Que Frena Tu Crecimiento. Y Lo Arreglamos.",
-    "hero.subtitle": "Consultorías de inteligencia artificial que analizan tu negocio completo, identifican oportunidades invisibles y diseñan la infraestructura exacta para que crezcas — sin importar tu industria.",
-    "hero.badge1": "Metodología Propietaria",
-    "hero.badge2": "Cualquier Industria",
-    "hero.badge3": "Tu Infraestructura",
-    "hero.cta1": "Agenda Tu Llamada de Descubrimiento",
-    "hero.cta2": "Mira Cómo Funciona",
-    "label.problema": "/01 EL PROBLEMA",
-    "label.metodologia": "/02 NUESTRA METODOLOGÍA",
-    "label.metodo": "/03 CÓMO FUNCIONA",
-    "label.servicios": "/04 QUÉ CONSTRUIMOS",
-    "label.paraquien": "/05 PARA QUIÉN",
-    "label.inversion": "/06 INVERSIÓN",
-    "label.preguntas": "/07 PREGUNTAS",
-    "marquee.s1": "Diagnóstico Completo de Tu Negocio",
-    "marquee.s2": "Metodología Propietaria",
-    "marquee.s3": "Tu Infraestructura",
-    "marquee.s4": "Cualquier Industria",
-    "marquee.s5": "ROI Calculado Con Tus Números",
-    "pain.title": "Tu Negocio Tiene Fugas Invisibles. Y Te Están Costando Caro.",
-    "pain.subtitle": "La mayoría de los dueños de negocio no saben exactamente dónde pierden dinero. Estos son los patrones más comunes.",
-    "pain.c1.title": "Prospectos Que Se Enfrían",
-    "pain.c1.desc": "Cada hora que tardas en responder, la probabilidad de conversión cae. Tus prospectos no esperan — compran con quien contesta primero.",
-    "pain.c2.title": "Operaciones Sin Visibilidad",
-    "pain.c2.desc": "No sabes cuánto te cuesta adquirir un cliente, cuántos se pierden en el proceso, ni dónde está el cuello de botella real.",
-    "pain.c3.title": "Procesos Manuales Repetitivos",
-    "pain.c3.desc": "Tu equipo gasta horas en tareas que deberían ser automáticas: seguimiento, recordatorios, cotizaciones, reportes. Tiempo que podrían invertir en vender.",
-    "pain.c4.title": "Clientes Que No Regresan",
-    "pain.c4.desc": "Sin un sistema de retención, más de la mitad de tus clientes compran una vez y desaparecen. Adquirir un cliente nuevo cuesta 5x más que retener uno.",
-    "pain.c5.title": "Seguimiento Inconsistente",
-    "pain.c5.desc": "Cotizaciones que nunca se cierran, leads que se olvidan, oportunidades que mueren en silencio. La venta se pierde en el seguimiento, no en la primera conversación.",
-    "pain.c6.title": "Dependencia de Terceros",
-    "pain.c6.desc": "Pagas a agencias, plataformas o SaaS que controlan tus datos y tus procesos. Si cancelas, pierdes todo. No eres dueño de tu propia infraestructura.",
-    "pain.bridge": "El primer paso es saber exactamente dónde están las fugas.",
-    "method.title": "No Adivinamos. Diagnosticamos.",
-    "method.subtitle": "Usamos una metodología propietaria que analiza las áreas críticas de tu negocio para encontrar exactamente dónde pierdes crecimiento — y qué construir primero.",
-    "method.badge": "Growth Scanner",
-    "method.card.title": "Un diagnóstico completo de tu negocio",
-    "method.card.desc": "Nuestra Consultoría de IA usa el Growth Scanner para analizar múltiples dimensiones de tu operación. No te vendemos una solución genérica — encontramos tus cuellos de botella reales y priorizamos por impacto.",
-    "method.f1": "Análisis de múltiples áreas operativas",
-    "method.f2": "Score cuantificado por área",
-    "method.f3": "Matriz de oportunidades priorizada por ROI",
-    "method.f4": "Roadmap personalizado de implementación",
-    "method.f5": "Proyección de ROI con números de tu negocio",
-    "method.cta": "Agenda Tu Consultoría →",
-    "method.score.label": "Score General",
-    "method.score.status": "Oportunidades Significativas",
-    "process.title": "Tres Pasos. Sin Complejidad.",
-    "process.subtitle": "De llamada a infraestructura funcionando — en tus propias cuentas.",
-    "process.s1.badge": "Paso 1",
-    "process.s1.title": "Consultoría de IA",
-    "process.s1.desc": "Analizamos tu negocio completo con nuestra metodología Growth Scanner. Identificamos dónde pierdes crecimiento, priorizamos por impacto y calculamos tu ROI con números reales. Sales con un roadmap claro.",
-    "process.s1.price": "$15,000 MXN",
-    "process.s2.badge": "Paso 2",
-    "process.s2.title": "Infraestructura de Crecimiento",
-    "process.s2.desc": "Construimos exactamente lo que la consultoría reveló — en tus propias cuentas. Automatizaciones, IA conversacional y sistemas de seguimiento. Todo corre en tu infraestructura y te pertenece.",
-    "process.s2.price": "$35,000 - $150,000 MXN",
-    "process.s3.badge": "Opcional",
-    "process.s3.title": "Mantenimiento + Optimización",
-    "process.s3.desc": "Puro servicio: optimización mensual, analytics, soporte prioritario. Tu infraestructura (~$1,275 MXN/mes) la pagas directo a los proveedores. Si cancelas, todo sigue funcionando.",
-    "process.s3.price": "$5,000 - $15,000 MXN/mes",
-    "process.tagline": "Tu infraestructura. Tus cuentas. Si cancelas, todo sigue funcionando.",
-    "process.cta": "Agenda Tu Llamada de Descubrimiento →",
-    "services.title": "Infraestructura de Crecimiento",
-    "services.subtitle": "Sistemas inteligentes que trabajan mientras tú te enfocas en lo que importa. Cada solución sale del diagnóstico de tu consultoría — nunca vendemos paquetes genéricos.",
-    "services.c1.title": "IA Conversacional",
-    "services.c1.desc": "Asistentes inteligentes por WhatsApp, voz o web que responden, califican y convierten prospectos a cualquier hora — en español e inglés.",
-    "services.c2.title": "Automatización de Procesos",
-    "services.c2.desc": "Seguimiento automático, recordatorios, nurturing de leads, cotizaciones, reportes. Todo lo que tu equipo hace manualmente, automatizado.",
-    "services.c3.title": "Datos e Inteligencia",
-    "services.c3.desc": "Dashboards en tiempo real que te muestran exactamente qué funciona y qué no. Disponible con nuestro plan de Mantenimiento.",
-    "services.c4.title": "Sistemas a Tu Medida",
-    "services.c4.desc": "Cada negocio es diferente. Por eso no vendemos plantillas. Arquitectamos y construimos exactamente lo que tu negocio necesita, basado en lo que encontramos en la consultoría. Tú eres dueño de todo — código, flujos, datos.",
-    "services.own1": "Sin Lock-In",
-    "services.own1d": "Cancelas cuando quieras. Todo corre en tus cuentas — sigue funcionando.",
-    "services.own2": "Tu Cuenta, Tu Sistema",
-    "services.own2d": "Flujos y automatizaciones en tu propia cuenta. Nunca en la nuestra.",
-    "services.own3": "Tus Datos, Tus APIs",
-    "services.own3d": "Tus datos y claves de API viven en tus cuentas — nunca en las nuestras.",
-    "services.banner": "No construimos tecnología bonita. Construimos infraestructura que genera resultados.",
-    "paraquien.title": "Funciona Para Cualquier Industria",
-    "paraquien.subtitle": "Nuestra metodología no depende de tu vertical. Si tu negocio tiene clientes, prospectos y operaciones — podemos encontrar dónde pierdes crecimiento.",
-    "paraquien.i1": "Salud y Dental",
-    "paraquien.i2": "Legal",
-    "paraquien.i3": "Estética y Bienestar",
-    "paraquien.i4": "Real Estate",
-    "paraquien.i5": "Restaurantes",
-    "paraquien.i6": "Educación",
-    "paraquien.i7": "E-commerce",
-    "paraquien.i8": "Y más...",
-    "paraquien.how.title": "El Denominador Común",
-    "paraquien.how.subtitle": "No importa tu industria. Si reconoces estos patrones, hay oportunidad.",
-    "paraquien.p1.title": "Tienes prospectos que no conviertes",
-    "paraquien.p1.desc": "Te llegan leads pero se pierden en el proceso",
-    "paraquien.p2.title": "Tienes procesos que dependen de personas",
-    "paraquien.p2.desc": "Si alguien falta, el proceso se detiene",
-    "paraquien.p3.title": "Quieres crecer sin multiplicar tu equipo",
-    "paraquien.p3.desc": "Escalar sin que los costos escalen igual",
-    "paraquien.cta": "Agenda Tu Llamada Gratuita",
-    "pricing.title": "Inversión",
-    "pricing.subtitle": "No es un gasto mensual. Es infraestructura que te pertenece.",
-    "pricing.p1.badge": "Tarifa Fundador",
-    "pricing.p1.title": "Consultoría de IA",
-    "pricing.p1.desc": "Diagnóstico profundo con mapa operativo, matriz de oportunidades y proyección de ROI.",
-    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Consultoría</span>',
-    "pricing.p1.note": "Mapeamos tu operación completa para encontrar exactamente dónde pierdes crecimiento.",
-    "pricing.p1.bonus.label": "Bonus Solo en Marzo",
-    "pricing.p1.bonus.desc": "2 automatizaciones incluidas (WhatsApp 24/7 + Recordatorios). A cambio, documentamos resultados como caso de estudio.",
-    "pricing.p1.f1": "Diagnóstico completo con Growth Scanner",
-    "pricing.p1.f2": "Mapa operativo de tu negocio",
-    "pricing.p1.f3": "Matriz de oportunidades priorizada",
-    "pricing.p1.f4": "Proyección de ROI con tus números",
-    "pricing.p1.f5": "Roadmap de implementación personalizado",
-    "pricing.p1.f6": "50% se acredita si avanzas a construcción",
-    "pricing.p1.countdown.label": "Esta oferta expira en",
-    "pricing.p1.countdown.days": "Días",
-    "pricing.p1.countdown.hours": "Horas",
-    "pricing.p1.countdown.mins": "Min",
-    "pricing.p1.countdown.secs": "Seg",
-    "pricing.p1.cta": "Agenda Tu Consultoría",
-    "pricing.p2.badge": "Recomendado",
-    "pricing.p2.title": "Infraestructura de Crecimiento",
-    "pricing.p2.desc": "Sistema completo basado en tu Consultoría. Construido en semanas, no meses.",
-    "pricing.p2.price": '$35,000 - $150,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span>',
-    "pricing.p2.note": "Cotizado según Consultoría / Pago Único / $7,500 de crédito incluido",
-    "pricing.p2.f1": "Todo lo de Consultoría + $7,500 de crédito",
-    "pricing.p2.f2": "Integraciones avanzadas",
-    "pricing.p2.f3": "Múltiples canales (WhatsApp + Voz + Web)",
-    "pricing.p2.f4": "Soporte prioritario 60 días",
-    "pricing.p2.f5": "Propiedad total del código y flujos",
-    "pricing.p2.cta": "Agenda Tu Llamada",
-    "pricing.maint.title": "Mantenimiento + Optimización",
-    "pricing.maint.desc": "Puro servicio: optimización mensual, analytics, soporte prioritario. Tu infraestructura (~$1,275-3,536 MXN/mes) la pagas directo a proveedores.",
-    "pricing.maint.price": '$5,000 - $15,000 <span class="text-xs font-normal opacity-50 not-italic">MXN/mes</span>',
-    "pricing.maint.note": "Incluye dashboard de analytics + optimización continua",
-    "pricing.table.compare": "Comparativa",
-    "pricing.table.saas": "SaaS Mensual",
-    "pricing.table.agency": "Agencia Retainer",
-    "pricing.table.r1.label": "Costo",
-    "pricing.table.r1.saas": "$20,000+ MXN/mes",
-    "pricing.table.r1.agency": "$100,000+ MXN/mes",
-    "pricing.table.r1.aelion": "$15K-$150K MXN (una vez)",
-    "pricing.table.r2.label": "Propiedad",
-    "pricing.table.r2.saas": "Lo rentas",
-    "pricing.table.r2.agency": "Ellos controlan",
-    "pricing.table.r2.aelion": "Tus cuentas, tu sistema",
-    "pricing.table.r3.label": "Dependencia",
-    "pricing.table.r3.saas": "Cancelar = perder todo",
-    "pricing.table.r3.agency": "Sin agencia = sin marketing",
-    "pricing.table.r3.aelion": "Independencia total",
-    "pricing.table.r4.label": "Tiempo de ROI",
-    "pricing.table.r4.saas": "3-6 meses",
-    "pricing.table.r4.agency": "3-6 meses",
-    "pricing.table.r4.aelion": "< 30 días",
-    "pricing.tagline": "Un cliente recuperado al mes paga todo el sistema.",
-    "faq.title": "Las Preguntas Que Ya Te Hiciste",
-    "faq.subtitle": "Respuestas directas a las objeciones reales.",
-    "faq.q1": '"Esto suena caro."',
-    "faq.a1": "¿Caro comparado con qué? La consultoría te muestra exactamente cuánto dinero pierdes en fugas invisibles. Cuando ves los números reales de tu negocio, la inversión se paga sola. Lo caro es seguir sin saber dónde pierdes.",
-    "faq.q2": '"¿Y si no funciona para mi negocio?"',
-    "faq.a2": "El Growth Scanner funciona para cualquier industria — analizamos tu operación, identificamos cuellos de botella y calculamos tu ROI con números reales. La metodología es universal porque se adapta a tu negocio, no al revés. En la llamada de descubrimiento confirmamos el fit antes de que inviertas un peso.",
-    "faq.q3": '"No confío en la IA con mis clientes."',
-    "faq.a3": "La IA maneja los primeros 90 segundos: saludo, calificación, agendamiento. Tu equipo maneja las relaciones. Es como tener una recepcionista que nunca duerme, nunca se enferma, y siempre sigue el protocolo perfecto.",
-    "faq.q4": '"Ya tengo recepcionista."',
-    "faq.a4": "Perfecto — AELION no reemplaza a tu equipo, lo amplifica. Tu recepcionista no puede contestar a las 3am, ni enviar 50 recordatorios simultáneos, ni hacer seguimiento a 200 cotizaciones. El sistema hace lo que un humano no puede escalar.",
-    "faq.q5": '"¿Qué pasa si cambio o crezco?"',
-    "faq.a5": "Todo corre en TUS cuentas — tu n8n, tu OpenAI, tu WhatsApp. Si cancelas mantenimiento, todo sigue funcionando exactamente igual. Lo único que pierdes es a nosotros optimizándolo. La infraestructura cuesta entre $1,275-3,536 MXN/mes (hosting + APIs) y la pagas directo a los proveedores, no a nosotros.",
-    "faq.q6": '"¿Cómo empezamos?"',
-    "faq.a6": "Agenda una llamada de descubrimiento gratuita (30 min). Si hay fit, avanzamos a la Consultoría de IA ($15K) donde mapeamos tu operación completa y calculamos tu ROI. De ahí, construimos tu infraestructura ($35-150K, con $7,500 de crédito de la consultoría). Sin compromiso en la primera llamada.",
-    "faq.q7": '"¿Cuánto cuesta al mes mantener todo?"',
-    "faq.a7": "La infraestructura (hosting, APIs, WhatsApp) cuesta entre $1,275-3,536 MXN/mes dependiendo de lo que construimos — y la pagas directo a los proveedores, no a nosotros. Nuestro mantenimiento opcional ($5,000-15,000 MXN/mes) es puro servicio: optimización, soporte y mejoras continuas. Si decides no tomar mantenimiento, tu sistema sigue funcionando igual.",
-    "cta.title": "Descubre Dónde Pierdes Crecimiento",
-    "cta.subtitle": "Agenda 30 minutos. Analizamos tu negocio, identificamos si hay oportunidades reales con IA, y te explicamos exactamente cómo funcionaría tu infraestructura de crecimiento.",
-    "cta.whatsapp": "Escríbenos por WhatsApp",
-    "cta.schedule": "Agenda Tu Llamada",
-    "cta.trust1": "Sin compromiso",
-    "cta.trust2": "30 minutos",
-    "cta.trust3": "Llamada gratuita",
-    "cta.trust4": "Siguientes pasos claros",
-    "footer.tagline": "Smarter Systems.<br/>Super Human Results.",
-    "footer.desc": "Infraestructura de IA para negocios que no tienen tiempo que perder.",
-    "footer.navTitle": "Navegación",
-    "footer.nav.problem": "Problema",
-    "footer.nav.methodology": "Metodología",
-    "footer.nav.process": "Proceso",
-    "footer.nav.services": "Servicios",
-    "footer.nav.pricing": "Inversión",
-    "footer.contactTitle": "Contacto",
-    "footer.copyright": "© 2026 AELION. Todos los derechos reservados.",
-    "footer.made": "Hecho con IA en México 🇲🇽",
-},
-en: {
-    "nav.problem": "Problem",
-    "nav.methodology": "Methodology",
-    "nav.method": "Process",
-    "nav.services": "Services",
-    "nav.pricing": "Investment",
-    "nav.cta": "Book a Call",
-    "hero.h1": "We Find What's Holding Back Your Growth. And We Fix It.",
-    "hero.subtitle": "AI consulting that analyzes your entire business, identifies invisible opportunities, and designs the exact infrastructure for you to grow — regardless of industry.",
-    "hero.badge1": "Proprietary Methodology",
-    "hero.badge2": "Any Industry",
-    "hero.badge3": "Your Infrastructure",
-    "hero.cta1": "Book a Discovery Call",
-    "hero.cta2": "See How It Works",
-    "label.problema": "/01 THE PROBLEM",
-    "label.metodologia": "/02 OUR METHODOLOGY",
-    "label.metodo": "/03 HOW IT WORKS",
-    "label.servicios": "/04 WHAT WE BUILD",
-    "label.paraquien": "/05 FOR WHOM",
-    "label.inversion": "/06 INVESTMENT",
-    "label.preguntas": "/07 QUESTIONS",
-    "marquee.s1": "Full Business Diagnostic",
-    "marquee.s2": "Proprietary Methodology",
-    "marquee.s3": "Your Infrastructure",
-    "marquee.s4": "Any Industry",
-    "marquee.s5": "ROI Calculated With Your Numbers",
-    "pain.title": "Your Business Has Invisible Leaks. And They're Costing You.",
-    "pain.subtitle": "Most business owners don't know exactly where they're losing money. These are the most common patterns.",
-    "pain.c1.title": "Prospects Going Cold",
-    "pain.c1.desc": "Every hour you delay responding, conversion probability drops. Your prospects don't wait — they buy from whoever answers first.",
-    "pain.c2.title": "No Operational Visibility",
-    "pain.c2.desc": "You don't know your customer acquisition cost, how many you lose in the process, or where the real bottleneck is.",
-    "pain.c3.title": "Repetitive Manual Processes",
-    "pain.c3.desc": "Your team spends hours on tasks that should be automatic: follow-ups, reminders, quotes, reports. Time they could invest in selling.",
-    "pain.c4.title": "Clients Who Don't Return",
-    "pain.c4.desc": "Without a retention system, more than half your clients buy once and disappear. Acquiring a new client costs 5x more than retaining one.",
-    "pain.c5.title": "Inconsistent Follow-Up",
-    "pain.c5.desc": "Quotes that never close, leads that get forgotten, opportunities that die in silence. Sales are lost in follow-up, not the first conversation.",
-    "pain.c6.title": "Third-Party Dependency",
-    "pain.c6.desc": "You pay agencies, platforms, or SaaS that control your data and processes. Cancel and you lose everything. You don't own your own infrastructure.",
-    "pain.bridge": "The first step is knowing exactly where the leaks are.",
-    "method.title": "We Don't Guess. We Diagnose.",
-    "method.subtitle": "We use a proprietary methodology that analyzes the critical areas of your business to find exactly where you're losing growth — and what to build first.",
-    "method.badge": "Growth Scanner",
-    "method.card.title": "A complete diagnostic of your business",
-    "method.card.desc": "Our AI Consulting uses the Growth Scanner to analyze multiple dimensions of your operation. We don't sell you a generic solution — we find your real bottlenecks and prioritize by impact.",
-    "method.f1": "Analysis of multiple operational areas",
-    "method.f2": "Quantified score per area",
-    "method.f3": "Opportunity matrix prioritized by ROI",
-    "method.f4": "Custom implementation roadmap",
-    "method.f5": "ROI projection with your business numbers",
-    "method.cta": "Book Your Consultation →",
-    "method.score.label": "Overall Score",
-    "method.score.status": "Significant Opportunities",
-    "process.title": "Three Steps. No Complexity.",
-    "process.subtitle": "From call to working infrastructure — on your own accounts.",
-    "process.s1.badge": "Step 1",
-    "process.s1.title": "AI Consulting",
-    "process.s1.desc": "We analyze your entire business with our Growth Scanner methodology. We identify where you're losing growth, prioritize by impact, and calculate your ROI with real numbers. You leave with a clear roadmap.",
-    "process.s1.price": "$15,000 MXN",
-    "process.s2.badge": "Step 2",
-    "process.s2.title": "Growth Infrastructure",
-    "process.s2.desc": "We build exactly what the consulting revealed — on your own accounts. Automations, conversational AI, and follow-up systems. Everything runs on your infrastructure and belongs to you.",
-    "process.s2.price": "$35,000 - $150,000 MXN",
-    "process.s3.badge": "Optional",
-    "process.s3.title": "Maintenance + Optimization",
-    "process.s3.desc": "Pure service: monthly optimization, analytics, priority support. Your infrastructure (~$1,275 MXN/month) is paid directly to providers. Cancel and everything keeps running.",
-    "process.s3.price": "$5,000 - $15,000 MXN/month",
-    "process.tagline": "Your infrastructure. Your accounts. Cancel and everything keeps running.",
-    "process.cta": "Book a Discovery Call →",
-    "services.title": "Growth Infrastructure",
-    "services.subtitle": "Smart systems that work while you focus on what matters. Every solution comes from your consulting diagnostic — we never sell generic packages.",
-    "services.c1.title": "Conversational AI",
-    "services.c1.desc": "Smart assistants via WhatsApp, voice, or web that respond, qualify, and convert prospects at any hour — in Spanish and English.",
-    "services.c2.title": "Process Automation",
-    "services.c2.desc": "Automatic follow-up, reminders, lead nurturing, quotes, reports. Everything your team does manually, automated.",
-    "services.c3.title": "Data & Intelligence",
-    "services.c3.desc": "Real-time dashboards that show you exactly what's working and what's not. Available with our Maintenance plan.",
-    "services.c4.title": "Custom-Built Systems",
-    "services.c4.desc": "Every business is different. That's why we don't sell templates. We architect and build exactly what your business needs, based on what we find in consulting. You own everything — code, workflows, data.",
-    "services.own1": "No Lock-In",
-    "services.own1d": "Cancel anytime. Everything runs on your accounts — keeps working.",
-    "services.own2": "Your Account, Your System",
-    "services.own2d": "Workflows and automations on your own account. Never ours.",
-    "services.own3": "Your Data, Your APIs",
-    "services.own3d": "Your data and API keys live in your accounts — never in ours.",
-    "services.banner": "We don't build pretty tech. We build infrastructure that drives results.",
-    "paraquien.title": "Works For Any Industry",
-    "paraquien.subtitle": "Our methodology doesn't depend on your vertical. If your business has clients, prospects, and operations — we can find where you're losing growth.",
-    "paraquien.i1": "Healthcare & Dental",
-    "paraquien.i2": "Legal",
-    "paraquien.i3": "Aesthetics & Wellness",
-    "paraquien.i4": "Real Estate",
-    "paraquien.i5": "Restaurants",
-    "paraquien.i6": "Education",
-    "paraquien.i7": "E-commerce",
-    "paraquien.i8": "And more...",
-    "paraquien.how.title": "The Common Denominator",
-    "paraquien.how.subtitle": "Regardless of industry. If you recognize these patterns, there's opportunity.",
-    "paraquien.p1.title": "You have prospects you're not converting",
-    "paraquien.p1.desc": "Leads come in but get lost in the process",
-    "paraquien.p2.title": "You have processes that depend on people",
-    "paraquien.p2.desc": "If someone's absent, the process stops",
-    "paraquien.p3.title": "You want to grow without multiplying your team",
-    "paraquien.p3.desc": "Scale without costs scaling equally",
-    "paraquien.cta": "Book Your Free Call",
-    "pricing.title": "Investment",
-    "pricing.subtitle": "Not a monthly expense. It's infrastructure you own.",
-    "pricing.p1.badge": "Founding Rate",
-    "pricing.p1.title": "AI Consulting",
-    "pricing.p1.desc": "Deep diagnostic with operations map, opportunity matrix, and ROI projection.",
-    "pricing.p1.price": '$15,000 <span class="text-sm font-normal opacity-50 not-italic">MXN / Consultation</span>',
-    "pricing.p1.note": "We map your entire operation to find exactly where you're losing growth.",
-    "pricing.p1.bonus.label": "March Bonus Only",
-    "pricing.p1.bonus.desc": "2 automations included (24/7 WhatsApp + Reminders). In exchange, we document results as a case study.",
-    "pricing.p1.f1": "Complete diagnostic with Growth Scanner",
-    "pricing.p1.f2": "Operations map of your business",
-    "pricing.p1.f3": "Prioritized opportunity matrix",
-    "pricing.p1.f4": "ROI projection with your numbers",
-    "pricing.p1.f5": "Custom implementation roadmap",
-    "pricing.p1.f6": "50% credited toward build",
-    "pricing.p1.countdown.label": "This offer expires in",
-    "pricing.p1.countdown.days": "Days",
-    "pricing.p1.countdown.hours": "Hours",
-    "pricing.p1.countdown.mins": "Min",
-    "pricing.p1.countdown.secs": "Sec",
-    "pricing.p1.cta": "Book Your Consultation",
-    "pricing.p2.badge": "Recommended",
-    "pricing.p2.title": "Growth Infrastructure",
-    "pricing.p2.desc": "Complete system based on your Consultation. Built in weeks, not months.",
-    "pricing.p2.price": '$35,000 - $150,000 <span class="text-sm font-normal opacity-50 not-italic">MXN</span>',
-    "pricing.p2.note": "Quoted from Consultation / One-Time Payment / $7,500 credit included",
-    "pricing.p2.f1": "Everything in AI Consulting + $7,500 credit",
-    "pricing.p2.f2": "Advanced integrations",
-    "pricing.p2.f3": "Multiple channels (WhatsApp + Voice + Web)",
-    "pricing.p2.f4": "Priority support 60 days",
-    "pricing.p2.f5": "Full ownership of code and workflows",
-    "pricing.p2.cta": "Book a Call",
-    "pricing.maint.title": "Maintenance + Optimization",
-    "pricing.maint.desc": "Pure service: monthly optimization, analytics, priority support. Your infrastructure (~$1,275-3,536 MXN/month) is paid directly to providers.",
-    "pricing.maint.price": '$5,000 - $15,000 <span class="text-xs font-normal opacity-50 not-italic">MXN/month</span>',
-    "pricing.maint.note": "Includes analytics dashboard + continuous optimization",
-    "pricing.table.compare": "Comparison",
-    "pricing.table.saas": "Monthly SaaS",
-    "pricing.table.agency": "Agency Retainer",
-    "pricing.table.r1.label": "Cost",
-    "pricing.table.r1.saas": "$20,000+ MXN/month",
-    "pricing.table.r1.agency": "$100,000+ MXN/month",
-    "pricing.table.r1.aelion": "$15K-$150K MXN (one-time)",
-    "pricing.table.r2.label": "Ownership",
-    "pricing.table.r2.saas": "You rent it",
-    "pricing.table.r2.agency": "They control it",
-    "pricing.table.r2.aelion": "Your accounts, your system",
-    "pricing.table.r3.label": "Dependency",
-    "pricing.table.r3.saas": "Cancel = lose everything",
-    "pricing.table.r3.agency": "No agency = no marketing",
-    "pricing.table.r3.aelion": "Total independence",
-    "pricing.table.r4.label": "Time to ROI",
-    "pricing.table.r4.saas": "3-6 months",
-    "pricing.table.r4.agency": "3-6 months",
-    "pricing.table.r4.aelion": "< 30 days",
-    "pricing.tagline": "One recovered client per month pays for the entire system.",
-    "faq.title": "The Questions You've Already Asked Yourself",
-    "faq.subtitle": "Direct answers to real objections.",
-    "faq.q1": '"This sounds expensive."',
-    "faq.a1": "Expensive compared to what? The consultation shows you exactly how much money you're losing to invisible leaks. When you see your real business numbers, the investment pays for itself. What's expensive is continuing without knowing where you're losing.",
-    "faq.q2": '"What if it doesn\'t work for my business?"',
-    "faq.a2": "The Growth Scanner works for any industry — we analyze your operations, identify bottlenecks, and calculate your ROI with real numbers. The methodology is universal because it adapts to your business, not the other way around. The discovery call confirms fit before you invest a single peso.",
-    "faq.q3": '"I don\'t trust AI with my clients."',
-    "faq.a3": "AI handles the first 90 seconds: greeting, qualification, booking. Your team handles relationships. It's like having a receptionist who never sleeps, never gets sick, and always follows the perfect protocol.",
-    "faq.q4": '"I already have a receptionist."',
-    "faq.a4": "Perfect — AELION doesn't replace your team, it amplifies them. Your receptionist can't answer at 3am, send 50 simultaneous reminders, or follow up on 200 quotes. The system does what a human can't scale.",
-    "faq.q5": '"What if I change or grow?"',
-    "faq.a5": "Everything runs on YOUR accounts — your n8n, your OpenAI, your WhatsApp. Cancel maintenance and everything keeps working exactly the same. The only thing you lose is us optimizing it. Infrastructure costs $1,275-3,536 MXN/month (hosting + APIs) paid directly to providers, not to us.",
-    "faq.q6": '"How do we get started?"',
-    "faq.a6": "Book a free 30-minute discovery call. If there's a fit, we move to the AI Consulting ($15K) where we map your entire operation and calculate your ROI. From there, we build your infrastructure ($35-150K, with $7,500 credit from the consulting). No commitment on the first call.",
-    "faq.q7": '"How much does it cost monthly to maintain everything?"',
-    "faq.a7": "Infrastructure (hosting, APIs, WhatsApp) costs $1,275-3,536 MXN/month depending on what we build — paid directly to providers, not to us. Our optional maintenance ($5,000-15,000 MXN/month) is pure service: optimization, support, and continuous improvements. If you choose not to take maintenance, your system keeps running the same.",
-    "cta.title": "Discover Where You're Losing Growth",
-    "cta.subtitle": "Book 30 minutes. We analyze your business, identify if there are real AI opportunities, and explain exactly how your growth infrastructure would work.",
-    "cta.whatsapp": "Message Us on WhatsApp",
-    "cta.schedule": "Book a Discovery Call",
-    "cta.trust1": "No commitment",
-    "cta.trust2": "30 minutes",
-    "cta.trust3": "Free call",
-    "cta.trust4": "Clear next steps",
-    "footer.tagline": "Smarter Systems.<br/>Super Human Results.",
-    "footer.desc": "AI infrastructure for businesses that have no time to waste.",
-    "footer.navTitle": "Navigation",
-    "footer.nav.problem": "Problem",
-    "footer.nav.methodology": "Methodology",
-    "footer.nav.process": "Process",
-    "footer.nav.services": "Services",
-    "footer.nav.pricing": "Investment",
-    "footer.contactTitle": "Contact",
-    "footer.copyright": "© 2026 AELION. All rights reserved.",
-    "footer.made": "Made with AI in Mexico 🇲🇽",
-}
-};
-
-const pageMeta = {
-    es: {
-        title: "AELION — Infraestructura de Crecimiento con IA para tu Negocio",
-        description: "Consultoría de IA que diagnostica tu negocio completo, identifica las fugas de crecimiento y diseña la infraestructura exacta para escalar. Metodología propietaria para cualquier industria.",
-        ogTitle: "AELION — Infraestructura de Crecimiento con IA",
-        ogDesc: "Consultoría de IA que diagnostica tu negocio, encuentra lo que frena tu crecimiento y diseña la infraestructura para escalar.",
-        locale: "es_MX"
-    },
-    en: {
-        title: "AELION — AI Growth Infrastructure for Your Business",
-        description: "AI consulting that diagnoses your entire business, identifies growth leaks, and designs the exact infrastructure to scale. Proprietary methodology for any industry.",
-        ogTitle: "AELION — AI Growth Infrastructure",
-        ogDesc: "AI consulting that diagnoses your business, finds what's holding back growth, and designs the infrastructure to scale.",
-        locale: "en_US"
-    }
-};
-
-let _i18nIndex = 0;
-let _i18nAnimate = false;
-function animateTranslation(el, applyText) {
-    if (!_i18nAnimate) { applyText(); return; }
-    const delay = Math.min(_i18nIndex * 6, 200);
-    el.style.transition = 'opacity 0.18s ease';
-    el.style.opacity = '0';
-    setTimeout(() => {
-        applyText();
-        el.style.opacity = '1';
-    }, 180 + delay);
-    _i18nIndex++;
-}
-
-function setLang(lang) {
-    const t = translations[lang];
-    if (!t) return;
-    const meta = pageMeta[lang];
-    _i18nIndex = 0;
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (key === 'true') return;
-        if (!t[key]) return;
-
-        animateTranslation(el, () => {
-            if (el.hasAttribute('data-i18n-html')) {
-                el.innerHTML = t[key];
-            } else {
-                el.textContent = t[key];
-            }
-        });
-    });
-
-    // Update page metadata
     document.documentElement.lang = lang;
-    document.title = meta.title;
-    document.querySelector('meta[name="description"]').content = meta.description;
-    document.querySelector('meta[property="og:title"]').content = meta.ogTitle;
-    document.querySelector('meta[property="og:description"]').content = meta.ogDesc;
-    document.querySelector('meta[property="og:locale"]').content = meta.locale;
-    document.querySelector('meta[name="twitter:title"]').content = meta.ogTitle;
-    document.querySelector('meta[name="twitter:description"]').content = meta.ogDesc;
-
-    // Update toggle button styles
-    const esBtn = document.getElementById('lang-es');
-    const enBtn = document.getElementById('lang-en');
-    if (lang === 'es') {
-        esBtn.classList.add('text-primary', 'border-b-2', 'border-primary');
-        esBtn.classList.remove('opacity-50');
-        enBtn.classList.remove('text-primary', 'border-b-2', 'border-primary');
-        enBtn.classList.add('opacity-50');
-    } else {
-        enBtn.classList.add('text-primary', 'border-b-2', 'border-primary');
-        enBtn.classList.remove('opacity-50');
-        esBtn.classList.remove('text-primary', 'border-b-2', 'border-primary');
-        esBtn.classList.add('opacity-50');
-    }
-
-    // Update mobile toggle
-    document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
-        const btnLang = btn.textContent.trim().toLowerCase();
-        if (btnLang === lang) {
-            btn.classList.add('text-primary', 'border', 'border-primary/30');
-            btn.classList.remove('opacity-50');
-        } else {
-            btn.classList.remove('text-primary', 'border', 'border-primary/30');
-            btn.classList.add('opacity-50');
-        }
-    });
-
-    // Re-animate hero words + subtitle after language switch
-    setTimeout(() => { animateHeroWords(); animateHeroSubtitle(); }, 250);
-
-    localStorage.setItem('aelion-lang', lang);
-}
-
-// Initialize
-(function initLang() {
-    const saved = localStorage.getItem('aelion-lang');
-    if (saved && saved !== 'es') {
-        setLang(saved);
-    }
-    requestAnimationFrame(() => { _i18nAnimate = true; });
+    btn.textContent = lang === "es" ? "EN" : "ES";
+    current = lang;
+    try { localStorage.setItem("aelion-lang", lang); } catch(e){}
+  }
+  capture();
+  btn.addEventListener("click", function(){ apply(current === "en" ? "es" : "en"); });
+  var saved = null;
+  try { saved = localStorage.getItem("aelion-lang"); } catch(e){}
+  if (saved === "es") apply("es");
 })();
-
-// Countdown timer — expires March 31, 2026 at 23:59:59 CST (UTC-6)
-(function initCountdown() {
-    const deadline = new Date('2026-03-31T23:59:59-06:00').getTime();
-    const days = document.getElementById('cd-days');
-    const hours = document.getElementById('cd-hours');
-    const mins = document.getElementById('cd-mins');
-    const secs = document.getElementById('cd-secs');
-    const container = document.getElementById('countdown-container');
-    if (!days) return;
-
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    function tick() {
-        const now = Date.now();
-        const diff = deadline - now;
-        if (diff <= 0) {
-            const expiredMsg = document.documentElement.lang === 'en' ? 'This offer has expired' : 'Esta oferta ha expirado';
-            container.textContent = '';
-            const p = document.createElement('p');
-            p.className = 'text-sm font-bold text-red-400';
-            p.textContent = expiredMsg;
-            container.appendChild(p);
-            if (countdownInterval) clearInterval(countdownInterval);
-            return;
-        }
-        const d = Math.floor(diff / 86400000);
-        const h = Math.floor((diff % 86400000) / 3600000);
-        const m = Math.floor((diff % 3600000) / 60000);
-        const s = Math.floor((diff % 60000) / 1000);
-        days.textContent = pad(d);
-        hours.textContent = pad(h);
-        mins.textContent = pad(m);
-        secs.textContent = pad(s);
-    }
-
-    let countdownInterval;
-    tick();
-    countdownInterval = setInterval(tick, 1000);
-})();
-
-// Fade sections on scroll
-const fadeSections = document.querySelectorAll('.fade-section');
-const fadeSectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
-fadeSections.forEach(el => fadeSectionObserver.observe(el));
 </script>
+
 </body>
 </html>

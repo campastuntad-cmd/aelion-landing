@@ -1,0 +1,245 @@
+{
+  "prospect_name": "Alan Tovar",
+  "business_name": "Consorcio Gual",
+  "date_time": "[Fecha por confirmar]",
+  "duration": "60-90 min",
+  "objective": "Diagnóstico profundo — Growth Scanner 8 variables",
+  "investment": "$15,000 MXN (50% acreditado si procede a construcción)",
+  "prospect_info": {
+    "Negocio": "Consorcio Gual, S.A. de C.V. — Distribución de químicos industriales a granel",
+    "Ubicación": "Cuautitlán Izcalli, Estado de México",
+    "Antigüedad": "40+ años",
+    "Tamaño": "11-50 empleados",
+    "Productos": "Ácido sulfúrico, sosa cáustica, ácido clorhídrico, hipoclorito de sodio",
+    "Cobertura": "Nacional — 32 estados",
+    "Website": "cgual.com (Wix, no indexado)",
+    "Alan": "Certificado en HubSpot Sales + Salesforce. Basado en Querétaro."
+  },
+  "discovery_findings": "Notas de la discovery call del 13 de marzo. Actualizar con hallazgos reales después de la llamada.",
+  "pre_diagnostic_checklist": [
+    "Pago recibido ($15,000 MXN — 100% upfront)",
+    "Entrevista diagnóstica agendada (60-90 min)",
+    "Cliente informado: 50% ($7,500) se acredita al build si procede en 30 días",
+    "Notas de discovery call revisadas",
+    "Cuestionario pre-diagnóstico enviado (si aplica)"
+  ],
+  "growth_scanner_variables": [
+    {
+      "number": 1,
+      "name": "Offer",
+      "description": "Producto/servicio, packaging, precios, posicionamiento",
+      "entry_question": "¿Cómo está estructurada su oferta actualmente? ¿Manejan diferentes grados, paquetes, o todo es cotización individual?",
+      "deep_dive": [
+        "¿Cómo definen ustedes el éxito? ¿Qué métricas les probarían que esto funciona?",
+        "¿Tienen precios fijos o todo es negociación caso por caso?",
+        "¿Hay productos con mayor margen que otros? ¿Los priorizan?",
+        "¿Los clientes entienden la diferencia entre sus grados técnicos? ¿Eso causa fricciones?"
+      ],
+      "hypothesis_alan": "Catálogo simple (4 productos) pero posible complejidad en grados y especificaciones. Oportunidad de estandarizar cotizaciones."
+    },
+    {
+      "number": 2,
+      "name": "Lead Flow",
+      "description": "Cómo generan leads (ads, contenido, referidos, orgánico)",
+      "entry_question": "¿De dónde vienen sus clientes nuevos? ¿Cuántos llegan al mes?",
+      "deep_dive": [
+        "Háblame del proceso completo: desde que alguien los busca hasta que les cotiza.",
+        "¿Qué plataformas o canales usan para ser encontrados? ¿Cosmos, Quiminet, Google?",
+        "¿Cuántos clientes nuevos consiguen al mes vs. cuántos son recurrentes?",
+        "¿Han medido alguna vez el costo de adquirir un cliente nuevo?"
+      ],
+      "hypothesis_alan": "Dependencia 100% de referidos y directorios industriales (Cosmos, Quiminet). Zero generación digital. Website no indexado = invisible en Google."
+    },
+    {
+      "number": 3,
+      "name": "Appointments",
+      "description": "Cómo los leads se convierten en conversaciones (calificación, agendado)",
+      "entry_question": "Cuando llega una solicitud, ¿cómo deciden si es un cliente viable? ¿Hay un filtro?",
+      "deep_dive": [
+        "¿Dónde se atascan las cosas entre el primer contacto y la primera cotización?",
+        "¿Cuál es el tiempo promedio de respuesta cuando alguien pregunta?",
+        "¿Quién decide qué solicitudes atender primero?",
+        "¿Reciben solicitudes fuera de horario? ¿Qué pasa con esas?"
+      ],
+      "hypothesis_alan": "Proceso manual — llamada/WhatsApp → alguien responde cuando puede. Sin filtro de calificación. Tiempo de respuesta probablemente lento."
+    },
+    {
+      "number": 4,
+      "name": "Deal Flow",
+      "description": "Cómo las conversaciones se convierten en ingresos (cierre, objeciones, seguimiento)",
+      "entry_question": "¿Qué porcentaje de cotizaciones se convierten en pedido? ¿Cuál es la tasa de cierre?",
+      "deep_dive": [
+        "¿Cuál es el cuello de botella más grande entre cotización y pedido?",
+        "¿Cuántas cotizaciones se quedan sin respuesta? ¿Les dan seguimiento?",
+        "¿Qué objeciones escuchan más frecuentemente?",
+        "¿Cuánto tiempo pasa entre cotización enviada y decisión del cliente?"
+      ],
+      "hypothesis_alan": "Sin seguimiento automatizado a cotizaciones pendientes. Probable pérdida significativa de deals por falta de follow-up. Alan sabe que necesita un pipeline pero no tiene uno implementado."
+    },
+    {
+      "number": 5,
+      "name": "Fulfillment",
+      "description": "Cómo se entrega el servicio (operaciones, calidad, velocidad)",
+      "entry_question": "¿Cómo es el proceso desde que confirman un pedido hasta que el producto llega al cliente?",
+      "deep_dive": [
+        "¿Cómo fluye el trabajo entre el equipo de ventas, almacén, y transporte?",
+        "¿Dónde se rompen los handoffs?",
+        "¿Cuánto tiempo promedio tarda desde pedido hasta entrega?",
+        "¿Cómo coordinan con las empresas de transporte especializado?"
+      ],
+      "hypothesis_alan": "Logística compleja — químicos a granel requieren transporte especializado, seguros, protocolos de seguridad. Coordinación probablemente por WhatsApp/teléfono."
+    },
+    {
+      "number": 6,
+      "name": "Marketing Engine",
+      "description": "Contenido, presencia social, posicionamiento de marca, ads, nurture",
+      "entry_question": "¿Tienen alguna estrategia de marketing activa? ¿Contenido, redes sociales, publicidad?",
+      "deep_dive": [
+        "¿Qué tan satisfechos están con sus herramientas actuales de marketing?",
+        "¿Qué automatizarían primero si pudieran?",
+        "¿Hacen algo para mantenerse en la mente de sus clientes entre pedidos?",
+        "¿Sus competidores están haciendo algo en digital que ustedes no?"
+      ],
+      "hypothesis_alan": "Marketing prácticamente inexistente. LinkedIn con 22 seguidores. Sin contenido. Sin nurture. Grupo Pochteca tiene presencia digital completa — brecha competitiva creciente."
+    },
+    {
+      "number": 7,
+      "name": "Data & Intelligence",
+      "description": "Qué miden, cómo deciden, reportes, analytics",
+      "entry_question": "¿Cómo miden el rendimiento del negocio? ¿Tienen dashboards, reportes, o es más por feeling?",
+      "deep_dive": [
+        "¿Qué tan bien se comunican sus sistemas entre sí?",
+        "¿Hay herramientas que están pagando pero no usan?",
+        "¿Tienen visibilidad de cuáles son sus clientes más rentables?",
+        "¿Pueden predecir cuándo un cliente va a necesitar re-pedir?"
+      ],
+      "hypothesis_alan": "Probablemente cero analytics. Decisiones basadas en experiencia de 40 años, no en datos. Sin visibilidad de ciclos de compra o rentabilidad por cliente."
+    },
+    {
+      "number": 8,
+      "name": "Operations & Logistics",
+      "description": "Procesos manuales, workflows del equipo, cadena de suministro, comunicación interna",
+      "entry_question": "¿Qué procesos requieren más intervención manual en el día a día?",
+      "deep_dive": [
+        "¿Cuánto tiempo y dinero estiman que se pierde semanalmente en procesos manuales?",
+        "Si tú no estuvieras un día, ¿qué se detiene?",
+        "¿Cómo se comunica el equipo internamente? ¿WhatsApp, juntas, correo?",
+        "¿La documentación de COFEPRIS y certificados la manejan a mano?"
+      ],
+      "hypothesis_alan": "Alta dependencia de procesos manuales. Documentación COFEPRIS probablemente manual. Comunicación interna fragmentada (WhatsApp + llamadas). Almacén y entregas coordinados sin sistema."
+    }
+  ],
+  "ops_canvas_prep": {
+    "acquisition_engine": [
+      "Directorios industriales (Cosmos, Quiminet) → contacto llega",
+      "Referidos de clientes existentes → llamada/WhatsApp",
+      "Website (cgual.com) → formulario de contacto [mínimo tráfico]",
+      "¿Quién maneja? ¿Herramientas? ¿Dónde se pierde?"
+    ],
+    "delivery_engine": [
+      "Cotización aprobada → orden al almacén de Teoloyucan",
+      "Coordinación con transporte especializado",
+      "Entrega al cliente (mínimo 10 toneladas)",
+      "Documentación de seguridad + COFEPRIS",
+      "¿Quién maneja cada paso? ¿Herramientas? ¿Dónde se atasca?"
+    ],
+    "support_engine": [
+      "Seguimiento post-entrega (¿existe?)",
+      "Gestión de re-pedidos (¿proactivo o reactivo?)",
+      "Manejo de reclamos/incidencias",
+      "Relación comercial continua — ¿quién la cuida?",
+      "¿Quién maneja? ¿Herramientas? ¿Dónde se pierde?"
+    ]
+  },
+  "opportunity_matrix_hypotheses": {
+    "quick_wins": [
+      "Bot de WhatsApp para pre-llenar cotizaciones (elimina ida y vuelta manual)",
+      "Recordatorios automáticos de re-pedido basados en ciclo de compra",
+      "Respuesta automática fuera de horario con info básica"
+    ],
+    "big_swings": [
+      "CRM con pipeline visual + seguimiento automatizado de cotizaciones",
+      "Motor de generación de leads (SEO + LinkedIn outreach a procurement managers)",
+      "Dashboard de inteligencia comercial (rentabilidad por cliente, ciclos, tendencias)"
+    ],
+    "nice_to_haves": [
+      "Notificaciones automáticas de estatus de entrega al cliente",
+      "Automatización de documentación COFEPRIS",
+      "Monitoreo de precios de materia prima para optimizar compras"
+    ],
+    "deprioritize": [
+      "Rebuild completo del website (funcional por ahora, mejor invertir en SEO primero)",
+      "App móvil para clientes (no hay volumen digital que lo justifique aún)"
+    ]
+  },
+  "roi_calculator_prep": {
+    "direct_savings": [
+      {
+        "task": "Cotizaciones manuales",
+        "hours_saved_per_week": "??",
+        "employees_affected": "??",
+        "hourly_rate": "??",
+        "note": "RECOPILAR: cuántas cotizaciones/semana, cuánto tarda cada una, quién las hace"
+      },
+      {
+        "task": "Seguimiento manual a clientes",
+        "hours_saved_per_week": "??",
+        "employees_affected": "??",
+        "hourly_rate": "??",
+        "note": "RECOPILAR: cuántos clientes activos, frecuencia de contacto, tiempo por follow-up"
+      }
+    ],
+    "revenue_uplift": [
+      {
+        "opportunity": "Cotizaciones perdidas por falta de seguimiento",
+        "estimated_value": "??",
+        "note": "RECOPILAR: tasa de cierre actual, cuántas cotizaciones se quedan sin responder"
+      },
+      {
+        "opportunity": "Clientes que no re-piden a tiempo",
+        "estimated_value": "??",
+        "note": "RECOPILAR: ticket promedio, frecuencia de compra, churn rate"
+      }
+    ]
+  },
+  "presentation_structure": {
+    "part_1_problem": "X lucha con Y porque Z, resultando en A, B, C. — Usar citas textuales de Alan de la entrevista.",
+    "part_2_analysis": "Ops Canvas (3 engines mapeados) + Opportunity Matrix (2x2) + workflows actuales 'As-Is' + resumen de gaps.",
+    "part_3_solution": "2-3 paquetes por tiers (Scale $80K+ / Growth $45-65K / Starter $35K). Empezar por el más caro (High Anchor). Features, ventajas, limitaciones, precio.",
+    "part_4_next_steps": "ROI Calculator con números reales de Alan + priorización + M.A.N.S. + recordatorio: '$7,500 de tu Consultoría se acreditan al build.'"
+  },
+  "metrics_to_collect": [
+    "Número de cotizaciones por semana/mes",
+    "Tasa de conversión de cotización a pedido",
+    "Tiempo promedio de respuesta a solicitudes",
+    "Ticket promedio por pedido",
+    "Número de clientes activos vs. inactivos",
+    "Frecuencia promedio de re-pedido por cliente",
+    "Horas semanales dedicadas a tareas administrativas repetitivas",
+    "Costo de adquisición de cliente nuevo (si lo conocen)",
+    "Número de cotizaciones que se quedan sin respuesta",
+    "Costo mensual de herramientas actuales (si las hay)"
+  ],
+  "do_list": [
+    "Mapear el Ops Canvas EN VIVO con Alan — que vea su negocio desplegado",
+    "Anotar CITAS TEXTUALES de Alan — van directo a la presentación",
+    "Recopilar TODOS los números reales para el ROI Calculator",
+    "Hacer las preguntas incómodas: ¿cuántos clientes han perdido? ¿cuánto les cuesta?",
+    "Validar hipótesis — no asumir, confirmar cada punto con datos reales",
+    "Explicar qué viene después: 'Con esta información, preparo tu reporte en 2-3 días'"
+  ],
+  "dont_list": [
+    "NO presentar soluciones todavía — esto es diagnóstico puro",
+    "NO dar precios del build durante la Consultoría (eso viene en la presentación)",
+    "NO apresurarse — si necesitas más tiempo, tómalo. La calidad del diagnóstico es el producto",
+    "NO asumir que la hipótesis es correcta — puede haber sorpresas",
+    "NO omitir ninguna de las 8 variables — el valor está en la cobertura completa"
+  ],
+  "deliverables_timeline": {
+    "day_1": "Entrevista diagnóstica profunda (60-90 min) — Growth Scanner 8 variables + Ops Canvas en vivo",
+    "days_2_3": "Análisis: Opportunity Matrix + ROI Calculator + diseño de solución por tiers",
+    "day_4": "Testing de Quick Wins + preparación de presentación en Gamma",
+    "day_5": "Entrega interactiva: presentación de 4 partes con validación entre cada sección"
+  },
+  "remember": "Esta es la Consultoría de IA — el producto que vale $15,000 MXN. La calidad de este diagnóstico determina si Alan compra un build de $35-80K. Cada dato que recopiles, cada cita que anotes, cada número que obtengas es munición para el ROI Calculator y la presentación. No dejes ningún espacio en blanco. El Ops Canvas es tu arma más poderosa — cuando Alan vea su negocio desplegado en 3 columnas, va a ver los gaps que nunca había visto."
+}

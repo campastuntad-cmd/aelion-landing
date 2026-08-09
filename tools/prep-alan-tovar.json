@@ -1,0 +1,216 @@
+{
+  "prospect_name": "Alan Tovar",
+  "business_name": "Consorcio Gual",
+  "date_time": "Viernes 13 de Marzo, 12:30 PM",
+  "duration": "30 min",
+  "objective": "Entender, NO vender",
+  "prospect_info": {
+    "Negocio": "Consorcio Gual, S.A. de C.V. — Distribución de químicos industriales a granel",
+    "Ubicación": "Cuautitlán Izcalli, Estado de México (almacén en Teoloyucan)",
+    "Antigüedad": "40+ años (fundado ~1981)",
+    "Tamaño": "11-50 empleados",
+    "Productos": "Ácido sulfúrico, sosa cáustica, ácido clorhídrico, hipoclorito de sodio (mínimo 10 toneladas por pedido)",
+    "Cobertura": "Nacional — 32 estados, 2M+ toneladas entregadas",
+    "Website": "cgual.com (Wix básico, NO indexado en Google)",
+    "LinkedIn": "22 seguidores — mínima presencia digital",
+    "WhatsApp": "+52 1 55 4993 3930",
+    "Alan": "Certificado en HubSpot Sales + Salesforce. Emprendedor (creó MakerPartners). 3K+ seguidores en LinkedIn. Basado en Querétaro."
+  },
+  "context": "Alan tiene experiencia con CRM y herramientas de ventas (HubSpot, Salesforce) pero opera en una industria 100% tradicional. Consorcio Gual tiene 40 años en el mercado pero cero presencia digital — no aparecen en Google. Compiten contra Grupo Pochteca que tiene 33 centros de distribución y plataforma digital completa. Alan es técnicamente sofisticado pero la empresa opera de forma manual.",
+  "role_instruction": "Alan ya entiende el concepto de CRM y automatización. No le vendas la idea — véndele la ejecución. Pregunta qué herramientas usa HOY y dónde está la brecha entre lo que sabe que es posible y lo que realmente tienen implementado.",
+  "what_they_said": null,
+  "pain_translation": [
+    {
+      "said": "Tiene certificaciones de HubSpot y Salesforce",
+      "means": "Sabe que necesita un CRM pero probablemente no tiene uno implementado",
+      "question": "¿Actualmente usan algún CRM o todo se maneja por WhatsApp/Excel?"
+    },
+    {
+      "said": "Website en Wix, no indexado en Google",
+      "means": "Zero generación de leads digital — dependen 100% de boca en boca",
+      "question": "¿De dónde vienen sus clientes nuevos hoy? ¿Cuántos llegan al mes?"
+    },
+    {
+      "said": "4 productos, mínimo 10 toneladas",
+      "means": "Catálogo simple + pedidos grandes = perfecto para automatizar cotizaciones",
+      "question": "¿Cómo es el proceso cuando un cliente pide una cotización? ¿Cuántas manejan por semana?"
+    },
+    {
+      "said": "Competidor Grupo Pochteca tiene 33 centros + digital",
+      "means": "Presión competitiva creciente de jugadores digitalizados",
+      "question": "¿Han notado que están perdiendo clientes a competidores más grandes? ¿Qué los diferencia?"
+    }
+  ],
+  "phases": [
+    {
+      "title": "FASE 1: INTRODUCCIÓN Y MARCO (2-3 min)",
+      "script": "Alan, qué tal, gracias por tomarte el tiempo. Mira, lo que vamos a hacer hoy es una conversación para entender cómo opera Consorcio Gual y ver si hay oportunidad de mejorar algunos procesos con tecnología. Voy a hacerte unas preguntas, tú me cuentas cómo están las cosas, y al final te digo honestamente si veo algo donde podamos ayudar — o si no, también te lo digo. No hay venta aquí, es puro diagnóstico. ¿Suena bien?",
+      "bullets": null,
+      "sub_sections": null,
+      "note": null
+    },
+    {
+      "title": "FASE 2: RAPPORT Y CREDIBILIDAD (2-3 min)",
+      "script": null,
+      "bullets": [
+        "\"Vi que Consorcio Gual tiene más de 40 años en el mercado — eso dice mucho de la calidad del servicio y las relaciones que han construido. ¿Cómo ha sido la evolución del negocio en los últimos años?\"",
+        "\"En AELION nos especializamos en construir infraestructura de crecimiento con IA para negocios de servicios e industria. Escaneamos 8 variables clave de tu negocio y construimos sistemas que cierran las brechas.\"",
+        "\"Vi que tienes experiencia con HubSpot y Salesforce — eso me dice que ya entiendes el valor de tener sistemas. Eso hace esta conversación mucho más productiva.\""
+      ],
+      "sub_sections": null,
+      "note": "Validar su conocimiento técnico. Él ya habla tu idioma."
+    },
+    {
+      "title": "FASE 3: DISCOVERY — METAS Y DESAFÍOS (15-20 min)",
+      "script": null,
+      "bullets": null,
+      "sub_sections": [
+        {
+          "title": "A. Metas y Visión",
+          "questions": [
+            "¿Cuáles son las prioridades principales para Consorcio Gual en los próximos 6-12 meses?",
+            "Si todo saliera perfecto, ¿cómo se ve el negocio en un año?",
+            "¿Están buscando crecer en clientes nuevos, retener mejor a los actuales, o ser más eficientes?"
+          ]
+        },
+        {
+          "title": "B. Ventas y Pipeline",
+          "questions": [
+            "¿Cómo reciben las solicitudes de cotización hoy? ¿WhatsApp, teléfono, email, web?",
+            "¿Cuántas cotizaciones manejan por semana o por mes?",
+            "¿Quién responde las cotizaciones? ¿Cuánto tardan en responder?",
+            "¿Qué porcentaje de cotizaciones se convierten en pedido?",
+            "¿Tienen algún sistema para dar seguimiento a cotizaciones pendientes?"
+          ]
+        },
+        {
+          "title": "C. Clientes y Retención",
+          "questions": [
+            "¿Cómo saben cuándo un cliente necesita volver a pedir? ¿Es manual o tienen algún tracking?",
+            "¿Han perdido clientes por no dar seguimiento a tiempo?",
+            "¿Manejan diferentes precios o condiciones por cliente? ¿Dónde está esa información?"
+          ]
+        },
+        {
+          "title": "D. Herramientas y Sistemas",
+          "questions": [
+            "Alan, con tu experiencia en HubSpot y Salesforce — ¿actualmente usan algún CRM o todo es WhatsApp/Excel?",
+            "¿Qué herramientas usan para coordinar logística y entregas?",
+            "¿Del 1 al 10, qué tan automatizado está el negocio hoy?",
+            "¿Han probado algo de IA o automatización antes?"
+          ]
+        },
+        {
+          "title": "E. Presencia Digital",
+          "questions": [
+            "¿De dónde vienen sus clientes nuevos hoy? ¿Referidos, directorios industriales, otro?",
+            "¿Han intentado generar leads de forma digital — Google, LinkedIn, ads?",
+            "¿Cuánto les cuesta adquirir un cliente nuevo actualmente?"
+          ]
+        },
+        {
+          "title": "F. Stakeholders y Decisiones",
+          "questions": [
+            "¿Quién más está involucrado en decisiones tecnológicas? ¿Socios, directivos?",
+            "Si decidiéramos trabajar juntos, ¿quién más tendría que aprobar?"
+          ]
+        }
+      ],
+      "note": "Mantén a Alan hablando 70% del tiempo. Usa los 5 Whys para profundizar."
+    },
+    {
+      "title": "FASE 4: RESUMIR Y CONECTAR VALOR (3-4 min)",
+      "script": "OK, lo que escucho es esto: [sus palabras]. Consorcio Gual tiene [fortaleza] pero está perdiendo [oportunidad] porque [brecha que describió]. Con 40 años de relaciones y un catálogo enfocado, el potencial de automatizar [proceso específico] es muy alto.",
+      "bullets": null,
+      "sub_sections": null,
+      "note": "Usa sus palabras exactas. Cuantifica si es posible."
+    },
+    {
+      "title": "FASE 5: M.A.N.S. — PRÓXIMOS PASOS (2-3 min)",
+      "script": null,
+      "bullets": [
+        "SI HAY FIT: \"Mira, lo que veo es que hay oportunidad real aquí. Lo que te propongo es una Consultoría de IA — es un diagnóstico profundo donde escaneamos tu negocio completo con nuestro Growth Scanner de 8 variables, te doy un scorecard con tus gaps, una proyección de ROI con tus números reales, y un roadmap priorizado. Es una inversión de $15,000 MXN. Y si decides avanzar con la construcción, la mitad se acredita al costo del sistema. ¿Te parece si la agendamos?\"",
+        "SI NO ESTÁ LISTO: \"Entiendo que no es el momento. Te mando un resumen de lo que encontramos hoy — es tuyo. Y cuando estés listo, aquí estoy.\"",
+        "SI NO HAY FIT: \"Honestamente, no creo que lo que hacemos sea lo que necesitas ahorita. Lo que yo te recomendaría es [sugerencia genuina].\"",
+        "SIEMPRE: Confirmar siguiente paso concreto con fecha."
+      ],
+      "sub_sections": null,
+      "note": null
+    }
+  ],
+  "shooting_bullets": [
+    "Bot de cotizaciones en WhatsApp: el cliente manda qué producto necesita, cuántas toneladas y a dónde → el sistema pre-llena la cotización y la manda a ventas lista para aprobar. Cero ida y vuelta manual.",
+    "CRM con pipeline visual: cada cotización como un deal, seguimiento automático a cotizaciones pendientes, recordatorios de re-pedido basados en el ciclo de compra de cada cliente.",
+    "Motor de generación de leads: arreglar el SEO (hoy no aparecen en Google), presencia en LinkedIn, outreach a gerentes de compras de empresas manufactureras.",
+    "Notificaciones automáticas de entrega: el cliente recibe estatus de su pedido — confirmado, en tránsito, entregado. Genera confianza sin esfuerzo manual.",
+    "Inteligencia de precios de proveedores: monitorear fluctuaciones de precio de materia prima para optimizar tiempos de compra."
+  ],
+  "listening_prompts": [
+    "\"Eso es muy interesante — ¿me puedes contar más sobre eso?\"",
+    "\"Solo para confirmar, cuando dices [X], ¿te refieres a...?\"",
+    "\"Parece que [problema] es frustrante. ¿Cuánto tiempo llevan así?\"",
+    "\"¿Cómo impacta eso en la operación diaria?\"",
+    "\"¿Por qué crees que pasa eso?\" (5 Whys)"
+  ],
+  "solutions": [
+    {
+      "problem": "Cotizaciones lentas / manuales",
+      "solution": "Bot de WhatsApp que recopila specs → genera cotización pre-llenada → aprobación con un click"
+    },
+    {
+      "problem": "Sin seguimiento a cotizaciones pendientes",
+      "solution": "CRM con pipeline + seguimiento automático (recordatorios Day 2, Day 5)"
+    },
+    {
+      "problem": "No saben cuándo el cliente necesita re-pedir",
+      "solution": "Tracking de ciclo de compra → recordatorio proactivo de re-pedido vía WhatsApp"
+    },
+    {
+      "problem": "Invisibles en digital",
+      "solution": "SEO + indexación en Google + LinkedIn outreach a gerentes de compras"
+    },
+    {
+      "problem": "Sin visibilidad de entregas",
+      "solution": "Notificaciones automáticas de estatus de pedido al cliente"
+    }
+  ],
+  "objections": [
+    {
+      "trigger": "¿Y eso cuánto cuesta?",
+      "response": "Alan, eso depende mucho de qué tanto necesiten. Por eso primero quiero entender bien cómo operan. Hay soluciones desde muy accesibles hasta más completas. Lo que te propongo es hacer primero el diagnóstico y después hablamos de números con información real."
+    },
+    {
+      "trigger": "Somos un equipo chico, no creo que necesitemos algo así",
+      "response": "Justamente por eso. La automatización le da a un equipo de 15 personas el alcance de uno de 50. No se trata de crecer el equipo — se trata de que el equipo que ya tienes pueda hacer más sin quemarse."
+    },
+    {
+      "trigger": "Nuestros clientes nos conocen, no necesitamos marketing digital",
+      "response": "Y eso es tu fortaleza — 40 años de relaciones es un activo enorme. Pero la pregunta es: ¿cuántos clientes nuevos están llegando? Un solo cliente nuevo de pedidos a granel puede representar ingresos significativos al año."
+    },
+    {
+      "trigger": "Ya intentamos con tecnología y no funcionó",
+      "response": "Eso es más común de lo que crees. La mayoría de las veces falla porque se implementa la herramienta sin adaptar el proceso. Nosotros primero entendemos tu proceso y después diseñamos la herramienta alrededor de él — no al revés."
+    }
+  ],
+  "do_list": [
+    "Toma notas de todo lo que dice",
+    "Valida su conocimiento técnico (HubSpot, Salesforce) — habla como par, no como profesor",
+    "Usa los términos de su industria (cotización, pedido, toneladas, grado técnico)",
+    "Termina con un siguiente paso concreto (agendar Consultoría)"
+  ],
+  "dont_list": [
+    "No ofrezcas precios específicos todavía",
+    "No asumas que por tener certificaciones de CRM ya tiene uno implementado",
+    "No hables más que él — escucha 70%, habla 30%",
+    "No uses jerga de tech que no aplique a su industria"
+  ],
+  "post_call": [
+    "Guardar notas en Airtable CRM (Lead record + Interaction)",
+    "Enviar mensaje de seguimiento por WhatsApp: agradecer + resumir hallazgos + confirmar siguiente paso",
+    "Si bridgeó a Consultoría → agendar y enviar invitación de calendario",
+    "Si no → agregar a secuencia de follow-up",
+    "Actualizar Outreach Log con resultado"
+  ],
+  "remember": "Alan YA SABE lo que es un CRM, lo que es automatización, lo que es un pipeline. Tu trabajo NO es educarlo — es entender por qué su empresa de 40 años aún no lo tiene implementado. ¿Es presupuesto? ¿Es resistencia interna? ¿Es que nadie ha ejecutado? Ahí está la oportunidad real. Los 40 años de relaciones son su foso competitivo — posiciona la IA como lo que protege y escala ese foso, no como algo que lo reemplaza.",
+  "goal": "\"Este muchacho realmente entiende mi negocio y tiene un plan claro para ayudarnos. Quiero hacer el diagnóstico completo.\""
+}
